@@ -23,4 +23,12 @@
 .nav-tools-badge {
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.07);
   letter-spacing: 0.01em;
+}
+/* Hide scrollbars for popular tools rows */
+#popularToolsRow1, #popularToolsRow2 {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+#popularToolsRow1::-webkit-scrollbar, #popularToolsRow2::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 } 

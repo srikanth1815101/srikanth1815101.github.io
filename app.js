@@ -1,42 +1,249 @@
 // ---- DATA ----
 const categories = [
   {
-    id: 'text-tools',
-    name: 'Text Tools',
-    description: 'Tools for text manipulation and conversion',
-    icon: 'type',
-    color: 'bg-blue-50 text-blue-600',
-  },
-  {
-    id: 'pdf-tools',
-    name: 'PDF Tools',
-    description: 'Work with PDF files easily',
-    icon: 'file-text',
-    color: 'bg-red-50 text-red-600',
-  },
-  {
     id: 'image-tools',
     name: 'Image Tools',
-    description: 'Edit and convert images online',
+    description: 'Convert, resize, and manipulate images online',
     icon: 'image',
     color: 'bg-green-50 text-green-600',
   },
   {
-    id: 'ai-tools',
-    name: 'AI Tools',
-    description: 'Leverage AI for various tasks',
-    icon: 'brain',
+    id: 'seo-tools',
+    name: 'SEO Tools',
+    description: 'Optimize your website for search engines',
+    icon: 'search',
     color: 'bg-purple-50 text-purple-600',
   },
+  {
+    id: 'text-tools',
+    name: 'Text Tools',
+    description: 'Text manipulation and analysis tools',
+    icon: 'type',
+    color: 'bg-blue-50 text-blue-600',
+  },
+  {
+    id: 'developer-tools',
+    name: 'Developer Tools',
+    description: 'Essential tools for web developers',
+    icon: 'code',
+    color: 'bg-orange-50 text-orange-600',
+  },
+  {
+    id: 'math-calculators',
+    name: 'Math & Calculators',
+    description: 'Various calculators and mathematical tools',
+    icon: 'calculator',
+    color: 'bg-red-50 text-red-600',
+  },
+  {
+    id: 'unit-converters',
+    name: 'Unit Converters',
+    description: 'Convert units easily',
+    icon: 'ruler',
+    color: 'bg-yellow-50 text-yellow-600',
+  },
+  {
+    id: 'security-tools',
+    name: 'Security & Encryption',
+    description: 'Tools for security and data encryption',
+    icon: 'shield',
+    color: 'bg-indigo-50 text-indigo-600',
+  },
+  {
+    id: 'social-media-tools',
+    name: 'Social Media Tools',
+    description: 'Tools for social media content and analysis',
+    icon: 'share-2',
+    color: 'bg-pink-50 text-pink-600',
+  },
+  {
+    id: 'misc-tools',
+    name: 'Miscellaneous Tools',
+    description: 'Various useful online tools',
+    icon: 'wrench',
+    color: 'bg-gray-50 text-gray-600',
+  }
 ];
 
 const tools = [
+  // Image Tools
+  {
+    id: 'image-to-png',
+    name: 'Image to PNG Converter',
+    description: 'Convert images to PNG format',
+    icon: 'image',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'image-to-jpg',
+    name: 'Image to JPG Converter',
+    description: 'Convert images to JPG format',
+    icon: 'image',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'image-resizer',
+    name: 'Image Resizer',
+    description: 'Resize images to desired dimensions',
+    icon: 'scaling',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'image-compressor',
+    name: 'Image Compressor',
+    description: 'Compress images without losing quality',
+    icon: 'image-upscale',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'image-cropper',
+    name: 'Image Cropper',
+    description: 'Crop images to desired size',
+    icon: 'crop',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'image-to-base64',
+    name: 'Convert Image to Base64',
+    description: 'Convert images to Base64 string',
+    icon: 'file-code',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'webp-to-png',
+    name: 'Convert WebP to PNG',
+    description: 'Convert WebP images to PNG format',
+    icon: 'image',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'gif-maker',
+    name: 'GIF Maker',
+    description: 'Create animated GIFs from images',
+    icon: 'image-play',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'qr-generator',
+    name: 'QR Code Generator',
+    description: 'Generate QR codes for any content',
+    icon: 'qr-code',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+  {
+    id: 'screenshot-to-pdf',
+    name: 'Screenshot to PDF Converter',
+    description: 'Convert screenshots to PDF format',
+    icon: 'file',
+    url: 'tool.html',
+    category: 'image-tools',
+  },
+
+  // SEO Tools
+  {
+    id: 'meta-tag-generator',
+    name: 'Meta Tag Generator',
+    description: 'Generate meta tags for your website',
+    icon: 'tags',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'keyword-density',
+    name: 'Keyword Density Checker',
+    description: 'Check keyword density in your content',
+    icon: 'bar-chart',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'sitemap-generator',
+    name: 'Sitemap Generator',
+    description: 'Generate XML sitemaps for your website',
+    icon: 'network',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'robots-generator',
+    name: 'Robots.txt Generator',
+    description: 'Generate robots.txt file for your website',
+    icon: 'file-text',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'google-index-checker',
+    name: 'Google Index Checker',
+    description: 'Check if your page is indexed by Google',
+    icon: 'search',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'domain-authority',
+    name: 'Domain Authority Checker',
+    description: 'Check domain authority score',
+    icon: 'trending-up',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'backlink-checker',
+    name: 'Backlink Checker',
+    description: 'Check backlinks for your website',
+    icon: 'link',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'page-speed',
+    name: 'Page Speed Checker',
+    description: 'Check your website loading speed',
+    icon: 'gauge',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'xml-validator',
+    name: 'XML Sitemap Validator',
+    description: 'Validate your XML sitemap',
+    icon: 'check-circle',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+  {
+    id: 'mobile-friendly',
+    name: 'Mobile-Friendly Test',
+    description: 'Test if your website is mobile-friendly',
+    icon: 'smartphone',
+    url: 'tool.html',
+    category: 'seo-tools',
+  },
+
   // Text Tools
   {
-    id: 'text-converter',
-    name: 'Text Converter',
-    description: 'Convert text between different formats',
-    icon: 'type',
+    id: 'word-counter',
+    name: 'Word Counter',
+    description: 'Count words in your text',
+    icon: 'whole-word',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+  {
+    id: 'character-counter',
+    name: 'Character Counter',
+    description: 'Count characters in your text',
+    icon: 'case-sensitive',
     url: 'tool.html',
     category: 'text-tools',
   },
@@ -48,57 +255,634 @@ const tools = [
     url: 'tool.html',
     category: 'text-tools',
   },
-  // PDF Tools
   {
-    id: 'pdf-merger',
-    name: 'PDF Merger',
-    description: 'Merge multiple PDFs into one',
+    id: 'plagiarism-checker',
+    name: 'Plagiarism Checker',
+    description: 'Check text for plagiarism',
+    icon: 'copy',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+  {
+    id: 'grammar-checker',
+    name: 'Grammar Checker',
+    description: 'Check text for grammar errors',
+    icon: 'check-circle',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+  {
+    id: 'text-to-speech',
+    name: 'Text-to-Speech',
+    description: 'Convert text to speech',
+    icon: 'volume-2',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+  {
+    id: 'speech-to-text',
+    name: 'Speech-to-Text',
+    description: 'Convert speech to text',
+    icon: 'mic',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+  {
+    id: 'url-encoder',
+    name: 'URL Encoder & Decoder',
+    description: 'Encode or decode URLs',
+    icon: 'link',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+  {
+    id: 'fancy-text',
+    name: 'Fancy Text Generator',
+    description: 'Generate fancy text styles',
+    icon: 'wand',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+  {
+    id: 'random-text',
+    name: 'Random Text Generator',
+    description: 'Generate random text',
+    icon: 'shuffle',
+    url: 'tool.html',
+    category: 'text-tools',
+  },
+
+  // Developer Tools
+  {
+    id: 'json-formatter',
+    name: 'JSON Formatter',
+    description: 'Format and validate JSON',
+    icon: 'braces',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'html-to-markdown',
+    name: 'HTML to Markdown Converter',
+    description: 'Convert HTML to Markdown',
+    icon: 'code',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'css-minifier',
+    name: 'CSS Minifier',
+    description: 'Minify CSS code',
+    icon: 'file-code',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'js-minifier',
+    name: 'JavaScript Minifier',
+    description: 'Minify JavaScript code',
+    icon: 'file-code-2',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'sql-formatter',
+    name: 'SQL Formatter',
+    description: 'Format SQL queries',
+    icon: 'database',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'htaccess-generator',
+    name: 'HTACCESS Redirect Generator',
+    description: 'Generate HTACCESS redirect rules',
+    icon: 'file-code',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'markdown-to-html',
+    name: 'Markdown to HTML Converter',
+    description: 'Convert Markdown to HTML',
+    icon: 'code-xml',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'color-picker',
+    name: 'Color Code Picker',
+    description: 'Pick and convert color codes',
+    icon: 'palette',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'base64-encoder',
+    name: 'Base64 Encoder & Decoder',
+    description: 'Encode or decode Base64',
+    icon: 'file-code',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+  {
+    id: 'ip-lookup',
+    name: 'IP Address Lookup',
+    description: 'Look up IP address information',
+    icon: 'globe',
+    url: 'tool.html',
+    category: 'developer-tools',
+  },
+
+  // Math & Calculators
+  {
+    id: 'percentage-calculator',
+    name: 'Percentage Calculator',
+    description: 'Calculate percentages',
+    icon: 'percent',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'age-calculator',
+    name: 'Age Calculator',
+    description: 'Calculate age from birth date',
+    icon: 'calendar',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'bmi-calculator',
+    name: 'BMI Calculator',
+    description: 'Calculate Body Mass Index',
+    icon: 'scale',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'loan-calculator',
+    name: 'Loan EMI Calculator',
+    description: 'Calculate loan EMI',
+    icon: 'credit-card',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'scientific-calculator',
+    name: 'Scientific Calculator',
+    description: 'Advanced mathematical calculations',
+    icon: 'calculator',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'discount-calculator',
+    name: 'Discount Calculator',
+    description: 'Calculate discounts',
+    icon: 'badge-indian-rupee',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'currency-converter',
+    name: 'Currency Converter',
+    description: 'Convert between currencies',
+    icon: 'dollar-sign',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'timezone-converter',
+    name: 'Time Zone Converter',
+    description: 'Convert between time zones',
+    icon: 'clock',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'binary-converter',
+    name: 'Binary to Decimal Converter',
+    description: 'Convert between binary and decimal',
+    icon: 'code',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+  {
+    id: 'tip-calculator',
+    name: 'Tip Calculator',
+    description: 'Calculate tips and splits',
+    icon: 'hand-platter',
+    url: 'tool.html',
+    category: 'math-calculators',
+  },
+
+  // Unit Converters
+  {
+    id: 'length-converter',
+    name: 'Length Converter',
+    description: 'Convert between length units',
+    icon: 'ruler',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'weight-converter',
+    name: 'Weight Converter',
+    description: 'Convert between weight units',
+    icon: 'scale',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'speed-converter',
+    name: 'Speed Converter',
+    description: 'Convert between speed units',
+    icon: 'gauge',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'temperature-converter',
+    name: 'Temperature Converter',
+    description: 'Convert between temperature units',
+    icon: 'thermometer',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'volume-converter',
+    name: 'Volume Converter',
+    description: 'Convert between volume units',
+    icon: 'box',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'data-converter',
+    name: 'Data Storage Converter',
+    description: 'Convert between data storage units',
+    icon: 'hard-drive',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'energy-converter',
+    name: 'Energy Converter',
+    description: 'Convert between energy units',
+    icon: 'zap',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'pressure-converter',
+    name: 'Pressure Converter',
+    description: 'Convert between pressure units',
+    icon: 'wind-arrow-down',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'fuel-converter',
+    name: 'Fuel Efficiency Converter',
+    description: 'Convert between fuel efficiency units',
+    icon: 'circle-gauge',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+  {
+    id: 'angle-converter',
+    name: 'Angle Converter',
+    description: 'Convert between angle units',
+    icon: 'compass',
+    url: 'tool.html',
+    category: 'unit-converters',
+  },
+
+  // Security & Encryption Tools
+  {
+    id: 'md5-generator',
+    name: 'MD5 Hash Generator',
+    description: 'Generate MD5 hashes',
+    icon: 'key',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'sha256-generator',
+    name: 'SHA256 Hash Generator',
+    description: 'Generate SHA256 hashes',
+    icon: 'key',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'password-generator',
+    name: 'Password Generator',
+    description: 'Generate secure passwords',
+    icon: 'lock',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'random-string',
+    name: 'Random String Generator',
+    description: 'Generate random strings',
+    icon: 'hash',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'url-shortener',
+    name: 'URL Shortener',
+    description: 'Shorten long URLs',
+    icon: 'link',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'ip-geolocation',
+    name: 'IP Geolocation Finder',
+    description: 'Find location from IP address',
+    icon: 'map-pin',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'ssl-checker',
+    name: 'SSL Certificate Checker',
+    description: 'Check SSL certificate validity',
+    icon: 'shield',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'whois-lookup',
+    name: 'Whois Lookup',
+    description: 'Look up domain information',
+    icon: 'search',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'http-headers',
+    name: 'HTTP Headers Checker',
+    description: 'Check HTTP headers',
+    icon: 'globe',
+    url: 'tool.html',
+    category: 'security-tools',
+  },
+  {
+    id: 'privacy-policy',
+    name: 'Privacy Policy Generator',
+    description: 'Generate privacy policy',
     icon: 'file-text',
     url: 'tool.html',
-    category: 'pdf-tools',
+    category: 'security-tools',
+  },
+
+  // Social Media Tools
+  {
+    id: 'youtube-thumbnail',
+    name: 'YouTube Thumbnail Downloader',
+    description: 'Download YouTube video thumbnails',
+    icon: 'youtube',
+    url: 'tool.html',
+    category: 'social-media-tools',
   },
   {
-    id: 'pdf-splitter',
-    name: 'PDF Splitter',
-    description: 'Split PDF into multiple files',
+    id: 'instagram-downloader',
+    name: 'Instagram Photo Downloader',
+    description: 'Download Instagram photos',
+    icon: 'instagram',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'twitter-downloader',
+    name: 'Twitter Video Downloader',
+    description: 'Download Twitter videos',
+    icon: 'twitter',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'facebook-downloader',
+    name: 'Facebook Video Downloader',
+    description: 'Download Facebook videos',
+    icon: 'facebook',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'tiktok-downloader',
+    name: 'TikTok Video Downloader',
+    description: 'Download TikTok videos',
+    icon: 'flame',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'youtube-tags',
+    name: 'YouTube Tags Extractor',
+    description: 'Extract tags from YouTube videos',
+    icon: 'tags',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'hashtag-generator',
+    name: 'Hashtag Generator',
+    description: 'Generate hashtags for social media',
+    icon: 'hash',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'social-post-generator',
+    name: 'Social Media Post Generator',
+    description: 'Generate social media posts',
+    icon: 'edit-3',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'emoji-keyboard',
+    name: 'Emoji Keyboard',
+    description: 'Copy and paste emojis',
+    icon: 'smile',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+  {
+    id: 'twitter-counter',
+    name: 'Twitter Character Counter',
+    description: 'Count characters for Twitter posts',
+    icon: 'hash',
+    url: 'tool.html',
+    category: 'social-media-tools',
+  },
+
+  // Miscellaneous Tools
+  {
+    id: 'barcode-generator',
+    name: 'Barcode Generator',
+    description: 'Generate barcodes',
+    icon: 'barcode',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'meme-generator',
+    name: 'Meme Generator',
+    description: 'Create and edit memes',
+    icon: 'image',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'resume-builder',
+    name: 'Resume Builder',
+    description: 'Create professional resumes',
+    icon: 'file-user',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'invoice-generator',
+    name: 'Invoice Generator',
+    description: 'Generate professional invoices',
     icon: 'file-text',
     url: 'tool.html',
-    category: 'pdf-tools',
-  },
-  // Image Tools
-  {
-    id: 'image-resizer',
-    name: 'Image Resizer',
-    description: 'Resize images online',
-    icon: 'image',
-    url: 'tool.html',
-    category: 'image-tools',
+    category: 'misc-tools',
   },
   {
-    id: 'image-converter',
-    name: 'Image Converter',
-    description: 'Convert images between formats',
-    icon: 'image',
+    id: 'business-name',
+    name: 'Business Name Generator',
+    description: 'Generate business names',
+    icon: 'briefcase',
     url: 'tool.html',
-    category: 'image-tools',
-  },
-  // AI Tools
-  {
-    id: 'ai-summarizer',
-    name: 'AI Summarizer',
-    description: 'Summarize text using AI',
-    icon: 'brain',
-    url: 'tool.html',
-    category: 'ai-tools',
+    category: 'misc-tools',
   },
   {
-    id: 'ai-writer',
-    name: 'AI Writer',
-    description: 'Generate text using AI',
-    icon: 'brain',
+    id: 'lottery-generator',
+    name: 'Lottery Number Generator',
+    description: 'Generate lottery numbers',
+    icon: 'shuffle',
     url: 'tool.html',
-    category: 'ai-tools',
+    category: 'misc-tools',
   },
+  {
+    id: 'coin-flip',
+    name: 'Flip a Coin Simulator',
+    description: 'Simulate coin flips',
+    icon: 'hand-coins',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'random-number',
+    name: 'Random Number Generator',
+    description: 'Generate random numbers',
+    icon: 'hash',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'dice-roller',
+    name: 'Dice Roller Simulator',
+    description: 'Simulate dice rolls',
+    icon: 'dice-5',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'speed-test',
+    name: 'Internet Speed Test',
+    description: 'Test your internet speed',
+    icon: 'activity',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'daily-planner',
+    name: 'Daily Planner Creator',
+    description: 'Create daily planners',
+    icon: 'calendar',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'wedding-invitation',
+    name: 'Wedding Invitation Generator',
+    description: 'Generate wedding invitations',
+    icon: 'heart',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'story-plot',
+    name: 'Story Plot Generator',
+    description: 'Generate story plots',
+    icon: 'book-open',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'ebook-creator',
+    name: 'E-book Creator',
+    description: 'Create e-books',
+    icon: 'book',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'ai-chatbot',
+    name: 'AI Chatbot Demo',
+    description: 'Try our AI chatbot',
+    icon: 'message-circle',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'ip-tracker',
+    name: 'IP Address Tracker',
+    description: 'Track IP addresses',
+    icon: 'map-pin',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'fake-address',
+    name: 'Fake Address Generator',
+    description: 'Generate fake addresses',
+    icon: 'map-pin',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'electric-bill',
+    name: 'Calculator for Electric Bills',
+    description: 'Calculate electric bills',
+    icon: 'zap',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'leap-year',
+    name: 'Leap Year Checker',
+    description: 'Check if a year is a leap year',
+    icon: 'calendar-check',
+    url: 'tool.html',
+    category: 'misc-tools',
+  },
+  {
+    id: 'numerology',
+    name: 'Name to Numerology Calculator',
+    description: 'Calculate numerology from names',
+    icon: 'hash',
+    url: 'tool.html',
+    category: 'misc-tools',
+  }
 ];
 
 // ---- HELPERS ----
@@ -176,23 +960,149 @@ function renderToolItem(tool) {
   `;
 }
 
+// ---- POPULAR TOOLS ----
+const popularToolIds = [
+  'image-to-png', 'image-to-jpg', 'image-resizer', 'image-compressor', 'image-cropper',
+  'meta-tag-generator', 'keyword-density', 'word-counter', 'case-converter', 'json-formatter',
+  'bmi-calculator', 'currency-converter', 'length-converter', 'md5-generator', 'password-generator',
+  'youtube-thumbnail', 'instagram-downloader', 'barcode-generator', 'resume-builder', 'random-number',
+  'ai-chatbot', 'meme-generator', 'tip-calculator', 'sql-formatter', 'color-picker',
+];
+
+function renderPopularTools() {
+  const row1 = document.getElementById('popularToolsRow1');
+  const row2 = document.getElementById('popularToolsRow2');
+  if (!row1 || !row2) return;
+  // Split popular tools into two rows
+  const popularTools = popularToolIds.map(id => tools.find(t => t.id === id)).filter(Boolean);
+  const half = Math.ceil(popularTools.length / 2);
+  const row1Tools = popularTools.slice(0, half);
+  const row2Tools = popularTools.slice(half);
+  const colorPalette = [
+    "bg-blue-50 text-blue-600",
+    "bg-green-50 text-green-600",
+    "bg-yellow-50 text-yellow-600",
+    "bg-purple-50 text-purple-600",
+    "bg-pink-50 text-pink-600",
+    "bg-orange-50 text-orange-600",
+    "bg-red-50 text-red-600",
+    "bg-indigo-50 text-indigo-600",
+    "bg-gray-50 text-gray-600"
+  ];
+  row1.innerHTML = row1Tools.map((tool, idx) => `
+    <a href="${tool.url}" class="min-w-[320px] max-w-xs h-32 bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4 transition-all duration-300 hover:shadow-md hover:border-blue-100 focus:ring-2 focus:ring-blue-200 outline-none">
+      <div class="w-12 h-12 rounded-lg flex items-center justify-center ${colorPalette[idx % colorPalette.length]}">
+        <i data-lucide="${tool.icon}" class="w-6 h-6"></i>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-base text-gray-900">${tool.name}</div>
+        <div class="text-gray-500 text-sm mt-1">${tool.description}</div>
+      </div>
+    </a>
+  `).join('');
+  row2.innerHTML = row2Tools.map((tool, idx) => `
+    <a href="${tool.url}" class="min-w-[320px] max-w-xs h-32 bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4 transition-all duration-300 hover:shadow-md hover:border-blue-100 focus:ring-2 focus:ring-blue-200 outline-none">
+      <div class="w-12 h-12 rounded-lg flex items-center justify-center ${colorPalette[idx % colorPalette.length]}">
+        <i data-lucide="${tool.icon}" class="w-6 h-6"></i>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-base text-gray-900">${tool.name}</div>
+        <div class="text-gray-500 text-sm mt-1">${tool.description}</div>
+      </div>
+    </a>
+  `).join('');
+  lucide.createIcons();
+
+  // --- Smooth continuous auto-scroll using requestAnimationFrame ---
+  function autoScroll(row, speed, direction) {
+    let scrollAmount = 0;
+    function step() {
+      if (row.scrollWidth > row.clientWidth) {
+        scrollAmount += speed * direction;
+        if (scrollAmount < 0) scrollAmount = row.scrollWidth - row.clientWidth;
+        if (scrollAmount > row.scrollWidth - row.clientWidth) scrollAmount = 0;
+        row.scrollLeft = scrollAmount;
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  autoScroll(row1, 0.7, 1); // Row 1: left to right
+  autoScroll(row2, 0.7, -1); // Row 2: right to left
+}
+
+// ---- CATEGORY REVEAL ON SCROLL ----
+function setupCategoryReveal() {
+  const catSection = document.getElementById('categoriesSection');
+  function onScroll() {
+    const trigger = document.getElementById('popularToolsSection');
+    if (!catSection || !trigger) return;
+    const rect = trigger.getBoundingClientRect();
+    if (rect.bottom < window.innerHeight * 0.7) {
+      catSection.classList.remove('opacity-0', 'pointer-events-none');
+      window.removeEventListener('scroll', onScroll);
+    }
+  }
+  window.addEventListener('scroll', onScroll);
+}
+
+// ---- SEARCH/POPULAR TOOLS TOGGLE ----
+function showPopularTools(show) {
+  const popSection = document.getElementById('popularToolsSection');
+  if (popSection) popSection.style.display = show ? '' : 'none';
+}
+
+// ---- INTERACTIVITY ----
+function setupSearch() {
+  const input = document.getElementById('searchInput');
+  const form = document.getElementById('searchForm');
+  let lastQuery = '';
+
+  input.addEventListener('input', (e) => {
+    const query = e.target.value;
+    lastQuery = query;
+    const results = getToolsBySearch(query);
+    console.log('Search input:', query, 'Results:', results);
+    renderSearchResults(results, query);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const results = getToolsBySearch(lastQuery);
+    console.log('Search submit:', lastQuery, 'Results:', results);
+    renderSearchResults(results, lastQuery);
+  });
+}
+
+// ---- INIT ----
+document.addEventListener('DOMContentLoaded', () => {
+  renderCategories();
+  renderPopularTools();
+  setupCategoryReveal();
+  setupSearch();
+  lucide.createIcons();
+});
+
+// ---- SEARCH OVERRIDE ----
 function renderSearchResults(results, query) {
   const section = document.getElementById('searchResults');
+  console.log('Rendering search results for:', query, 'Results:', results);
   if (!query.trim()) {
     section.innerHTML = '';
+    showPopularTools(true);
     return;
   }
-  const displayResults = results.slice(0, 3);
+  showPopularTools(false);
   section.innerHTML = `
     <div class="container mx-auto py-8 px-4">
       <h2 class="text-lg font-semibold mb-4">
-        ${displayResults.length > 0
-          ? `Results for "${query}" (${displayResults.length})`
+        ${results.length > 0
+          ? `Results for "${query}" (${results.length})`
           : `No results found for "${query}"`}
       </h2>
-      ${displayResults.length > 0
+      ${results.length > 0
         ? `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            ${displayResults.map(tool => renderToolCard(tool)).join('')}
+            ${results.map((tool, idx) => renderToolCard(tool, idx)).join('')}
           </div>`
         : `<div class="bg-gray-50 rounded-lg p-8 text-center">
             <p class="text-gray-500">
@@ -205,13 +1115,27 @@ function renderSearchResults(results, query) {
   lucide.createIcons();
 }
 
-function renderToolCard(tool) {
+// Color palette for tool cards (used in multiple places)
+const colorPalette = [
+  "bg-blue-50 text-blue-600",
+  "bg-green-50 text-green-600",
+  "bg-yellow-50 text-yellow-600",
+  "bg-purple-50 text-purple-600",
+  "bg-pink-50 text-pink-600",
+  "bg-orange-50 text-orange-600",
+  "bg-red-50 text-red-600",
+  "bg-indigo-50 text-indigo-600",
+  "bg-gray-50 text-gray-600"
+];
+
+function renderToolCard(tool, idx) {
   const category = categories.find(c => c.id === tool.category);
+  const colorClass = colorPalette[idx % colorPalette.length];
   return `
     <a href="${tool.url}" class="block bg-white rounded-xl shadow-sm border border-gray-100 p-5 transition-all duration-300 hover:shadow-md hover:border-blue-100 focus:ring-2 focus:ring-blue-200 outline-none">
       <div class="flex items-center gap-4">
-        <div class="w-14 h-14 rounded-lg flex items-center justify-center bg-gray-50">
-          <i data-lucide="${tool.icon}" class="w-7 h-7 text-blue-500"></i>
+        <div class="w-14 h-14 rounded-lg flex items-center justify-center ${colorClass}">
+          <i data-lucide="${tool.icon}" class="w-7 h-7"></i>
         </div>
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-lg text-gray-900">${tool.name}</div>
@@ -222,29 +1146,4 @@ function renderToolCard(tool) {
       <div class="text-sm text-gray-400">Category: ${category ? category.name : ''}</div>
     </a>
   `;
-}
-
-// ---- INTERACTIVITY ----
-function setupSearch() {
-  const input = document.getElementById('searchInput');
-  const form = document.getElementById('searchForm');
-  let lastQuery = '';
-
-  input.addEventListener('input', (e) => {
-    const query = e.target.value;
-    lastQuery = query;
-    renderSearchResults(getToolsBySearch(query), query);
-  });
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    renderSearchResults(getToolsBySearch(lastQuery), lastQuery);
-  });
-}
-
-// ---- INIT ----
-document.addEventListener('DOMContentLoaded', () => {
-  renderCategories();
-  setupSearch();
-  lucide.createIcons();
-}); 
+} 
