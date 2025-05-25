@@ -901,6 +901,8 @@ function getToolsBySearch(query) {
 // ---- RENDERING ----
 function renderCategories() {
   const section = document.getElementById('categoriesSection');
+  if (!section) return; // Exit if element doesn't exist
+  
   section.innerHTML = `
     <div class="container mx-auto">
       <div class="text-center mb-12">
@@ -1076,10 +1078,49 @@ function setupSearch() {
 
 // ---- INIT ----
 document.addEventListener('DOMContentLoaded', () => {
-  renderCategories();
-  renderPopularTools();
-  setupCategoryReveal();
-  setupSearch();
+  // Only call these functions if we're on the index page
+  if (document.getElementById('categoriesSection')) {
+    renderCategories();
+    renderPopularTools();
+    setupCategoryReveal();
+    setupSearch();
+    
+    // Typewriter effect setup with tool names
+    const typewriterPhrases = tools.map(t => t.name);
+    const typewriterCategoryMap = tools.map(t => t.category);
+    let typewriterIndex = Math.floor(Math.random() * typewriterPhrases.length);
+    let charIndex = 0;
+    let isDeleting = false;
+    const searchInput = document.getElementById('searchInput');
+    
+    window.typewriterPhrases = typewriterPhrases;
+    window.typewriterCategoryMap = typewriterCategoryMap;
+    window.typewriterIndex = typewriterIndex;
+    window.charIndex = charIndex;
+    window.isDeleting = isDeleting;
+    window.searchInput = searchInput;
+    
+    if (searchInput) {
+      // Start typewriter animation
+      typewriterTick();
+      
+      // Add input event listener to handle clearing
+      searchInput.addEventListener('input', () => {
+        if (!searchInput.value) {
+          // Reset typewriter state when input is cleared
+          window.charIndex = 0;
+          window.isDeleting = false;
+          window.typewriterIndex = Math.floor(Math.random() * typewriterPhrases.length);
+          typewriterTick();
+        }
+      });
+    }
+    
+    renderHeroCategoriesRow();
+    autoScrollHeroCategoriesRow();
+  }
+  
+  // Always initialize Lucide icons
   lucide.createIcons();
 });
 
@@ -1146,4 +1187,190 @@ function renderToolCard(tool, idx) {
       <div class="text-sm text-gray-400">Category: ${category ? category.name : ''}</div>
     </a>
   `;
+}
+
+// Map typewriter phrases to category color classes
+const typewriterCategoryMap = [
+  'image-tools',
+  'seo-tools',
+  'text-tools',
+  'developer-tools',
+  'math-calculators',
+  'unit-converters',
+  'security-tools',
+  'social-media-tools',
+  'misc-tools',
+  null // All-in-One Toolbox (default color)
+];
+
+function getCategoryBgColor(catId) {
+  const cat = categories.find(c => c.id === catId);
+  if (!cat) return '#2563eb';
+  // Extract the bg color class (e.g., 'bg-green-50')
+  const match = cat.color.match(/bg-[^ ]+/);
+  if (!match) return '#2563eb';
+  // Map Tailwind bg classes to hex (add more as needed)
+  const colorMap = {
+    'bg-green-50': '#ecfdf5',
+    'bg-purple-50': '#f5f3ff',
+    'bg-blue-50': '#eff6ff',
+    'bg-orange-50': '#fff7ed',
+    'bg-red-50': '#fef2f2',
+    'bg-yellow-50': '#fefce8',
+    'bg-indigo-50': '#eef2ff',
+    'bg-pink-50': '#fdf2f8',
+    'bg-gray-50': '#f9fafb',
+  };
+  return colorMap[match[0]] || '#2563eb';
+}
+
+function getCategoryTextColor(catId) {
+  const cat = categories.find(c => c.id === catId);
+  if (!cat) return '#2563eb';
+  // Extract the text color class (e.g., 'text-green-600')
+  const match = cat.color.match(/text-[^ ]+/);
+  if (!match) return '#2563eb';
+  // Map Tailwind text classes to hex (add more as needed)
+  const colorMap = {
+    'text-green-600': '#059669',
+    'text-purple-600': '#7c3aed',
+    'text-blue-600': '#2563eb',
+    'text-orange-600': '#ea580c',
+    'text-red-600': '#dc2626',
+    'text-yellow-600': '#ca8a04',
+    'text-indigo-600': '#4f46e5',
+    'text-pink-600': '#db2777',
+    'text-gray-600': '#4b5563',
+  };
+  return colorMap[match[0]] || '#2563eb';
+}
+
+// Color cycle for typewriter
+const typewriterColorCycle = [
+  '#2563eb', // blue
+  '#059669', // green
+  '#ca8a04', // yellow
+  '#7c3aed', // purple
+  '#db2777', // pink
+  '#ea580c', // orange
+  '#dc2626', // red
+  '#4f46e5', // indigo
+  '#4b5563', // gray
+];
+
+let typewriterPause = false;
+function typewriterTick() {
+  const typewriterPhrases = window.typewriterPhrases;
+  let typewriterIndex = window.typewriterIndex;
+  let charIndex = window.charIndex;
+  let isDeleting = window.isDeleting;
+  const typewriterCategoryMap = window.typewriterCategoryMap;
+  const searchTypewriterText = document.getElementById('searchTypewriterText');
+  const searchTypewriterOverlay = document.getElementById('searchTypewriterOverlay');
+  const searchInput = window.searchInput;
+  const searchIconDiv = document.getElementById('searchIcon');
+  if (!searchTypewriterText || !searchInput) return;
+
+  // Hide overlay if input has value
+  if (searchInput.value && searchInput.value.length > 0) {
+    searchTypewriterOverlay.style.display = 'none';
+    return;
+  } else {
+    searchTypewriterOverlay.style.display = 'flex';
+  }
+
+  const currentPhrase = typewriterPhrases[typewriterIndex];
+  // Cycle color by index
+  const color = typewriterColorCycle[typewriterIndex % typewriterColorCycle.length];
+  searchTypewriterText.style.color = color;
+  // Color the search icon
+  setTimeout(() => {
+    if (searchIconDiv) {
+      const iconEl = searchIconDiv.querySelector('i');
+      if (iconEl) iconEl.style.color = color;
+    }
+  }, 0);
+
+  // Typewriter logic
+  if (isDeleting) {
+    if (charIndex === 0) {
+      isDeleting = false;
+      typewriterIndex = (typewriterIndex + 1) % typewriterPhrases.length;
+      window.typewriterIndex = typewriterIndex;
+      window.isDeleting = isDeleting;
+      setTimeout(typewriterTick, 500);
+      return;
+    } else {
+      charIndex--;
+      window.charIndex = charIndex;
+      searchTypewriterText.textContent = currentPhrase.substring(0, charIndex);
+      setTimeout(typewriterTick, 50);
+      return;
+    }
+  } else {
+    if (charIndex === currentPhrase.length) {
+      isDeleting = true;
+      window.isDeleting = isDeleting;
+      setTimeout(typewriterTick, 1000);
+      return;
+    } else {
+      charIndex++;
+      window.charIndex = charIndex;
+      searchTypewriterText.textContent = currentPhrase.substring(0, charIndex);
+      setTimeout(typewriterTick, 100);
+      return;
+    }
+  }
+}
+
+// ---- HERO CATEGORIES ICONS SCROLL ----
+let heroCategoryScrollIndex = 0;
+let heroCategoryRowWidth = 0;
+let heroCategoryIconWidth = 0;
+function renderHeroCategoriesRow() {
+  const outer = document.getElementById('heroCategoriesRow');
+  if (!outer) return;
+  const inner = outer.querySelector('.hero-icons-inner');
+  if (!inner) return;
+  // Duplicate icons for seamless infinite scroll
+  const allCats = [...categories, ...categories];
+  inner.innerHTML = allCats.map(cat => `
+    <span class="hero-category-icon ${cat.color}"><i data-lucide="${cat.icon}"></i></span>
+  `).join('');
+  lucide.createIcons();
+  // Calculate row width and icon width for animation
+  setTimeout(() => {
+    heroCategoryRowWidth = inner.scrollWidth / 2;
+    heroCategoryIconWidth = inner.firstElementChild ? inner.firstElementChild.offsetWidth + 20 : 60; // 20px gap
+  }, 100);
+}
+
+function autoScrollHeroCategoriesRow() {
+  const outer = document.getElementById('heroCategoriesRow');
+  if (!outer) return;
+  const inner = outer.querySelector('.hero-icons-inner');
+  if (!inner) return;
+  let currentIndex = 0;
+  let currentX = 0;
+  function step() {
+    // Animate to next icon
+    const targetX = -(currentIndex * heroCategoryIconWidth);
+    inner.style.transition = 'transform 0.7s cubic-bezier(0.4,0,0.2,1)';
+    inner.style.transform = `translateX(${targetX}px)`;
+    currentX = targetX;
+    setTimeout(() => {
+      currentIndex++;
+      if (currentIndex >= categories.length) {
+        // Reset for seamless loop
+        inner.style.transition = 'none';
+        inner.style.transform = 'translateX(0px)';
+        currentIndex = 0;
+        currentX = 0;
+        setTimeout(step, 900);
+      } else {
+        setTimeout(step, 900);
+      }
+    }, 700);
+  }
+  setTimeout(step, 900);
 } 
