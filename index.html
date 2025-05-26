@@ -12,7 +12,6 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
-  <script src="components/include.js"></script>
 </head>
 <body class="bg-gradient-to-b from-blue-50 via-white to-gray-50 min-h-screen flex flex-col">
   <!-- Header Placeholder -->
@@ -34,11 +33,11 @@
               <i data-lucide="search" class="w-5 h-5"></i>
             </div>
             <div id="searchTypewriterOverlay" class="absolute left-12 top-1/2 -translate-y-1/2 flex items-center pointer-events-none select-none text-lg w-[calc(100%-3rem)]">
-              <span id="searchTypewriterPrefix" class="text-gray-400">Search for </span><span id="searchTypewriterText" class="font-semibold"></span>
+              <span id="searchTypewriterText" class="font-semibold"></span>
             </div>
             <input id="searchInput" type="text" autocomplete="off" class="w-full pl-12 pr-24 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm transition-all text-lg bg-transparent text-gray-900 relative z-10" />
-            <button type="submit" id="searchButton" class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 text-white rounded-full transition-all">
-              <span>Search</span>
+            <button type="button" id="micButton" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-white rounded-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300 transform-none z-50 cursor-pointer">
+              <i data-lucide="mic" class="w-5 h-5"></i>
             </button>
           </form>
         </div>
@@ -64,10 +63,87 @@
 
   <!-- App JS -->
   <script src="app.js"></script>
+  <script src="components/include.js"></script>
   <script>
-    // Render Lucide search icon
+    // Render Lucide icons
     document.getElementById('searchIcon').innerHTML = '<i data-lucide="search" class="w-5 h-5"></i>';
+    document.getElementById('micButton').innerHTML = '<i data-lucide="mic" class="w-5 h-5"></i>';
     lucide.createIcons();
+
+    // Speech Recognition Setup
+    const micButton = document.getElementById('micButton');
+    const searchInput = document.getElementById('searchInput');
+    let isListening = false;
+    let recognition = null;
+
+    // Initialize speech recognition
+    function initSpeechRecognition() {
+      if ('webkitSpeechRecognition' in window) {
+        recognition = new webkitSpeechRecognition();
+      } else if ('SpeechRecognition' in window) {
+        recognition = new SpeechRecognition();
+      } else {
+        micButton.style.display = 'none';
+        return;
+      }
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        isListening = true;
+        micButton.classList.add('bg-red-600', 'hover:bg-red-700', 'listening');
+        micButton.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        console.log('Speech recognition started');
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('Speech recognized:', transcript);
+        searchInput.value = transcript;
+        
+        // Trigger search
+        const searchEvent = new Event('input', { bubbles: true });
+        searchInput.dispatchEvent(searchEvent);
+        
+        // Optional: Submit the form
+        document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+      };
+
+      recognition.onend = () => {
+        isListening = false;
+        micButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+        micButton.classList.remove('bg-red-600', 'hover:bg-red-700', 'listening');
+        console.log('Speech recognition ended');
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        isListening = false;
+        micButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+        micButton.classList.remove('bg-red-600', 'hover:bg-red-700', 'listening');
+      };
+    }
+
+    // Initialize speech recognition
+    initSpeechRecognition();
+
+    // Handle mic button click
+    micButton.addEventListener('click', () => {
+      if (!recognition) return;
+
+      if (!isListening) {
+        try {
+          recognition.start();
+        } catch (error) {
+          console.error('Error starting speech recognition:', error);
+        }
+      } else {
+        recognition.stop();
+      }
+    });
+
     // Desktop categories dropdown
     const categoriesDropdownBtn = document.getElementById('categoriesDropdownBtn');
     const categoriesDropdown = document.getElementById('categoriesDropdown');
