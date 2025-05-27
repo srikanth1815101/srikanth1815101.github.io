@@ -41,26 +41,30 @@ async function includeHTML(elementId, path) {
                 <i data-lucide="menu" class="w-7 h-7"></i>
               </button>
             </nav>
-            <div id="mobileMenu" class="md:hidden absolute top-full left-0 w-full bg-white/90 shadow-lg backdrop-blur-lg py-4 px-6 hidden flex-col gap-2 z-50">
-              <a href="index.html" class="block py-2 text-base font-semibold text-gray-700 hover:text-blue-600 rounded transition-colors">Home</a>
-              <button id="mobileCategoriesBtn" class="w-full text-left py-2 text-base font-medium text-gray-700 hover:text-blue-700 transition-colors flex items-center gap-1">
-                Categories
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-              </button>
-              <div id="mobileCategoriesDropdown" class="pl-4 hidden flex-col gap-1">
-                <a href="category.html?id=image-tools" class="block py-1 text-gray-700 hover:bg-blue-50">Image Tools</a>
-                <a href="category.html?id=seo-tools" class="block py-1 text-gray-700 hover:bg-blue-50">SEO Tools</a>
-                <a href="category.html?id=text-tools" class="block py-1 text-gray-700 hover:bg-blue-50">Text Tools</a>
-                <a href="category.html?id=developer-tools" class="block py-1 text-gray-700 hover:bg-blue-50">Developer Tools</a>
-                <a href="category.html?id=math-calculators" class="block py-1 text-gray-700 hover:bg-blue-50">Math & Calculators</a>
-                <a href="category.html?id=unit-converters" class="block py-1 text-gray-700 hover:bg-blue-50">Unit Converters</a>
-                <a href="category.html?id=security-tools" class="block py-1 text-gray-700 hover:bg-blue-50">Security & Encryption</a>
-                <a href="category.html?id=social-media-tools" class="block py-1 text-gray-700 hover:bg-blue-50">Social Media Tools</a>
-                <a href="category.html?id=misc-tools" class="block py-1 text-gray-700 hover:bg-blue-50">Miscellaneous Tools</a>
+            <div id="mobileMenu" class="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-[#7c3aed]/80 to-[#2563eb]/80 backdrop-blur-lg shadow-lg py-4 px-6 hidden flex-col gap-2 z-50">
+              <div class="flex justify-end mb-2">
+                <button id="mobileMenuCloseBtn" class="p-2 text-white hover:text-blue-100 focus:outline-none" aria-label="Close menu">
+                  <i data-lucide="x" class="w-7 h-7"></i>
+                </button>
               </div>
-              <a href="blog.html" class="block py-2 text-base font-semibold text-gray-700 hover:text-blue-600 rounded transition-colors">Blog</a>
-              <a href="about.html" class="block py-2 text-base font-semibold text-gray-700 hover:text-blue-600 rounded transition-colors">About Us</a>
-              <a href="contact.html" class="block py-2 text-base font-semibold text-gray-700 hover:text-blue-600 rounded transition-colors">Contact Us</a>
+              <a href="index.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">Home</a>
+              <button id="mobileCategoriesBtn" class="w-full flex justify-center text-center py-2 text-base font-medium text-white hover:text-blue-100 transition-colors items-center">
+                <span class="block w-full text-center">Categories</span>
+              </button>
+              <div id="mobileCategoriesDropdown" class="pl-4 hidden flex flex-col items-center gap-1 text-center">
+                <a href="category.html?id=image-tools" class="block py-1 text-white hover:text-blue-100">Image Tools</a>
+                <a href="category.html?id=seo-tools" class="block py-1 text-white hover:text-blue-100">SEO Tools</a>
+                <a href="category.html?id=text-tools" class="block py-1 text-white hover:text-blue-100">Text Tools</a>
+                <a href="category.html?id=developer-tools" class="block py-1 text-white hover:text-blue-100">Developer Tools</a>
+                <a href="category.html?id=math-calculators" class="block py-1 text-white hover:text-blue-100">Math & Calculators</a>
+                <a href="category.html?id=unit-converters" class="block py-1 text-white hover:text-blue-100">Unit Converters</a>
+                <a href="category.html?id=security-tools" class="block py-1 text-white hover:text-blue-100">Security & Encryption</a>
+                <a href="category.html?id=social-media-tools" class="block py-1 text-white hover:text-blue-100">Social Media Tools</a>
+                <a href="category.html?id=misc-tools" class="block py-1 text-white hover:text-blue-100">Miscellaneous Tools</a>
+              </div>
+              <a href="blog.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">Blog</a>
+              <a href="about.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">About Us</a>
+              <a href="contact.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">Contact Us</a>
             </div>
           </div>
         </header>
@@ -71,15 +75,66 @@ async function includeHTML(elementId, path) {
       element.innerHTML = `
         <!-- Footer -->
         <footer class="bg-gradient-to-b from-white to-gray-50 border-t border-gray-100">
+          <style>
+            #mobileCategoriesDropdown.hidden { display: none !important; }
+            #mobileCategoriesDropdown a { justify-content: center !important; text-align: center !important; width: 100%; }
+            @media (max-width: 768px) {
+              .footer-main {
+                text-align: center !important;
+                justify-items: center !important;
+              }
+              .footer-main .space-y-4, .footer-main > div {
+                align-items: center !important;
+                justify-content: center !important;
+              }
+              .footer-main .flex {
+                justify-content: center !important;
+              }
+              /* Only apply full-screen overlay when menu is open */
+              #mobileMenu.mobile-menu-open {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: linear-gradient(135deg, rgba(124,58,237,0.95) 0%, rgba(37,99,235,0.95) 100%) !important;
+                backdrop-filter: blur(16px) !important;
+                -webkit-backdrop-filter: blur(16px) !important;
+                z-index: 1000 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 1.5rem !important;
+                box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+                padding: 0 !important;
+              }
+              #mobileMenu a, #mobileMenu button {
+                font-size: 1.25rem !important;
+                width: 100%;
+                text-align: center;
+              }
+              #mobileCategoriesDropdown {
+                position: static !important;
+                padding-left: 0 !important;
+                width: 100%;
+                align-items: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+                text-align: center !important;
+              }
+            }
+          </style>
           <div class="container mx-auto px-4 py-12">
             <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 footer-main">
               <!-- Brand Section -->
               <div class="space-y-4">
-                <a href="index.html" class="flex items-center gap-3 group">
-                  <img src="logo.png" alt="CSRGO Logo" class="h-14 w-auto object-contain" />
+                <a href="index.html" class="flex items-center gap-3 group" style="align-items: center;">
+                  <img src="logo.png" alt="CSRGO Logo" class="h-10 w-auto object-contain" style="height:2.5rem;" />
                   <span class="nav-divider mx-1"></span>
-                  <span class="nav-tools-text text-3xl font-bold">CSRGO Tools</span>
+                  <span class="nav-tools-text text-2xl font-bold" style="font-size:2rem;">CSRGO Tools</span>
                 </a>
                 <p class="text-gray-600 text-base">Your one-stop destination for free online tools and utilities.</p>
               </div>
@@ -176,21 +231,46 @@ function initializeNavigation() {
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuCloseBtn = document.getElementById('mobileMenuCloseBtn');
   const mobileCategoriesBtn = document.getElementById('mobileCategoriesBtn');
   const mobileCategoriesDropdown = document.getElementById('mobileCategoriesDropdown');
   
   if (mobileMenuBtn && mobileMenu) {
+    // Ensure menu is hidden and does not have overlay class on load
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('mobile-menu-open');
+    document.body.classList.remove('overflow-hidden');
+    // Always ensure the icon is set to menu on load
+    const icon = mobileMenuBtn.querySelector('i');
+    if (icon) {
+      icon.setAttribute('data-lucide', 'menu');
+      lucide.createIcons();
+    }
+    
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('mobile-menu-open');
+      document.body.classList.remove('overflow-hidden');
+    };
+
     mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    document.addEventListener('click', (e) => {
-      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        mobileMenu.classList.add('hidden');
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      if (!isOpen) {
+        mobileMenu.classList.add('mobile-menu-open');
+        document.body.classList.add('overflow-hidden');
+      } else {
+        closeMenu();
       }
     });
+
+    if (mobileMenuCloseBtn) {
+      mobileMenuCloseBtn.addEventListener('click', closeMenu);
+    }
   }
   
   if (mobileCategoriesBtn && mobileCategoriesDropdown) {
+    // Always hide dropdown on load
+    mobileCategoriesDropdown.classList.add('hidden');
     mobileCategoriesBtn.addEventListener('click', (e) => {
       e.preventDefault();
       mobileCategoriesDropdown.classList.toggle('hidden');
@@ -205,4 +285,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Include footer
   await includeHTML('footer-placeholder', 'components/footer.html');
+
+  // Initialize mobile categories dropdown
+  const mobileCategoriesDropdown = document.getElementById('mobileCategoriesDropdown');
+  if (mobileCategoriesDropdown) {
+    mobileCategoriesDropdown.classList.add('hidden');
+  }
 }); 
