@@ -158,27 +158,6 @@
         }
       });
     }
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileCategoriesBtn = document.getElementById('mobileCategoriesBtn');
-    const mobileCategoriesDropdown = document.getElementById('mobileCategoriesDropdown');
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-      document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-          mobileMenu.classList.add('hidden');
-        }
-      });
-    }
-    if (mobileCategoriesBtn && mobileCategoriesDropdown) {
-      mobileCategoriesBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        mobileCategoriesDropdown.classList.toggle('hidden');
-      });
-    }
   </script>
 </body>
 </html> 

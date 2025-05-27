@@ -37,34 +37,58 @@ async function includeHTML(elementId, path) {
                 <a href="about.html" class="text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">About Us</a>
                 <a href="contact.html" class="text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">Contact Us</a>
               </div>
-              <button id="mobileMenuBtn" class="md:hidden flex items-center px-2 py-1 text-gray-700 hover:text-blue-700 focus:outline-none" aria-label="Open menu">
-                <i data-lucide="menu" class="w-7 h-7"></i>
+              <button id="mobileMenuBtn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none transition-colors" aria-label="Open menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
               </button>
             </nav>
-            <div id="mobileMenu" class="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-[#7c3aed]/80 to-[#2563eb]/80 backdrop-blur-lg shadow-lg py-4 px-6 hidden flex-col gap-2 z-50">
-              <div class="flex justify-end mb-2">
-                <button id="mobileMenuCloseBtn" class="p-2 text-white hover:text-blue-100 focus:outline-none" aria-label="Close menu">
-                  <i data-lucide="x" class="w-7 h-7"></i>
-                </button>
+            <!-- New Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+              <div class="flex flex-col h-full">
+                <!-- Mobile Menu Header -->
+                <div class="flex items-center justify-end p-4 border-b" style="background: linear-gradient(90deg, rgba(124,58,237,0.08) 0%, rgba(37,99,235,0.08) 100%); backdrop-filter: blur(8px);">
+                  <button id="mobileMenuCloseBtn" class="p-2 rounded-lg text-gray-700" aria-label="Close menu" style="display: flex; justify-content: flex-end;">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                  </button>
+                </div>
+                
+                <!-- Mobile Menu Content -->
+                <div class="flex-1 overflow-y-auto" style="background: linear-gradient(90deg, rgba(124,58,237,0.08) 0%, rgba(37,99,235,0.08) 100%); backdrop-filter: blur(8px);">
+                  <div class="p-4 space-y-2">
+                    <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i data-lucide="home" class="w-5 h-5 mr-3"></i>
+                      Home
+                    </a>
+                    <button id="mobileCategoriesBtn" class="w-full flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i data-lucide="grid" class="w-5 h-5 mr-3"></i>
+                      Categories
+                      <i data-lucide="chevron-down" class="w-5 h-5 ml-auto transition-transform"></i>
+                    </button>
+                    <div id="mobileCategoriesDropdown" class="hidden pl-12 space-y-2 mt-2">
+                      <a href="category.html?id=image-tools" class="block py-2 text-gray-600 hover:text-blue-600">Image Tools</a>
+                      <a href="category.html?id=seo-tools" class="block py-2 text-gray-600 hover:text-blue-600">SEO Tools</a>
+                      <a href="category.html?id=text-tools" class="block py-2 text-gray-600 hover:text-blue-600">Text Tools</a>
+                      <a href="category.html?id=developer-tools" class="block py-2 text-gray-600 hover:text-blue-600">Developer Tools</a>
+                      <a href="category.html?id=math-calculators" class="block py-2 text-gray-600 hover:text-blue-600">Math & Calculators</a>
+                      <a href="category.html?id=unit-converters" class="block py-2 text-gray-600 hover:text-blue-600">Unit Converters</a>
+                      <a href="category.html?id=security-tools" class="block py-2 text-gray-600 hover:text-blue-600">Security & Encryption</a>
+                      <a href="category.html?id=social-media-tools" class="block py-2 text-gray-600 hover:text-blue-600">Social Media Tools</a>
+                      <a href="category.html?id=misc-tools" class="block py-2 text-gray-600 hover:text-blue-600">Miscellaneous Tools</a>
+                    </div>
+                    <a href="blog.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i data-lucide="file-text" class="w-5 h-5 mr-3"></i>
+                      Blog
+                    </a>
+                    <a href="about.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i data-lucide="info" class="w-5 h-5 mr-3"></i>
+                      About Us
+                    </a>
+                    <a href="contact.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i data-lucide="mail" class="w-5 h-5 mr-3"></i>
+                      Contact Us
+                    </a>
+                  </div>
+                </div>
               </div>
-              <a href="index.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">Home</a>
-              <button id="mobileCategoriesBtn" class="w-full flex justify-center text-center py-2 text-base font-medium text-white hover:text-blue-100 transition-colors items-center">
-                <span class="block w-full text-center">Categories</span>
-              </button>
-              <div id="mobileCategoriesDropdown" class="pl-4 hidden flex flex-col items-center gap-1 text-center">
-                <a href="category.html?id=image-tools" class="block py-1 text-white hover:text-blue-100">Image Tools</a>
-                <a href="category.html?id=seo-tools" class="block py-1 text-white hover:text-blue-100">SEO Tools</a>
-                <a href="category.html?id=text-tools" class="block py-1 text-white hover:text-blue-100">Text Tools</a>
-                <a href="category.html?id=developer-tools" class="block py-1 text-white hover:text-blue-100">Developer Tools</a>
-                <a href="category.html?id=math-calculators" class="block py-1 text-white hover:text-blue-100">Math & Calculators</a>
-                <a href="category.html?id=unit-converters" class="block py-1 text-white hover:text-blue-100">Unit Converters</a>
-                <a href="category.html?id=security-tools" class="block py-1 text-white hover:text-blue-100">Security & Encryption</a>
-                <a href="category.html?id=social-media-tools" class="block py-1 text-white hover:text-blue-100">Social Media Tools</a>
-                <a href="category.html?id=misc-tools" class="block py-1 text-white hover:text-blue-100">Miscellaneous Tools</a>
-              </div>
-              <a href="blog.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">Blog</a>
-              <a href="about.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">About Us</a>
-              <a href="contact.html" class="block py-2 text-base font-semibold text-white hover:text-blue-100 rounded transition-colors">Contact Us</a>
             </div>
           </div>
         </header>
@@ -116,13 +140,19 @@ async function includeHTML(elementId, path) {
               }
               #mobileCategoriesDropdown {
                 position: static !important;
-                padding-left: 0 !important;
+                padding-left: 1rem !important;
                 width: 100%;
-                align-items: center !important;
                 display: flex !important;
                 flex-direction: column !important;
                 gap: 0.5rem !important;
-                text-align: center !important;
+                text-align: left !important;
+                align-items: stretch !important; /* Stretch items to full width */
+              }
+
+              #mobileCategoriesDropdown a {
+                text-align: left !important;
+                justify-content: flex-start !important;
+                padding-left: 2rem !important;
               }
             }
           </style>
@@ -228,53 +258,54 @@ function initializeNavigation() {
     });
   }
 
-  // Mobile menu toggle
+  // Mobile menu functionality
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileMenuCloseBtn = document.getElementById('mobileMenuCloseBtn');
   const mobileCategoriesBtn = document.getElementById('mobileCategoriesBtn');
   const mobileCategoriesDropdown = document.getElementById('mobileCategoriesDropdown');
-  
+
   if (mobileMenuBtn && mobileMenu) {
-    // Ensure menu is hidden and does not have overlay class on load
-    mobileMenu.classList.add('hidden');
-    mobileMenu.classList.remove('mobile-menu-open');
-    document.body.classList.remove('overflow-hidden');
-    // Always ensure the icon is set to menu on load
-    const icon = mobileMenuBtn.querySelector('i');
-    if (icon) {
-      icon.setAttribute('data-lucide', 'menu');
-      lucide.createIcons();
-    }
-    
-    const closeMenu = () => {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('mobile-menu-open');
-      document.body.classList.remove('overflow-hidden');
+    const toggleMenu = (show) => {
+      if (show) {
+        mobileMenu.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+        // Reset categories dropdown when closing menu
+        if (mobileCategoriesDropdown) {
+          mobileCategoriesDropdown.classList.add('hidden');
+          const chevron = mobileCategoriesBtn.querySelector('[data-lucide="chevron-down"]');
+          if (chevron) {
+            chevron.style.transform = 'rotate(0deg)';
+          }
+        }
+      }
     };
 
-    mobileMenuBtn.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('hidden');
-      if (!isOpen) {
-        mobileMenu.classList.add('mobile-menu-open');
-        document.body.classList.add('overflow-hidden');
-      } else {
-        closeMenu();
+    mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
+    mobileMenuCloseBtn.addEventListener('click', () => toggleMenu(false));
+
+    // Close menu when clicking outside
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        toggleMenu(false);
       }
     });
 
-    if (mobileMenuCloseBtn) {
-      mobileMenuCloseBtn.addEventListener('click', closeMenu);
+    // Categories dropdown in mobile menu
+    if (mobileCategoriesBtn && mobileCategoriesDropdown) {
+      mobileCategoriesBtn.addEventListener('click', () => {
+        mobileCategoriesDropdown.classList.toggle('hidden');
+        const chevron = mobileCategoriesBtn.querySelector('[data-lucide="chevron-down"]');
+        if (chevron) {
+          chevron.style.transform = mobileCategoriesDropdown.classList.contains('hidden')
+            ? 'rotate(0deg)'
+            : 'rotate(180deg)';
+        }
+      });
     }
-  }
-  
-  if (mobileCategoriesBtn && mobileCategoriesDropdown) {
-    // Always hide dropdown on load
-    mobileCategoriesDropdown.classList.add('hidden');
-    mobileCategoriesBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      mobileCategoriesDropdown.classList.toggle('hidden');
-    });
   }
 }
 
@@ -282,7 +313,7 @@ function initializeNavigation() {
 document.addEventListener('DOMContentLoaded', async () => {
   // Include header
   await includeHTML('header-placeholder', 'components/header.html');
-  
+
   // Include footer
   await includeHTML('footer-placeholder', 'components/footer.html');
 
