@@ -171,7 +171,7 @@
           <div class="bg-white rounded-xl shadow-sm p-6 text-center">
             <i data-lucide="mail" class="w-8 h-8 text-blue-600 mx-auto mb-4"></i>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-            <p class="text-gray-600">support@csrgo.com</p>
+            <a href="mailto:contact.csrgo@gmail.com" class="text-blue-600 hover:text-blue-800">contact.csrgo@gmail.com</a>
           </div>
           <div class="bg-white rounded-xl shadow-sm p-6 text-center">
             <i data-lucide="clock" class="w-8 h-8 text-purple-600 mx-auto mb-4"></i>
@@ -185,6 +185,8 @@
 
   <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
+  <div id="floating-buttons"></div>
+  <script src="components/floating-buttons.js"></script>
 
   <!-- App JS -->
   <script src="app.js"></script>
@@ -216,7 +218,7 @@
         formData.append('_subject', `CSRGO Tools - New Contact Form Submission from ${name}`);
         formData.append('_captcha', 'false');
 
-        const response = await fetch('https://formsubmit.co/ajax/csr850v2@gmail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/contact.csrgo@gmail.com', {
           method: 'POST',
           body: formData
         });

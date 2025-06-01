@@ -25,6 +25,7 @@ async function includeHTML(elementId, path) {
               </a>
               <div class="hidden md:flex items-center gap-6">
                 <a href="${basePath}index.html" class="text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">Home</a>
+                <a href="${basePath}favourite-tools.html" class="text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">Favourite Tools</a>
                 <div class="relative group">
                   <button class="text-base font-medium text-gray-700 hover:text-blue-700 transition-colors flex items-center gap-1" id="categoriesDropdownBtn">
                     Categories
@@ -64,11 +65,15 @@ async function includeHTML(elementId, path) {
                 <div class="flex-1 overflow-y-auto" style="background: linear-gradient(90deg, rgba(124,58,237,0.08) 0%, rgba(37,99,235,0.08) 100%); backdrop-filter: blur(8px);">
                   <div class="p-4 space-y-2">
                     <a href="${basePath}index.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                      <i data-lucide="home" class="w-5 h-5 mr-3"></i>
+                      <i data-lucide="home" class="w-5 h-5 mr-3 text-blue-600"></i>
                       Home
                     </a>
+                    <a href="${basePath}favourite-tools.html" class="w-full flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i data-lucide="star" class="w-5 h-5 mr-3 text-yellow-500"></i>
+                      Favourite Tools
+                    </a>
                     <button id="mobileCategoriesBtn" class="w-full flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                      <i data-lucide="grid" class="w-5 h-5 mr-3"></i>
+                      <i data-lucide="grid" class="w-5 h-5 mr-3 text-purple-600"></i>
                       Categories
                       <i data-lucide="chevron-down" class="w-5 h-5 ml-auto transition-transform"></i>
                     </button>
@@ -84,15 +89,15 @@ async function includeHTML(elementId, path) {
                       <a href="${basePath}category.html?id=misc-tools" class="block py-2 text-gray-600 hover:text-blue-600">Miscellaneous Tools</a>
                     </div>
                     <a href="${basePath}blog.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                      <i data-lucide="file-text" class="w-5 h-5 mr-3"></i>
+                      <i data-lucide="file-text" class="w-5 h-5 mr-3 text-green-600"></i>
                       Blog
                     </a>
                     <a href="${basePath}about.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                      <i data-lucide="info" class="w-5 h-5 mr-3"></i>
+                      <i data-lucide="info" class="w-5 h-5 mr-3 text-indigo-600"></i>
                       About Us
                     </a>
                     <a href="${basePath}contact.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                      <i data-lucide="mail" class="w-5 h-5 mr-3"></i>
+                      <i data-lucide="mail" class="w-5 h-5 mr-3 text-red-600"></i>
                       Contact Us
                     </a>
                   </div>
@@ -183,6 +188,7 @@ async function includeHTML(elementId, path) {
                 <h3 class="font-semibold text-gray-900 mb-4">Quick Links</h3>
                 <ul class="space-y-2">
                   <li><a href="${basePath}index.html" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a></li>
+                  <li><a href="${basePath}favourite-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Favourite Tools</a></li>
                   <li><a href="${basePath}about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About Us</a></li>
                   <li><a href="${basePath}blog.html" class="text-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
                   <li><a href="${basePath}contact.html" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>

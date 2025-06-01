@@ -18,7 +18,7 @@
         <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8">
             <h1 class="text-3xl font-bold text-gray-900 mb-2">Accessibility Statement</h1>
             <p class="text-gray-600 mb-2">Effective Date: May 26, 2025</p>
-            <p class="text-gray-600 mb-8">Last Updated: May 26, 2025</p>
+            <p class="text-gray-600 mb-8">Last Updated: May 28, 2025</p>
 
             <div class="prose prose-blue max-w-none">
                 <p class="mb-8">
@@ -49,43 +49,36 @@
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. Measures We Are Taking</h2>
                 <p class="mb-4">We are actively working on:</p>
                 <ul class="list-disc pl-6 mb-6 space-y-2">
-                    <li>Consistent use of semantic HTML tags</li>
-                    <li>Clear contrast ratios for text and backgrounds</li>
-                    <li>Descriptive button labels and alt text for icons/images</li>
-                    <li>Avoiding reliance on color alone to convey meaning</li>
-                    <li>Providing keyboard navigation wherever applicable</li>
+                    <li>Fixing low contrast issues for better readability</li>
+                    <li>Adding missing accessible labels to form fields and buttons</li>
+                    <li>Providing descriptive alternative text for images and icons</li>
+                    <li>Improving keyboard navigation throughout the site</li>
+                    <li>Declaring proper page language and document titles</li>
+                    <li>Using semantic HTML for better screen reader support</li>
                 </ul>
 
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">4. Limitations</h2>
-                <p class="mb-6">
-                    Due to the nature of our static, browser-only architecture, there may be some limitations in dynamic accessibility enhancements (like real-time ARIA live regions or interactive WAI-ARIA features). However, we are continually refining our design to improve accessibility.
-                </p>
+                <p class="mb-6">Due to the nature of our static, browser-only architecture, there may be some limitations in dynamic accessibility enhancements (like real-time ARIA live regions or interactive WAI-ARIA features). Some elements may not yet be fully optimized for assistive technologies. However, we are continually refining our design to improve accessibility.</p>
 
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">5. Third-Party Content</h2>
-                <p class="mb-6">
-                    Some content, such as Google Ads, may not be fully controlled or accessible. We encourage users to refer to the accessibility policies of such third-party services.
-                </p>
+                <p class="mb-6">Some content, such as Google Ads or embedded widgets, may not be fully controlled or accessible. We encourage users to refer to the accessibility policies of such third-party services.</p>
 
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">6. Feedback and Assistance</h2>
                 <p class="mb-4">We welcome feedback on the accessibility of CSRGO Tools. If you encounter any issues or have suggestions for improvement, please contact us:</p>
                 <ul class="list-none pl-6 mb-6 space-y-2">
                     <li class="flex items-center gap-2">
                         <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
-                        <a href="mailto:contact@csrgo.com" class="text-blue-600 hover:text-blue-800">contact@csrgo.com</a>
+                        <a href="mailto:contact.csrgo@gmail.com" class="text-blue-600 hover:text-blue-800">contact.csrgo@gmail.com</a>
                     </li>
                     <li class="flex items-center gap-2">
                         <i data-lucide="globe" class="w-5 h-5 text-gray-600"></i>
-                        <a href="https://tools.csrgo.com" class="text-blue-600 hover:text-blue-800">tools.csrgo.com</a>
+                        <a href="https://csrgo.com" class="text-blue-600 hover:text-blue-800">csrgo.com</a>
                     </li>
                 </ul>
-                <p class="mb-6">
-                    We will do our best to respond within a reasonable time and work to address any accessibility barriers.
-                </p>
+                <p class="mb-6">We will do our best to respond within a reasonable time and work to address any accessibility barriers.</p>
 
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">7. Compliance Status</h2>
-                <p class="mb-6">
-                    This website is partially conformant with WCAG 2.1 Level AA. Partial conformance means that some parts of the content do not fully conform to the accessibility standard, especially due to third-party scripts or limitations inherent to static-only designs.
-                </p>
+                <p class="mb-6">This website is partially conformant with WCAG 2.1 Level AA. Partial conformance means that some parts of the content do not fully conform to the accessibility standard, especially due to contrast issues, missing labels, and keyboard navigation gaps. We are aware of these and are actively working to resolve them.</p>
             </div>
         </div>
     </main>
@@ -93,8 +86,12 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
+    <!-- Floating Buttons -->
+    <div id="floating-buttons"></div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="components/include.js"></script>
+    <script src="components/floating-buttons.js"></script>
 </body>
 </html> 
