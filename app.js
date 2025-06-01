@@ -72,7 +72,7 @@ const tools = [
     name: 'Image to PNG Converter',
     description: 'Convert images to PNG format',
     icon: 'image',
-    url: 'tool.html',
+    url: 'tools/image-to-png.html',
     category: 'image-tools',
   },
   {
@@ -80,7 +80,7 @@ const tools = [
     name: 'Image to JPG Converter',
     description: 'Convert images to JPG format',
     icon: 'image',
-    url: 'tool.html',
+    url: 'tools/image-to-jpg.html',
     category: 'image-tools',
   },
   {
