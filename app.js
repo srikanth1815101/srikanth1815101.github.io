@@ -72,7 +72,7 @@ const tools = [
     name: 'Image to PNG Converter',
     description: 'Convert images to PNG format',
     icon: 'image',
-    url: 'tools/image-to-png.html',
+    url: 'tools/image-to-png-converter.html',
     category: 'image-tools',
   },
   {
@@ -80,7 +80,7 @@ const tools = [
     name: 'Image to JPG Converter',
     description: 'Convert images to JPG format',
     icon: 'image',
-    url: 'tools/image-to-jpg.html',
+    url: 'tools/image-to-jpg-converter.html',
     category: 'image-tools',
   },
   {
@@ -88,7 +88,7 @@ const tools = [
     name: 'Image Resizer',
     description: 'Resize images to desired dimensions',
     icon: 'scaling',
-    url: 'tool.html',
+    url: 'tools/image-resizer.html',
     category: 'image-tools',
   },
   {
@@ -96,7 +96,7 @@ const tools = [
     name: 'Image Compressor',
     description: 'Compress images without losing quality',
     icon: 'image-upscale',
-    url: 'tool.html',
+    url: 'tools/image-compressor.html',
     category: 'image-tools',
   },
   {
@@ -104,7 +104,7 @@ const tools = [
     name: 'Image Cropper',
     description: 'Crop images to desired size',
     icon: 'crop',
-    url: 'tool.html',
+    url: 'tools/image-cropper.html',
     category: 'image-tools',
   },
   {
@@ -112,7 +112,7 @@ const tools = [
     name: 'Convert Image to Base64',
     description: 'Convert images to Base64 string',
     icon: 'file-code',
-    url: 'tool.html',
+    url: 'tools/convert-image-to-base64.html',
     category: 'image-tools',
   },
   {
@@ -120,7 +120,7 @@ const tools = [
     name: 'Convert WebP to PNG',
     description: 'Convert WebP images to PNG format',
     icon: 'image',
-    url: 'tool.html',
+    url: 'tools/convert-webp-to-png.html',
     category: 'image-tools',
   },
   {
@@ -128,7 +128,7 @@ const tools = [
     name: 'GIF Maker',
     description: 'Create animated GIFs from images',
     icon: 'image-play',
-    url: 'tool.html',
+    url: 'tools/gif-maker.html',
     category: 'image-tools',
   },
   {
@@ -136,7 +136,7 @@ const tools = [
     name: 'QR Code Generator',
     description: 'Generate QR codes for any content',
     icon: 'qr-code',
-    url: 'tool.html',
+    url: 'tools/qr-code-generator.html',
     category: 'image-tools',
   },
   {
@@ -144,7 +144,7 @@ const tools = [
     name: 'Screenshot to PDF Converter',
     description: 'Convert screenshots to PDF format',
     icon: 'file',
-    url: 'tool.html',
+    url: 'tools/screenshot-to-pdf-converter.html',
     category: 'image-tools',
   },
 
@@ -154,7 +154,7 @@ const tools = [
     name: 'Meta Tag Generator',
     description: 'Generate meta tags for your website',
     icon: 'tags',
-    url: 'tool.html',
+    url: 'tools/meta-tag-generator.html',
     category: 'seo-tools',
   },
   {
@@ -162,7 +162,7 @@ const tools = [
     name: 'Keyword Density Checker',
     description: 'Check keyword density in your content',
     icon: 'bar-chart',
-    url: 'tool.html',
+    url: 'tools/keyword-density-checker.html',
     category: 'seo-tools',
   },
   {
@@ -170,7 +170,7 @@ const tools = [
     name: 'Sitemap Generator',
     description: 'Generate XML sitemaps for your website',
     icon: 'network',
-    url: 'tool.html',
+    url: 'tools/sitemap-generator.html',
     category: 'seo-tools',
   },
   {
@@ -178,7 +178,7 @@ const tools = [
     name: 'Robots.txt Generator',
     description: 'Generate robots.txt file for your website',
     icon: 'file-text',
-    url: 'tool.html',
+    url: 'tools/robots-txt-generator.html',
     category: 'seo-tools',
   },
   {
@@ -186,7 +186,7 @@ const tools = [
     name: 'Google Index Checker',
     description: 'Check if your page is indexed by Google',
     icon: 'search',
-    url: 'tool.html',
+    url: 'tools/google-index-checker.html',
     category: 'seo-tools',
   },
   {
@@ -194,7 +194,7 @@ const tools = [
     name: 'Domain Authority Checker',
     description: 'Check domain authority score',
     icon: 'trending-up',
-    url: 'tool.html',
+    url: 'tools/domain-authority-checker.html',
     category: 'seo-tools',
   },
   {
@@ -202,7 +202,7 @@ const tools = [
     name: 'Backlink Checker',
     description: 'Check backlinks for your website',
     icon: 'link',
-    url: 'tool.html',
+    url: 'tools/backlink-checker.html',
     category: 'seo-tools',
   },
   {
@@ -210,7 +210,7 @@ const tools = [
     name: 'Page Speed Checker',
     description: 'Check your website loading speed',
     icon: 'gauge',
-    url: 'tool.html',
+    url: 'tools/page-speed-checker.html',
     category: 'seo-tools',
   },
   {
@@ -218,7 +218,7 @@ const tools = [
     name: 'XML Sitemap Validator',
     description: 'Validate your XML sitemap',
     icon: 'check-circle',
-    url: 'tool.html',
+    url: 'tools/xml-sitemap-validator.html',
     category: 'seo-tools',
   },
   {
@@ -226,7 +226,7 @@ const tools = [
     name: 'Mobile-Friendly Test',
     description: 'Test if your website is mobile-friendly',
     icon: 'smartphone',
-    url: 'tool.html',
+    url: 'tools/mobile-friendly-test.html',
     category: 'seo-tools',
   },
 
@@ -236,7 +236,7 @@ const tools = [
     name: 'Word Counter',
     description: 'Count words in your text',
     icon: 'whole-word',
-    url: 'tool.html',
+    url: 'tools/word-counter.html',
     category: 'text-tools',
   },
   {
@@ -244,7 +244,7 @@ const tools = [
     name: 'Character Counter',
     description: 'Count characters in your text',
     icon: 'case-sensitive',
-    url: 'tool.html',
+    url: 'tools/character-counter.html',
     category: 'text-tools',
   },
   {
@@ -252,7 +252,7 @@ const tools = [
     name: 'Case Converter',
     description: 'Convert text between different cases',
     icon: 'type',
-    url: 'tool.html',
+    url: 'tools/case-converter.html',
     category: 'text-tools',
   },
   {
@@ -260,7 +260,7 @@ const tools = [
     name: 'Plagiarism Checker',
     description: 'Check text for plagiarism',
     icon: 'copy',
-    url: 'tool.html',
+    url: 'tools/plagiarism-checker.html',
     category: 'text-tools',
   },
   {
@@ -268,7 +268,7 @@ const tools = [
     name: 'Grammar Checker',
     description: 'Check text for grammar errors',
     icon: 'check-circle',
-    url: 'tool.html',
+    url: 'tools/grammar-checker.html',
     category: 'text-tools',
   },
   {
@@ -276,7 +276,7 @@ const tools = [
     name: 'Text-to-Speech',
     description: 'Convert text to speech',
     icon: 'volume-2',
-    url: 'tool.html',
+    url: 'tools/text-to-speech.html',
     category: 'text-tools',
   },
   {
@@ -284,7 +284,7 @@ const tools = [
     name: 'Speech-to-Text',
     description: 'Convert speech to text',
     icon: 'mic',
-    url: 'tool.html',
+    url: 'tools/speech-to-text.html',
     category: 'text-tools',
   },
   {
@@ -292,7 +292,7 @@ const tools = [
     name: 'URL Encoder & Decoder',
     description: 'Encode or decode URLs',
     icon: 'link',
-    url: 'tool.html',
+    url: 'tools/url-encoder-decoder.html',
     category: 'text-tools',
   },
   {
@@ -300,7 +300,7 @@ const tools = [
     name: 'Fancy Text Generator',
     description: 'Generate fancy text styles',
     icon: 'wand',
-    url: 'tool.html',
+    url: 'tools/fancy-text-generator.html',
     category: 'text-tools',
   },
   {
@@ -308,7 +308,7 @@ const tools = [
     name: 'Random Text Generator',
     description: 'Generate random text',
     icon: 'shuffle',
-    url: 'tool.html',
+    url: 'tools/random-text-generator.html',
     category: 'text-tools',
   },
 
@@ -318,7 +318,7 @@ const tools = [
     name: 'JSON Formatter',
     description: 'Format and validate JSON',
     icon: 'braces',
-    url: 'tool.html',
+    url: 'tools/json-formatter.html',
     category: 'developer-tools',
   },
   {
@@ -326,7 +326,7 @@ const tools = [
     name: 'HTML to Markdown Converter',
     description: 'Convert HTML to Markdown',
     icon: 'code',
-    url: 'tool.html',
+    url: 'tools/html-to-markdown-converter.html',
     category: 'developer-tools',
   },
   {
@@ -334,7 +334,7 @@ const tools = [
     name: 'CSS Minifier',
     description: 'Minify CSS code',
     icon: 'file-code',
-    url: 'tool.html',
+    url: 'tools/css-minifier.html',
     category: 'developer-tools',
   },
   {
@@ -342,7 +342,7 @@ const tools = [
     name: 'JavaScript Minifier',
     description: 'Minify JavaScript code',
     icon: 'file-code-2',
-    url: 'tool.html',
+    url: 'tools/javascript-minifier.html',
     category: 'developer-tools',
   },
   {
@@ -350,7 +350,7 @@ const tools = [
     name: 'SQL Formatter',
     description: 'Format SQL queries',
     icon: 'database',
-    url: 'tool.html',
+    url: 'tools/sql-formatter.html',
     category: 'developer-tools',
   },
   {
@@ -358,7 +358,7 @@ const tools = [
     name: 'HTACCESS Redirect Generator',
     description: 'Generate HTACCESS redirect rules',
     icon: 'file-code',
-    url: 'tool.html',
+    url: 'tools/htaccess-redirect-generator.html',
     category: 'developer-tools',
   },
   {
@@ -366,7 +366,7 @@ const tools = [
     name: 'Markdown to HTML Converter',
     description: 'Convert Markdown to HTML',
     icon: 'code-xml',
-    url: 'tool.html',
+    url: 'tools/markdown-to-html-converter.html',
     category: 'developer-tools',
   },
   {
@@ -374,7 +374,7 @@ const tools = [
     name: 'Color Code Picker',
     description: 'Pick and convert color codes',
     icon: 'palette',
-    url: 'tool.html',
+    url: 'tools/color-code-picker.html',
     category: 'developer-tools',
   },
   {
@@ -382,7 +382,7 @@ const tools = [
     name: 'Base64 Encoder & Decoder',
     description: 'Encode or decode Base64',
     icon: 'file-code',
-    url: 'tool.html',
+    url: 'tools/base64-encoder-decoder.html',
     category: 'developer-tools',
   },
   {
@@ -390,7 +390,7 @@ const tools = [
     name: 'IP Address Lookup',
     description: 'Look up IP address information',
     icon: 'globe',
-    url: 'tool.html',
+    url: 'tools/ip-address-lookup.html',
     category: 'developer-tools',
   },
 
@@ -400,7 +400,7 @@ const tools = [
     name: 'Percentage Calculator',
     description: 'Calculate percentages',
     icon: 'percent',
-    url: 'tool.html',
+    url: 'tools/percentage-calculator.html',
     category: 'math-calculators',
   },
   {
@@ -408,7 +408,7 @@ const tools = [
     name: 'Age Calculator',
     description: 'Calculate age from birth date',
     icon: 'calendar',
-    url: 'tool.html',
+    url: 'tools/age-calculator.html',
     category: 'math-calculators',
   },
   {
@@ -416,7 +416,7 @@ const tools = [
     name: 'BMI Calculator',
     description: 'Calculate Body Mass Index',
     icon: 'scale',
-    url: 'tool.html',
+    url: 'tools/bmi-calculator.html',
     category: 'math-calculators',
   },
   {
@@ -424,7 +424,7 @@ const tools = [
     name: 'Loan EMI Calculator',
     description: 'Calculate loan EMI',
     icon: 'credit-card',
-    url: 'tool.html',
+    url: 'tools/loan-emi-calculator.html',
     category: 'math-calculators',
   },
   {
@@ -432,7 +432,7 @@ const tools = [
     name: 'Scientific Calculator',
     description: 'Advanced mathematical calculations',
     icon: 'calculator',
-    url: 'tool.html',
+    url: 'tools/scientific-calculator.html',
     category: 'math-calculators',
   },
   {
@@ -440,7 +440,7 @@ const tools = [
     name: 'Discount Calculator',
     description: 'Calculate discounts',
     icon: 'badge-indian-rupee',
-    url: 'tool.html',
+    url: 'tools/discount-calculator.html',
     category: 'math-calculators',
   },
   {
@@ -448,7 +448,7 @@ const tools = [
     name: 'Currency Converter',
     description: 'Convert between currencies',
     icon: 'dollar-sign',
-    url: 'tool.html',
+    url: 'tools/currency-converter.html',
     category: 'math-calculators',
   },
   {
@@ -456,7 +456,7 @@ const tools = [
     name: 'Time Zone Converter',
     description: 'Convert between time zones',
     icon: 'clock',
-    url: 'tool.html',
+    url: 'tools/time-zone-converter.html',
     category: 'math-calculators',
   },
   {
@@ -464,7 +464,7 @@ const tools = [
     name: 'Binary to Decimal Converter',
     description: 'Convert between binary and decimal',
     icon: 'code',
-    url: 'tool.html',
+    url: 'tools/binary-to-decimal-converter.html',
     category: 'math-calculators',
   },
   {
@@ -472,7 +472,7 @@ const tools = [
     name: 'Tip Calculator',
     description: 'Calculate tips and splits',
     icon: 'hand-platter',
-    url: 'tool.html',
+    url: 'tools/tip-calculator.html',
     category: 'math-calculators',
   },
 
@@ -482,7 +482,7 @@ const tools = [
     name: 'Length Converter',
     description: 'Convert between length units',
     icon: 'ruler',
-    url: 'tool.html',
+    url: 'tools/length-converter.html',
     category: 'unit-converters',
   },
   {
@@ -490,7 +490,7 @@ const tools = [
     name: 'Weight Converter',
     description: 'Convert between weight units',
     icon: 'scale',
-    url: 'tool.html',
+    url: 'tools/weight-converter.html',
     category: 'unit-converters',
   },
   {
@@ -498,7 +498,7 @@ const tools = [
     name: 'Speed Converter',
     description: 'Convert between speed units',
     icon: 'gauge',
-    url: 'tool.html',
+    url: 'tools/speed-converter.html',
     category: 'unit-converters',
   },
   {
@@ -506,7 +506,7 @@ const tools = [
     name: 'Temperature Converter',
     description: 'Convert between temperature units',
     icon: 'thermometer',
-    url: 'tool.html',
+    url: 'tools/temperature-converter.html',
     category: 'unit-converters',
   },
   {
@@ -514,7 +514,7 @@ const tools = [
     name: 'Volume Converter',
     description: 'Convert between volume units',
     icon: 'box',
-    url: 'tool.html',
+    url: 'tools/volume-converter.html',
     category: 'unit-converters',
   },
   {
@@ -522,7 +522,7 @@ const tools = [
     name: 'Data Storage Converter',
     description: 'Convert between data storage units',
     icon: 'hard-drive',
-    url: 'tool.html',
+    url: 'tools/data-storage-converter.html',
     category: 'unit-converters',
   },
   {
@@ -530,7 +530,7 @@ const tools = [
     name: 'Energy Converter',
     description: 'Convert between energy units',
     icon: 'zap',
-    url: 'tool.html',
+    url: 'tools/energy-converter.html',
     category: 'unit-converters',
   },
   {
@@ -538,7 +538,7 @@ const tools = [
     name: 'Pressure Converter',
     description: 'Convert between pressure units',
     icon: 'wind-arrow-down',
-    url: 'tool.html',
+    url: 'tools/pressure-converter.html',
     category: 'unit-converters',
   },
   {
@@ -546,7 +546,7 @@ const tools = [
     name: 'Fuel Efficiency Converter',
     description: 'Convert between fuel efficiency units',
     icon: 'circle-gauge',
-    url: 'tool.html',
+    url: 'tools/fuel-efficiency-converter.html',
     category: 'unit-converters',
   },
   {
@@ -554,7 +554,7 @@ const tools = [
     name: 'Angle Converter',
     description: 'Convert between angle units',
     icon: 'compass',
-    url: 'tool.html',
+    url: 'tools/angle-converter.html',
     category: 'unit-converters',
   },
 
@@ -564,7 +564,7 @@ const tools = [
     name: 'MD5 Hash Generator',
     description: 'Generate MD5 hashes',
     icon: 'key',
-    url: 'tool.html',
+    url: 'tools/md5-hash-generator.html',
     category: 'security-tools',
   },
   {
@@ -572,7 +572,7 @@ const tools = [
     name: 'SHA256 Hash Generator',
     description: 'Generate SHA256 hashes',
     icon: 'key',
-    url: 'tool.html',
+    url: 'tools/sha256-hash-generator.html',
     category: 'security-tools',
   },
   {
@@ -580,7 +580,7 @@ const tools = [
     name: 'Password Generator',
     description: 'Generate secure passwords',
     icon: 'lock',
-    url: 'tool.html',
+    url: 'tools/password-generator.html',
     category: 'security-tools',
   },
   {
@@ -588,7 +588,7 @@ const tools = [
     name: 'Random String Generator',
     description: 'Generate random strings',
     icon: 'hash',
-    url: 'tool.html',
+    url: 'tools/random-string-generator.html',
     category: 'security-tools',
   },
   {
@@ -596,7 +596,7 @@ const tools = [
     name: 'URL Shortener',
     description: 'Shorten long URLs',
     icon: 'link',
-    url: 'tool.html',
+    url: 'tools/url-shortener.html',
     category: 'security-tools',
   },
   {
@@ -604,7 +604,7 @@ const tools = [
     name: 'IP Geolocation Finder',
     description: 'Find location from IP address',
     icon: 'map-pin',
-    url: 'tool.html',
+    url: 'tools/ip-geolocation-finder.html',
     category: 'security-tools',
   },
   {
@@ -612,7 +612,7 @@ const tools = [
     name: 'SSL Certificate Checker',
     description: 'Check SSL certificate validity',
     icon: 'shield',
-    url: 'tool.html',
+    url: 'tools/ssl-certificate-checker.html',
     category: 'security-tools',
   },
   {
@@ -620,7 +620,7 @@ const tools = [
     name: 'Whois Lookup',
     description: 'Look up domain information',
     icon: 'search',
-    url: 'tool.html',
+    url: 'tools/whois-lookup.html',
     category: 'security-tools',
   },
   {
@@ -628,7 +628,7 @@ const tools = [
     name: 'HTTP Headers Checker',
     description: 'Check HTTP headers',
     icon: 'globe',
-    url: 'tool.html',
+    url: 'tools/http-headers-checker.html',
     category: 'security-tools',
   },
   {
@@ -636,7 +636,7 @@ const tools = [
     name: 'Privacy Policy Generator',
     description: 'Generate privacy policy',
     icon: 'file-text',
-    url: 'tool.html',
+    url: 'tools/privacy-policy-generator.html',
     category: 'security-tools',
   },
 
@@ -646,7 +646,7 @@ const tools = [
     name: 'YouTube Thumbnail Downloader',
     description: 'Download YouTube video thumbnails',
     icon: 'youtube',
-    url: 'tool.html',
+    url: 'tools/youtube-thumbnail-downloader.html',
     category: 'social-media-tools',
   },
   {
@@ -654,7 +654,7 @@ const tools = [
     name: 'Instagram Photo Downloader',
     description: 'Download Instagram photos',
     icon: 'instagram',
-    url: 'tool.html',
+    url: 'tools/instagram-photo-downloader.html',
     category: 'social-media-tools',
   },
   {
@@ -662,7 +662,7 @@ const tools = [
     name: 'Twitter Video Downloader',
     description: 'Download Twitter videos',
     icon: 'twitter',
-    url: 'tool.html',
+    url: 'tools/twitter-video-downloader.html',
     category: 'social-media-tools',
   },
   {
@@ -670,7 +670,7 @@ const tools = [
     name: 'Facebook Video Downloader',
     description: 'Download Facebook videos',
     icon: 'facebook',
-    url: 'tool.html',
+    url: 'tools/facebook-video-downloader.html',
     category: 'social-media-tools',
   },
   {
@@ -678,7 +678,7 @@ const tools = [
     name: 'TikTok Video Downloader',
     description: 'Download TikTok videos',
     icon: 'flame',
-    url: 'tool.html',
+    url: 'tools/tiktok-video-downloader.html',
     category: 'social-media-tools',
   },
   {
@@ -686,7 +686,7 @@ const tools = [
     name: 'YouTube Tags Extractor',
     description: 'Extract tags from YouTube videos',
     icon: 'tags',
-    url: 'tool.html',
+    url: 'tools/youtube-tags-extractor.html',
     category: 'social-media-tools',
   },
   {
@@ -694,7 +694,7 @@ const tools = [
     name: 'Hashtag Generator',
     description: 'Generate hashtags for social media',
     icon: 'hash',
-    url: 'tool.html',
+    url: 'tools/hashtag-generator.html',
     category: 'social-media-tools',
   },
   {
@@ -702,7 +702,7 @@ const tools = [
     name: 'Social Media Post Generator',
     description: 'Generate social media posts',
     icon: 'edit-3',
-    url: 'tool.html',
+    url: 'tools/social-media-post-generator.html',
     category: 'social-media-tools',
   },
   {
@@ -710,7 +710,7 @@ const tools = [
     name: 'Emoji Keyboard',
     description: 'Copy and paste emojis',
     icon: 'smile',
-    url: 'tool.html',
+    url: 'tools/emoji-keyboard.html',
     category: 'social-media-tools',
   },
   {
@@ -718,7 +718,7 @@ const tools = [
     name: 'Twitter Character Counter',
     description: 'Count characters for Twitter posts',
     icon: 'hash',
-    url: 'tool.html',
+    url: 'tools/twitter-character-counter.html',
     category: 'social-media-tools',
   },
 
@@ -728,7 +728,7 @@ const tools = [
     name: 'Barcode Generator',
     description: 'Generate barcodes',
     icon: 'barcode',
-    url: 'tool.html',
+    url: 'tools/barcode-generator.html',
     category: 'misc-tools',
   },
   {
@@ -736,7 +736,7 @@ const tools = [
     name: 'Meme Generator',
     description: 'Create and edit memes',
     icon: 'image',
-    url: 'tool.html',
+    url: 'tools/meme-generator.html',
     category: 'misc-tools',
   },
   {
@@ -744,7 +744,7 @@ const tools = [
     name: 'Resume Builder',
     description: 'Create professional resumes',
     icon: 'file-user',
-    url: 'tool.html',
+    url: 'tools/resume-builder.html',
     category: 'misc-tools',
   },
   {
@@ -752,7 +752,7 @@ const tools = [
     name: 'Invoice Generator',
     description: 'Generate professional invoices',
     icon: 'file-text',
-    url: 'tool.html',
+    url: 'tools/invoice-generator.html',
     category: 'misc-tools',
   },
   {
@@ -760,7 +760,7 @@ const tools = [
     name: 'Business Name Generator',
     description: 'Generate business names',
     icon: 'briefcase',
-    url: 'tool.html',
+    url: 'tools/business-name-generator.html',
     category: 'misc-tools',
   },
   {
@@ -768,7 +768,7 @@ const tools = [
     name: 'Lottery Number Generator',
     description: 'Generate lottery numbers',
     icon: 'shuffle',
-    url: 'tool.html',
+    url: 'tools/lottery-number-generator.html',
     category: 'misc-tools',
   },
   {
@@ -776,7 +776,7 @@ const tools = [
     name: 'Flip a Coin Simulator',
     description: 'Simulate coin flips',
     icon: 'hand-coins',
-    url: 'tool.html',
+    url: 'tools/flip-a-coin-simulator.html',
     category: 'misc-tools',
   },
   {
@@ -784,7 +784,7 @@ const tools = [
     name: 'Random Number Generator',
     description: 'Generate random numbers',
     icon: 'hash',
-    url: 'tool.html',
+    url: 'tools/random-number-generator.html',
     category: 'misc-tools',
   },
   {
@@ -792,7 +792,7 @@ const tools = [
     name: 'Dice Roller Simulator',
     description: 'Simulate dice rolls',
     icon: 'dice-5',
-    url: 'tool.html',
+    url: 'tools/dice-roller-simulator.html',
     category: 'misc-tools',
   },
   {
@@ -800,7 +800,7 @@ const tools = [
     name: 'Internet Speed Test',
     description: 'Test your internet speed',
     icon: 'activity',
-    url: 'tool.html',
+    url: 'tools/internet-speed-test.html',
     category: 'misc-tools',
   },
   {
@@ -808,7 +808,7 @@ const tools = [
     name: 'Daily Planner Creator',
     description: 'Create daily planners',
     icon: 'calendar',
-    url: 'tool.html',
+    url: 'tools/daily-planner-creator.html',
     category: 'misc-tools',
   },
   {
@@ -816,7 +816,7 @@ const tools = [
     name: 'Wedding Invitation Generator',
     description: 'Generate wedding invitations',
     icon: 'heart',
-    url: 'tool.html',
+    url: 'tools/wedding-invitation-generator.html',
     category: 'misc-tools',
   },
   {
@@ -824,7 +824,7 @@ const tools = [
     name: 'Story Plot Generator',
     description: 'Generate story plots',
     icon: 'book-open',
-    url: 'tool.html',
+    url: 'tools/story-plot-generator.html',
     category: 'misc-tools',
   },
   {
@@ -832,7 +832,7 @@ const tools = [
     name: 'E-book Creator',
     description: 'Create e-books',
     icon: 'book',
-    url: 'tool.html',
+    url: 'tools/e-book-creator.html',
     category: 'misc-tools',
   },
   {
@@ -840,7 +840,7 @@ const tools = [
     name: 'AI Chatbot Demo',
     description: 'Try our AI chatbot',
     icon: 'message-circle',
-    url: 'tool.html',
+    url: 'tools/ai-chatbot-demo.html',
     category: 'misc-tools',
   },
   {
@@ -848,7 +848,7 @@ const tools = [
     name: 'IP Address Tracker',
     description: 'Track IP addresses',
     icon: 'map-pin',
-    url: 'tool.html',
+    url: 'tools/ip-address-tracker.html',
     category: 'misc-tools',
   },
   {
@@ -856,7 +856,7 @@ const tools = [
     name: 'Fake Address Generator',
     description: 'Generate fake addresses',
     icon: 'map-pin',
-    url: 'tool.html',
+    url: 'tools/fake-address-generator.html',
     category: 'misc-tools',
   },
   {
@@ -864,7 +864,7 @@ const tools = [
     name: 'Calculator for Electric Bills',
     description: 'Calculate electric bills',
     icon: 'zap',
-    url: 'tool.html',
+    url: 'tools/calculator-for-electric-bills.html',
     category: 'misc-tools',
   },
   {
@@ -872,7 +872,7 @@ const tools = [
     name: 'Leap Year Checker',
     description: 'Check if a year is a leap year',
     icon: 'calendar-check',
-    url: 'tool.html',
+    url: 'tools/leap-year-checker.html',
     category: 'misc-tools',
   },
   {
@@ -880,7 +880,7 @@ const tools = [
     name: 'Name to Numerology Calculator',
     description: 'Calculate numerology from names',
     icon: 'hash',
-    url: 'tool.html',
+    url: 'tools/name-to-numerology-calculator.html',
     category: 'misc-tools',
   }
 ];

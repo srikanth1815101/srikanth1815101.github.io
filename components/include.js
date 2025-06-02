@@ -82,6 +82,10 @@ async function includeHTML(elementId, path) {
                   <i data-lucide="mail" class="w-5 h-5 text-red-600"></i>
                   Contact Us
                 </a>
+                <a href="${basePath}sitemap.html" class="flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">
+                  <i data-lucide="network" class="w-5 h-5 text-orange-600"></i>
+                  Sitemap
+                </a>
               </div>
               <button id="mobileMenuBtn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none transition-colors" aria-label="Open menu">
                 <i data-lucide="menu" class="w-6 h-6"></i>
@@ -135,6 +139,10 @@ async function includeHTML(elementId, path) {
                     <a href="${basePath}contact.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                       <i data-lucide="mail" class="w-5 h-5 mr-3 text-red-600"></i>
                       Contact Us
+                    </a>
+                    <a href="${basePath}sitemap.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i data-lucide="network" class="w-5 h-5 mr-3 text-orange-600"></i>
+                      Sitemap
                     </a>
                   </div>
                 </div>
@@ -228,6 +236,7 @@ async function includeHTML(elementId, path) {
                   <li><a href="${basePath}about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About Us</a></li>
                   <li><a href="${basePath}blog.html" class="text-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
                   <li><a href="${basePath}contact.html" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
+                  <li><a href="${basePath}sitemap.html" class="text-gray-600 hover:text-blue-600 transition-colors">Sitemap</a></li>
                 </ul>
               </div>
 
