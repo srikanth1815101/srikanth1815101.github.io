@@ -921,38 +921,43 @@ function renderCategories() {
 
 function renderCategoryCard(category) {
   const toolsInCat = getToolsByCategory(category.id);
-  const previewTools = toolsInCat.slice(0, 2);
   return `
-    <div class="group relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-100">
-      <div class="absolute top-0 right-0 w-24 h-24 opacity-5 transition-opacity duration-300 group-hover:opacity-10 pointer-events-none select-none">
-        <i data-lucide="${category.icon}" class="w-full h-full"></i>
-      </div>
-      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${category.color}">
-        <i data-lucide="${category.icon}" class="w-6 h-6"></i>
+    <div class="group relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-100 h-full flex flex-col">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center ${category.color}">
+          <i data-lucide="${category.icon}" class="w-6 h-6"></i>
+        </div>
+        <a href="category.html?id=${category.id}" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+          <span>View all</span>
+          <span class="transform transition-transform group-hover:translate-x-0.5">→</span>
+        </a>
       </div>
       <h3 class="text-xl font-bold mb-2">${category.name}</h3>
       <p class="text-gray-600 text-sm mb-6">${category.description}</p>
-      <div class="space-y-2">
-        ${previewTools.map(tool => renderToolItem(tool)).join('')}
-        <div class="pt-4 mt-4 border-t border-gray-100">
-          <a href="category.html?id=${category.id}" class="flex items-center justify-between w-full px-4 py-2.5 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group/link">
-            <span>View all tools</span>
-            <div class="flex items-center gap-1">
-              <span class="text-blue-500">${toolsInCat.length}</span>
-              <span class="transform transition-transform group-hover/link:translate-x-0.5">→</span>
-            </div>
-          </a>
-        </div>
+      <div class="space-y-2 flex-grow">
+        ${toolsInCat.map((tool, idx) => renderToolItem(tool, idx)).join('')}
       </div>
     </div>
   `;
 }
 
-function renderToolItem(tool) {
+function renderToolItem(tool, idx = 0) {
+  const colorPalette = [
+    "bg-blue-50 text-blue-600",
+    "bg-green-50 text-green-600",
+    "bg-yellow-50 text-yellow-600",
+    "bg-purple-50 text-purple-600",
+    "bg-pink-50 text-pink-600",
+    "bg-orange-50 text-orange-600",
+    "bg-red-50 text-red-600",
+    "bg-indigo-50 text-indigo-600",
+    "bg-gray-50 text-gray-600"
+  ];
+  const colorClass = colorPalette[idx % colorPalette.length];
   return `
     <a href="${tool.url}" class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group">
-      <div class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white transition-colors">
-        <i data-lucide="${tool.icon}" class="w-4 h-4 text-gray-600"></i>
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center ${colorClass}">
+        <i data-lucide="${tool.icon}" class="w-4 h-4"></i>
       </div>
       <div>
         <span class="font-medium text-gray-900">${tool.name}</span>
@@ -1373,4 +1378,8 @@ function autoScrollHeroCategoriesRow() {
     }, 700);
   }
   setTimeout(step, 900);
-} 
+}
+
+// ---- CATEGORY PAGE RENDERING ----
+// Patch: Expose renderToolItem for category.html
+window.renderToolItem = renderToolItem; 

@@ -174,6 +174,9 @@
       </div>
     </section>
 
+    <!-- Similar Tools Section Placeholder -->
+    <div id="similarToolsSection"></div>
+
     <!-- What is tool? Section -->
     <section class="py-16 px-4 bg-white">
       <div class="container mx-auto max-w-4xl">
@@ -415,154 +418,22 @@
 
   <!-- App JS -->
   <script src="../app.js"></script>
-  <script src="../components/include.js"></script>
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-
-    // Initialize components
-    includeHTML('header-placeholder', '../components/header.html');
-    includeHTML('footer-placeholder', '../components/footer.html');
-
-    // Tool functionality
-    const dropZone = document.getElementById('dropZone');
-    const fileInput = document.getElementById('fileInput');
-    const previewArea = document.getElementById('previewArea');
-    const originalPreview = document.getElementById('originalPreview');
-    const jpgPreview = document.getElementById('jpgPreview');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const convertBtn = document.getElementById('convertBtn');
-    const conversionResult = document.getElementById('conversionResult');
-    const resizeWidth = document.getElementById('resizeWidth');
-    const resizeHeight = document.getElementById('resizeHeight');
-    const bgColor = document.getElementById('bgColor');
-    const jpgQuality = document.getElementById('jpgQuality');
-    const qualityValue = document.getElementById('qualityValue');
-    let originalImage = null;
-
-    // Handle drag and drop
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('drop-zone-active');
-    });
-
-    dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('drop-zone-active');
-    });
-
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('drop-zone-active');
-      const file = e.dataTransfer.files[0];
-      if (file && file.type.startsWith('image/')) {
-        handleImageUpload(file);
-      }
-    });
-
-    // Handle click to upload
-    dropZone.addEventListener('click', () => {
-      fileInput.click();
-    });
-
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        handleImageUpload(file);
-      }
-    });
-
-    // Handle image upload and conversion
-    function handleImageUpload(file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        originalPreview.src = e.target.result;
-        originalImage = new window.Image();
-        originalImage.onload = () => {
-          // Set default resize values
-          resizeWidth.value = '';
-          resizeHeight.value = '';
-          conversionResult.classList.add('hidden');
-        };
-        originalImage.src = e.target.result;
-        previewArea.classList.remove('hidden');
-        dropZone.classList.add('hidden');
-      };
-      reader.readAsDataURL(file);
-    }
-
-    // Update quality value label
-    jpgQuality.addEventListener('input', () => {
-      qualityValue.textContent = jpgQuality.value;
-    });
-
-    // Handle convert
-    convertBtn.addEventListener('click', () => {
-      if (!originalImage) return;
-      // Get options
-      let width = parseInt(resizeWidth.value) || originalImage.naturalWidth;
-      let height = parseInt(resizeHeight.value) || originalImage.naturalHeight;
-      let bg = bgColor.value;
-      let quality = parseInt(jpgQuality.value) / 100;
-
-      // Create canvas
-      const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext('2d');
-
-      // Always fill background (JPG does not support transparency)
-      ctx.fillStyle = bg;
-      ctx.fillRect(0, 0, width, height);
-
-      // Draw image
-      ctx.drawImage(originalImage, 0, 0, width, height);
-
-      // Show JPG preview
-      const jpgDataUrl = canvas.toDataURL('image/jpeg', quality);
-      jpgPreview.src = jpgDataUrl;
-      conversionResult.classList.remove('hidden');
-      // Scroll to JPG preview
-      setTimeout(() => {
-        conversionResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-    });
-
-    // Handle download
-    downloadBtn.addEventListener('click', () => {
-      const link = document.createElement('a');
-      link.download = 'converted-image.jpg';
-      link.href = jpgPreview.src;
-      link.click();
-    });
-
-    // FAQ functionality
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const button = item.querySelector('button');
-      const content = item.querySelector('.faq-content');
-      button.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(faq => {
-          faq.classList.remove('active');
-          faq.querySelector('.faq-content').style.maxHeight = null;
-        });
-        if (!isActive) {
-          item.classList.add('active');
-          content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-          item.classList.remove('active');
-          content.style.maxHeight = null;
-        }
-      });
-    });
+    // Expose tools and categories to window for similar-tools.js
+    if (typeof tools !== 'undefined') window.tools = tools;
+    if (typeof categories !== 'undefined') window.categories = categories;
   </script>
+  <script src="../components/include.js"></script>
   <div id="floating-buttons"></div>
   <script>
     window.CSRGO_TOOL_INFO = {
       name: 'Image to JPG Converter',
       url: window.location.href,
       icon: 'image',
+      category: 'image-tools'
     };
   </script>
   <script src="../components/floating-buttons.js"></script>
+  <script src="../components/similar-tools.js"></script>
 </body>
 </html> 

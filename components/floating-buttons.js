@@ -66,11 +66,11 @@
     style.id = 'csrgo-share-popup-style';
     style.textContent = `
       #csrgo-share-popup {
-        background: rgba(255,255,255,0.85);
+        background: rgba(255,255,255,0.95);
         backdrop-filter: blur(16px) saturate(180%);
         border-radius: 1.5rem;
-        box-shadow: 0 8px 32px rgba(37,99,235,0.18);
-        border: 1.5px solid #e0e7ef;
+        box-shadow: 0 8px 32px rgba(37,99,235,0.35), 0 2px 8px rgba(0,0,0,0.15);
+        border: 1.5px solid rgba(224,231,239,0.8);
         padding: 2rem 1.5rem 1.5rem 1.5rem;
         animation: fade-in .25s cubic-bezier(.4,0,.2,1);
         transition: box-shadow .2s;
@@ -181,14 +181,14 @@
     container.innerHTML = '';
     // Button order: share (bottom), favourite (middle, if tool), scroll-to-top (top)
     const baseBottom = 24; // px (bottom-6)
-    const btnSize = 56; // 14*4 px
+    const btnSize = 45;
     const gap = 20;
     let btnIndex = 0;
     let buttons = [];
     // Share button (always, bottom)
     buttons.push({
       id: 'csrgo-share-btn',
-      html: `<button id="csrgo-share-btn" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*btnIndex}px; right:24px; width:${btnSize}px; height:${btnSize}px; background:linear-gradient(90deg,#2563eb,#7c3aed); color:white; box-shadow:0 4px 24px rgba(79,70,229,0.12); border-radius:9999px; display:flex; align-items:center; justify-content:center; transition:all .2s;" title="Share"><i data-lucide="share-2" class="w-7 h-7" style="color:white;"></i></button>`
+      html: `<button id="csrgo-share-btn" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*btnIndex}px; right:24px; width:${btnSize}px; height:${btnSize}px; background:linear-gradient(90deg,#2563eb,#7c3aed); color:white; box-shadow:0 4px 24px rgba(79,70,229,0.12); border-radius:9999px; display:flex; align-items:center; justify-content:center; transition:all .2s;" title="Share"><i data-lucide="share-2" class="w-5 h-5" style="color:white;"></i></button>`
     });
     btnIndex++;
     // Favourite button (tool pages only, middle)
@@ -197,14 +197,14 @@
       const fav = isFavourite(tool);
       buttons.push({
         id: 'csrgo-favourite-btn',
-        html: `<button id="csrgo-favourite-btn" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*btnIndex}px; right:24px; width:${btnSize}px; height:${btnSize}px; background:linear-gradient(90deg,#2563eb,#7c3aed); color:white; box-shadow:0 4px 24px rgba(79,70,229,0.12); border-radius:9999px; display:flex; align-items:center; justify-content:center; transition:all .2s;" title="${fav ? 'Added to Favourites' : 'Add to Favourites'}"><i data-lucide="${fav ? 'star-off' : 'star'}" class="w-7 h-7" style="color:white;"></i></button>`
+        html: `<button id="csrgo-favourite-btn" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*btnIndex}px; right:24px; width:${btnSize}px; height:${btnSize}px; background:linear-gradient(90deg,#2563eb,#7c3aed); color:white; box-shadow:0 4px 24px rgba(79,70,229,0.12); border-radius:9999px; display:flex; align-items:center; justify-content:center; transition:all .2s;" title="${fav ? 'Added to Favourites' : 'Add to Favourites'}"><i data-lucide="${fav ? 'star-off' : 'star'}" class="w-5 h-5" style="color:white;"></i></button>`
       });
       btnIndex++;
     }
     // Scroll to top button (top)
     buttons.push({
       id: 'csrgo-scroll-top',
-      html: `<button id="csrgo-scroll-top" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*btnIndex}px; right:24px; width:${btnSize}px; height:${btnSize}px; background:linear-gradient(90deg,#2563eb,#7c3aed); color:white; box-shadow:0 4px 24px rgba(79,70,229,0.12); border-radius:9999px; display:flex; align-items:center; justify-content:center; transition:all .2s; opacity:0; pointer-events:none;" title="Go to top"><i data-lucide="arrow-up" class="w-7 h-7" style="color:white;"></i></button>`
+      html: `<button id="csrgo-scroll-top" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*btnIndex}px; right:24px; width:${btnSize}px; height:${btnSize}px; background:linear-gradient(90deg,#2563eb,#7c3aed); color:white; box-shadow:0 4px 24px rgba(79,70,229,0.12); border-radius:9999px; display:flex; align-items:center; justify-content:center; transition:all .2s; opacity:0; pointer-events:none;" title="Go to top"><i data-lucide="arrow-up" class="w-5 h-5" style="color:white;"></i></button>`
     });
     // Render all buttons
     container.innerHTML = buttons.map(b => b.html).join('') + `<div id="csrgo-share-popup" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*(btnIndex+1)}px; right:24px; background:white; border-radius:1rem; box-shadow:0 8px 32px rgba(37,99,235,0.10); border:1px solid #f1f5f9; padding:1.5rem; width:20rem; max-width:90vw; display:none; animation:fade-in .2s;"><div id="csrgo-share-content"></div></div>`;

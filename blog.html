@@ -18,16 +18,26 @@
   <div id="header-placeholder"></div>
 
   <!-- Main Content -->
-  <main class="flex-grow pt-28">
-    <div class="container mx-auto px-4 py-8">
-      <h1 class="text-4xl font-bold mb-8 text-center">Blog</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Blog posts will be added here -->
-        <div class="bg-white rounded-xl shadow-sm p-6">
-          <h2 class="text-xl font-semibold mb-4">Coming Soon</h2>
-          <p class="text-gray-600">Our blog is under construction. Check back soon for interesting articles about tools, technology, and more!</p>
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 px-4 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent"></div>
+      <div class="container mx-auto text-center relative z-10">
+        <div class="flex justify-center mb-6">
+          <div class="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center animate-float">
+            <i data-lucide="book-open" class="w-10 h-10 text-white"></i>
+          </div>
         </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
+          <span class="gradient-logo-text">Blog</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8 animate-fade-in">
+          Insights, guides, and updates from the CSRGO Tools team. Discover tips, tutorials, and the latest news about our tools and the world of productivity.
+        </p>
       </div>
+    </section>
+    <div class="container mx-auto px-4 pb-8">
+      <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </div>
   </main>
 
@@ -39,5 +49,65 @@
   <!-- App JS -->
   <script src="app.js"></script>
   <script src="components/include.js"></script>
+  <script>
+    // Sample blog data. Update this array as you add new blogs!
+    const blogs = [
+      {
+        title: 'How to Convert Images to PNG Effortlessly',
+        image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+        excerpt: 'Learn how to quickly convert your images to PNG format using our free online tool. Step-by-step guide for beginners.',
+        url: 'blogs/how-to-convert-images-to-png.html'
+      },
+      {
+        title: 'Top 5 Free SEO Tools for 2024',
+        image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+        excerpt: 'Boost your website ranking with these essential free SEO tools. We review the best options for every marketer.',
+        url: 'blogs/top-5-free-seo-tools-2024.html'
+      },
+      {
+        title: 'Why Use Online Calculators for Everyday Tasks?',
+        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80',
+        excerpt: 'Discover the convenience and accuracy of browser-based calculators for math, finance, and more.',
+        url: 'blogs/why-use-online-calculators.html'
+      }
+      // Add more blog objects here as you create new posts
+    ];
+
+    function renderBlogCards() {
+      const grid = document.getElementById('blogGrid');
+      if (!grid) return;
+      if (!blogs.length) {
+        grid.innerHTML = `<div class='col-span-full text-center text-gray-400 text-lg'>No blog posts yet. Check back soon!</div>`;
+        return;
+      }
+      grid.innerHTML = blogs.map(blog => `
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col h-full">
+          <div class="h-48 w-full bg-gray-100 overflow-hidden flex items-center justify-center">
+            <img src="${blog.image}" alt="${blog.title}" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h2 class="text-2xl font-semibold mb-2 text-gray-900 line-clamp-2">${blog.title}</h2>
+            <p class="text-gray-600 mb-4 flex-1 line-clamp-3">${blog.excerpt}</p>
+            <a href="${blog.url}" class="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#7c3aed] to-[#2563eb] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity mt-auto">Read More <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i></a>
+          </div>
+        </div>
+      `).join('');
+      if (window.lucide) lucide.createIcons();
+    }
+    document.addEventListener('DOMContentLoaded', renderBlogCards);
+  </script>
+  <style>
+        .gradient-bg {
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
 </body>
 </html> 

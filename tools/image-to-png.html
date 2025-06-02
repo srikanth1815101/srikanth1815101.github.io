@@ -176,6 +176,9 @@
       </div>
     </section>
 
+    <!-- Similar Tools Section Placeholder -->
+    <div id="similarToolsSection"></div>
+
     <!-- What is tool? Section -->
     <section class="py-16 px-4 bg-white">
       <div class="container mx-auto max-w-4xl">
@@ -418,6 +421,11 @@
 
   <!-- App JS -->
   <script src="../app.js"></script>
+  <script>
+    // Expose tools and categories to window for similar-tools.js
+    if (typeof tools !== 'undefined') window.tools = tools;
+    if (typeof categories !== 'undefined') window.categories = categories;
+  </script>
   <script src="../components/include.js"></script>
   <script>
     // Initialize Lucide icons
@@ -562,8 +570,10 @@
       name: 'Image to PNG Converter',
       url: window.location.href,
       icon: 'image',
+      category: 'image-tools'
     };
   </script>
   <script src="../components/floating-buttons.js"></script>
+  <script src="../components/similar-tools.js"></script>
 </body>
 </html> 
