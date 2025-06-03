@@ -1,5 +1,5 @@
 // ---- DATA ----
-const categories = [
+window.categories = [
   {
     id: 'image-tools',
     name: 'Image Tools',
@@ -65,7 +65,7 @@ const categories = [
   }
 ];
 
-const tools = [
+window.tools = [
   // Image Tools
   {
     id: 'image-to-png',
@@ -887,12 +887,12 @@ const tools = [
 
 // ---- HELPERS ----
 function getToolsByCategory(categoryId) {
-  return tools.filter(t => t.category === categoryId);
+  return window.tools.filter(t => t.category === categoryId);
 }
 function getToolsBySearch(query) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
-  return tools.filter(t =>
+  return window.tools.filter(t =>
     t.name.toLowerCase().includes(q) ||
     t.description.toLowerCase().includes(q)
   );
@@ -912,7 +912,7 @@ function renderCategories() {
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        ${categories.map(cat => renderCategoryCard(cat)).join('')}
+        ${window.categories.map(cat => renderCategoryCard(cat)).join('')}
       </div>
     </div>
   `;
@@ -981,7 +981,7 @@ function renderPopularTools() {
   const row2 = document.getElementById('popularToolsRow2');
   if (!row1 || !row2) return;
   // Split popular tools into two rows
-  const popularTools = popularToolIds.map(id => tools.find(t => t.id === id)).filter(Boolean);
+  const popularTools = popularToolIds.map(id => window.tools.find(t => t.id === id)).filter(Boolean);
   const half = Math.ceil(popularTools.length / 2);
   const row1Tools = popularTools.slice(0, half);
   const row2Tools = popularTools.slice(half);
@@ -1091,8 +1091,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSearch();
     
     // Typewriter effect setup with tool names
-    const typewriterPhrases = tools.map(t => t.name);
-    const typewriterCategoryMap = tools.map(t => t.category);
+    const typewriterPhrases = window.tools.map(t => t.name);
+    const typewriterCategoryMap = window.tools.map(t => t.category);
     let typewriterIndex = Math.floor(Math.random() * typewriterPhrases.length);
     let charIndex = 0;
     let isDeleting = false;
@@ -1175,7 +1175,7 @@ const colorPalette = [
 ];
 
 function renderToolCard(tool, idx) {
-  const category = categories.find(c => c.id === tool.category);
+  const category = window.categories.find(c => c.id === tool.category);
   const colorClass = colorPalette[idx % colorPalette.length];
   return `
     <a href="${tool.url}" class="block bg-white rounded-xl shadow-sm border border-gray-100 p-5 transition-all duration-300 hover:shadow-md hover:border-blue-100 focus:ring-2 focus:ring-blue-200 outline-none">
@@ -1209,7 +1209,7 @@ const typewriterCategoryMap = [
 ];
 
 function getCategoryBgColor(catId) {
-  const cat = categories.find(c => c.id === catId);
+  const cat = window.categories.find(c => c.id === catId);
   if (!cat) return '#2563eb';
   // Extract the bg color class (e.g., 'bg-green-50')
   const match = cat.color.match(/bg-[^ ]+/);
@@ -1230,7 +1230,7 @@ function getCategoryBgColor(catId) {
 }
 
 function getCategoryTextColor(catId) {
-  const cat = categories.find(c => c.id === catId);
+  const cat = window.categories.find(c => c.id === catId);
   if (!cat) return '#2563eb';
   // Extract the text color class (e.g., 'text-green-600')
   const match = cat.color.match(/text-[^ ]+/);
@@ -1338,7 +1338,7 @@ function renderHeroCategoriesRow() {
   const inner = outer.querySelector('.hero-icons-inner');
   if (!inner) return;
   // Duplicate icons for seamless infinite scroll
-  const allCats = [...categories, ...categories];
+  const allCats = [...window.categories, ...window.categories];
   inner.innerHTML = allCats.map(cat => `
     <span class="hero-category-icon ${cat.color}"><i data-lucide="${cat.icon}"></i></span>
   `).join('');
@@ -1365,7 +1365,7 @@ function autoScrollHeroCategoriesRow() {
     currentX = targetX;
     setTimeout(() => {
       currentIndex++;
-      if (currentIndex >= categories.length) {
+      if (currentIndex >= window.categories.length) {
         // Reset for seamless loop
         inner.style.transition = 'none';
         inner.style.transform = 'translateX(0px)';

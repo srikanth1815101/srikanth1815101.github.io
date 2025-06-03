@@ -2,60 +2,18 @@
 
 // Tool info data (can be moved to a separate JSON if needed)
 const TOOL_SECTIONS_DATA = {
-  'image-resizer': {
-    whatIs: {
-      title: 'What is Image Resizer?',
-      content: `The Image Resizer is a free online tool that allows you to resize your images to any desired dimensions while maintaining quality. Whether you need to resize images for social media, websites, or print, this tool provides a simple and efficient solution.<br><br><strong>Key features:</strong> You can resize images by specifying exact dimensions, maintain aspect ratios, adjust quality, and choose from multiple output formats. The tool supports various image formats including JPEG, PNG, and WebP.`
-    },
-    whyUse: {
-      title: 'Why Use Image Resizer?',
-      items: [
-        { icon: 'scaling', title: 'Precise Resizing', desc: 'Resize images to exact dimensions or maintain aspect ratios for perfect proportions.' },
-        { icon: 'settings', title: 'Quality Control', desc: 'Adjust image quality to balance file size and visual appearance.' },
-        { icon: 'file-type', title: 'Multiple Formats', desc: 'Choose from JPEG, PNG, or WebP formats based on your needs.' },
-        { icon: 'zap', title: 'Instant Processing', desc: 'Get your resized images instantly with no waiting time or uploads.' }
+  'image-to-png-converter': {
+    hero: {
+      icon: 'image',
+      iconBg: 'gradient-bg',
+      title: 'Image to PNG Converter',
+      subtitle: 'Convert your images to PNG format with high quality and transparency support',
+      features: [
+        { icon: 'shield', color: 'text-green-500', label: 'Secure Conversion' },
+        { icon: 'zap', color: 'text-yellow-500', label: 'Instant Results' },
+        { icon: 'globe', color: 'text-blue-500', label: 'Browser-based' }
       ]
     },
-    howToUse: {
-      title: 'How to Use Image Resizer',
-      steps: [
-        { icon: 'upload', title: 'Upload Your Image', desc: 'Click the upload area or drag and drop your image file into the designated zone.' },
-        { icon: 'scaling', title: 'Set Resize Options', desc: 'Choose your desired dimensions, aspect ratio, quality, and output format.' },
-        { icon: 'download', title: 'Download Result', desc: 'Preview your resized image and download it in your chosen format.' }
-      ]
-    },
-    features: [
-      'Resize images to any custom dimensions',
-      'Supports all major image formats (JPEG, PNG, GIF, BMP, WebP)',
-      'Quality and format control (JPEG, PNG, WebP)',
-      'Instant preview and download',
-      'Optimized for social media',
-      'Privacy and security: all processing in your browser'
-    ],
-    faq: [
-      {
-        q: 'What image formats are supported?',
-        a: 'The tool supports all common image formats including JPEG, PNG, GIF, BMP, and WebP. You can output your resized image in JPEG, PNG, or WebP format.'
-      },
-      {
-        q: 'Will resizing affect image quality?',
-        a: 'The tool uses high-quality resizing algorithms to maintain image quality. You can also adjust the quality slider to balance between file size and image quality.'
-      },
-      {
-        q: 'Is there a file size limit?',
-        a: 'No, there are no file size limitations. You can resize images of any size.'
-      },
-      {
-        q: 'Are my images secure?',
-        a: 'Yes, all processing is done locally in your browser. Your images are never uploaded to our servers, ensuring complete privacy and security.'
-      },
-      {
-        q: 'What are the recommended dimensions for social media?',
-        a: `Common social media image dimensions are: Facebook (1200x630px), Instagram (1080x1080px), Twitter (1200x675px), and LinkedIn (1200x627px). The tool\'s preset aspect ratios make it easy to achieve these dimensions.`
-      }
-    ]
-  },
-  'image-to-png': {
     whatIs: {
       title: 'What is Image to PNG Converter?',
       content: `The Image to PNG Converter is a free online tool that allows you to convert various image formats (such as JPG, JPEG, GIF, BMP, etc.) to PNG format. PNG (Portable Network Graphics) is a raster graphics file format that supports lossless data compression and transparency, making it ideal for web graphics, logos, and images that require transparent backgrounds.<br><br><strong>Customisation options:</strong> Before converting, you can resize your image by setting a custom width and height, choose a background color for non-transparent images, and decide whether to keep or remove transparency. This gives you full control over your PNG output.`
@@ -108,7 +66,18 @@ const TOOL_SECTIONS_DATA = {
       }
     ]
   },
-  'image-to-jpg': {
+  'image-to-jpg-converter': {
+    hero: {
+      icon: 'image',
+      iconBg: 'gradient-bg',
+      title: 'Image to JPG Converter',
+      subtitle: 'Convert your images to JPG format with customizable quality and background options.',
+      features: [
+        { icon: 'shield', color: 'text-green-500', label: 'Efficient Compression' },
+        { icon: 'sliders', color: 'text-purple-500', label: 'Custom Quality & Size' },
+        { icon: 'globe', color: 'text-blue-500', label: 'Universal Compatibility' }
+      ]
+    },
     whatIs: {
       title: 'What is Image to JPG Converter?',
       content: `The Image to JPG Converter is a free online tool that allows you to convert various image formats (such as PNG, GIF, BMP, TIFF, WebP, etc.) to JPG format. JPG (or JPEG) is a widely used compressed image format, ideal for photos and web images due to its small file size and broad compatibility.<br><br><strong>Customisation options:</strong> Before converting, you can resize your image by setting a custom width and height, choose a background color for transparent images, and adjust the JPG quality to balance file size and image clarity. This gives you full control over your JPG output.`
@@ -145,12 +114,38 @@ const TOOL_SECTIONS_DATA = {
       { q: 'Are my uploaded images secure?', a: 'Yes, all conversions are performed locally in your browser. Your images are never uploaded to our servers, ensuring complete privacy and security.' },
       { q: 'Can I resize my image before converting?', a: 'Absolutely! You can set a custom width and height before converting to JPG, giving you full control over the output size.' }
     ]
-  }
+  },
 };
 
 function renderToolSections(toolName) {
   const data = TOOL_SECTIONS_DATA[toolName];
   if (!data) return;
+
+  // HERO SECTION
+  if (data.hero && document.getElementById('heroSection')) {
+    document.getElementById('heroSection').innerHTML = `
+      <div class="flex justify-center mb-4">
+        <div class="w-16 h-16 rounded-2xl ${data.hero.iconBg} flex items-center justify-center animate-float">
+          <i data-lucide="${data.hero.icon}" class="w-8 h-8 text-white"></i>
+        </div>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 animate-fade-in">
+        <span class="gradient-logo-text">${data.hero.title}</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-6 animate-fade-in">
+        ${data.hero.subtitle}
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-4">
+        ${data.hero.features.map(f => `
+          <div class="flex items-center gap-2 text-gray-600 justify-center">
+            <i data-lucide="${f.icon}" class="w-6 h-6 ${f.color}"></i>
+            <span class="text-base font-medium">${f.label}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    lucide.createIcons();
+  }
 
   // What is
   document.getElementById('whatIsSection').innerHTML = `
@@ -250,15 +245,15 @@ function renderToolSections(toolName) {
         <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
       </div>
       <div class="space-y-4">
-        ${data.faq.map(faq => `
-          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden transition-all">
+        ${data.faq.map((item, i) => `
+          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden">
             <button class="w-full px-6 py-4 text-left flex items-center justify-between">
-              <h3 class="text-xl font-semibold">${faq.q}</h3>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
+              <h3 class="text-xl font-semibold">${item.q}</h3>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform duration-300"></i>
             </button>
-            <div class="faq-content">
+            <div class="faq-content overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
               <div class="px-6 pb-4">
-                <p class="text-gray-600">${faq.a}</p>
+                <p class="text-gray-600">${item.a}</p>
               </div>
             </div>
           </div>
@@ -270,22 +265,33 @@ function renderToolSections(toolName) {
   lucide.createIcons();
 
   // FAQ toggle
+  let activeFaq = null;
   document.querySelectorAll('.faq-item').forEach(item => {
     const button = item.querySelector('button');
     const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+    
     button.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(faq => {
-        faq.classList.remove('active');
-        faq.querySelector('.faq-content').style.maxHeight = null;
-      });
-      if (!isActive) {
-        item.classList.add('active');
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else {
-        item.classList.remove('active');
-        content.style.maxHeight = null;
+      // If clicking the active FAQ, close it
+      if (activeFaq === item) {
+        content.style.maxHeight = '0';
+        icon.style.transform = 'rotate(0deg)';
+        activeFaq = null;
+        return;
       }
+
+      // If there's an active FAQ, close it first
+      if (activeFaq) {
+        const activeContent = activeFaq.querySelector('.faq-content');
+        const activeIcon = activeFaq.querySelector('.faq-icon');
+        activeContent.style.maxHeight = '0';
+        activeIcon.style.transform = 'rotate(0deg)';
+      }
+
+      // Open the clicked FAQ
+      content.style.maxHeight = content.scrollHeight + 'px';
+      icon.style.transform = 'rotate(180deg)';
+      activeFaq = item;
     });
   });
 }
@@ -295,4 +301,37 @@ window.addEventListener('DOMContentLoaded', () => {
   if (window.CSRGO_TOOL_NAME) {
     renderToolSections(window.CSRGO_TOOL_NAME);
   }
-}); 
+});
+
+// Inject shared tool styles if not already present
+(function() {
+  if (!document.getElementById('csrgo-tool-shared-styles')) {
+    const style = document.createElement('style');
+    style.id = 'csrgo-tool-shared-styles';
+    style.textContent = `
+      .gradient-bg {
+        background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .drop-zone-active {
+        border-color: #4F46E5;
+        background-color: rgba(79, 70, 229, 0.05);
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+})(); 

@@ -31,8 +31,20 @@
       "bg-gray-50 text-gray-600"
     ];
     const colorClass = colorPalette[idx % colorPalette.length];
+    const isFileProtocol = location.protocol === 'file:';
+    let link;
+    if (isFileProtocol) {
+      // If current path includes /tools/, strip the tools/ prefix from tool.url
+      if (location.pathname.includes('/tools/')) {
+        link = tool.url.replace(/^tools\//, '').replace(/^tools\//, '');
+      } else {
+        link = tool.url;
+      }
+    } else {
+      link = '/' + tool.url;
+    }
     return `
-      <a href="/${tool.url}" class="flex items-center gap-3 p-3 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all">
+      <a href="${link}" class="flex items-center gap-3 p-3 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center ${colorClass}">
           <i data-lucide="${tool.icon}" class="w-5 h-5"></i>
         </div>

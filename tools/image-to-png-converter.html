@@ -12,44 +12,18 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../styles.css">
-  <style>
-    .gradient-bg {
-      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
-    }
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    .faq-item {
-      transition: all 0.3s ease;
-    }
-    .faq-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
-    .faq-item.active .faq-content {
-      max-height: 500px;
-    }
-    .faq-item.active .faq-icon {
-      transform: rotate(180deg);
-    }
-    .drop-zone-active {
-      border-color: #4F46E5;
-      background-color: rgba(79, 70, 229, 0.05);
-    }
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-  </style>
+  <link rel="icon" href="https://csrgo.com/logo.png" type="image/png" sizes="32x32">
+  <link rel="shortcut icon" href="https://csrgo.com/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://csrgo.com/logo.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://csrgo.com/",
+    "name": "CSRGO Tools",
+    "logo": "https://csrgo.com/logo.png"
+  }
+  </script>
 </head>
 <body class="bg-gradient-to-b from-blue-50 via-white to-gray-50 min-h-screen flex flex-col">
   <!-- Header Placeholder -->
@@ -58,39 +32,13 @@
   <!-- Main Content -->
   <main class="flex-grow">
     <!-- Hero Section -->
-    <section class="pt-28 pb-16 px-4 relative overflow-hidden">
+    <section class="pt-20 pb-8 px-4 relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent"></div>
-      <div class="container mx-auto text-center relative z-10">
-        <div class="flex justify-center mb-6">
-          <div class="w-20 h-20 rounded-2xl gradient-bg flex items-center justify-center animate-float">
-            <i data-lucide="image" class="w-10 h-10 text-white"></i>
-          </div>
-        </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
-          <span class="gradient-logo-text">Image to PNG Converter</span>
-        </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8 animate-fade-in">
-          Convert your images to PNG format with high quality and transparency support
-        </p>
-        <div class="flex justify-center gap-4">
-          <div class="flex items-center gap-2 text-gray-600">
-            <i data-lucide="shield" class="w-5 h-5 text-green-500"></i>
-            <span>Secure Conversion</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-600">
-            <i data-lucide="zap" class="w-5 h-5 text-yellow-500"></i>
-            <span>Instant Results</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-600">
-            <i data-lucide="globe" class="w-5 h-5 text-blue-500"></i>
-            <span>Browser-based</span>
-          </div>
-        </div>
-      </div>
+      <div class="container mx-auto text-center relative z-10" id="heroSection"></div>
     </section>
 
     <!-- Tool Section -->
-    <section class="py-12 px-4">
+    <section class="py-8 px-4">
       <div class="container mx-auto max-w-4xl">
         <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 card-hover">
           <div class="space-y-6">
@@ -113,7 +61,7 @@
             <!-- Preview Area -->
             <div id="previewArea" class="hidden">
               <div class="flex flex-col md:flex-row gap-6">
-                <div class="flex-1">
+                <div class="flex-1" id="originalImageSection">
                   <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
                     <i data-lucide="image" class="w-5 h-5 text-blue-600"></i>
                     Original Image
@@ -160,7 +108,7 @@
                   <i data-lucide="file-image" class="w-5 h-5 text-green-600"></i>
                   PNG Preview
                 </h3>
-                <div class="aspect-video bg-gray-100 rounded-lg overflow-hidden shadow-sm mb-6">
+                <div class="aspect-video bg-gray-100 rounded-lg overflow-hidden shadow-sm mb-6" id="pngPreviewSection">
                   <img id="pngPreview" class="w-full h-full object-contain" alt="PNG preview">
                 </div>
                 <div class="flex justify-center">
@@ -180,400 +128,191 @@
     <div id="similarToolsSection"></div>
 
     <!-- What is tool? Section -->
-    <section class="py-16 px-4 bg-white">
-      <div class="container mx-auto max-w-4xl">
-        <div class="flex items-center gap-4 mb-8">
-          <div class="w-10 md:w-12 aspect-square rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="info" class="w-6 h-6 text-white"></i>
-          </div>
-          <h2 class="text-3xl font-bold">What is Image to PNG Converter?</h2>
-        </div>
-        <div class="bg-gray-50 rounded-2xl p-8 shadow-sm">
-          <p class="text-gray-600 text-lg leading-relaxed">
-            The Image to PNG Converter is a free online tool that allows you to convert various image formats (such as JPG, JPEG, GIF, BMP, etc.) to PNG format. PNG (Portable Network Graphics) is a raster graphics file format that supports lossless data compression and transparency, making it ideal for web graphics, logos, and images that require transparent backgrounds.
-            <br><br>
-            <strong>Customisation options:</strong> Before converting, you can resize your image by setting a custom width and height, choose a background color for non-transparent images, and decide whether to keep or remove transparency. This gives you full control over your PNG output.
-          </p>
-        </div>
-      </div>
-    </section>
+    <section id="whatIsSection" class="py-16 px-4 bg-white"></section>
 
     <!-- Why use tool? Section -->
-    <section class="py-16 px-4">
-      <div class="container mx-auto max-w-4xl">
-        <div class="flex items-center gap-4 mb-8">
-          <div class="w-10 md:w-12 aspect-square rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="star" class="w-6 h-6 text-white"></i>
-          </div>
-          <h2 class="text-3xl font-bold">Why Use Image to PNG Converter?</h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
-              <i data-lucide="shield" class="w-6 h-6 text-blue-600"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Lossless Quality</h3>
-            <p class="text-gray-600">PNG format preserves image quality without compression artifacts, ensuring your images look crisp and clear.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-4">
-              <i data-lucide="layers" class="w-6 h-6 text-purple-600"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Transparency & Background Control</h3>
-            <p class="text-gray-600">Choose to keep transparency or set a custom background color for your PNG output, giving you flexibility for different use cases.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-4">
-              <i data-lucide="globe" class="w-6 h-6 text-green-600"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Web Compatibility</h3>
-            <p class="text-gray-600">PNG is widely supported across all modern web browsers and platforms, ensuring your images display correctly everywhere.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="w-12 h-12 rounded-xl bg-yellow-50 flex items-center justify-center mb-4">
-              <i data-lucide="zap" class="w-6 h-6 text-yellow-600"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Custom Size Output</h3>
-            <p class="text-gray-600">Easily resize your image by specifying the width and height before conversion, so your PNG fits your needs perfectly.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="whyUseSection" class="py-16 px-4"></section>
 
     <!-- How to use tool? Section -->
-    <section class="py-16 px-4 bg-white">
-      <div class="container mx-auto max-w-4xl">
-        <div class="flex items-center gap-4 mb-8">
-          <div class="w-10 md:w-12 aspect-square rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="help-circle" class="w-6 h-6 text-white"></i>
-          </div>
-          <h2 class="text-3xl font-bold">How to Use Image to PNG Converter</h2>
-        </div>
-        <div class="space-y-6">
-          <div class="flex gap-4 bg-gray-50 p-6 rounded-xl">
-            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">1</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
-                <i data-lucide="upload" class="w-5 h-5 text-blue-600"></i>
-                Upload Your Image
-              </h3>
-              <p class="text-gray-600">Click the upload area or drag and drop your image file into the designated zone.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 bg-gray-50 p-6 rounded-xl">
-            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">2</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
-                <i data-lucide="settings" class="w-5 h-5 text-blue-600"></i>
-                Customise Output
-              </h3>
-              <p class="text-gray-600">Set your desired width and height to resize the image. Choose a background color for non-transparent images, and use the checkbox to keep or remove transparency as needed.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 bg-gray-50 p-6 rounded-xl">
-            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">3</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
-                <i data-lucide="wand-2" class="w-5 h-5 text-blue-600"></i>
-                Convert & Download
-              </h3>
-              <p class="text-gray-600">Click the "Convert to PNG" button to apply your customizations. Preview the result and download your customized PNG image instantly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="howToUseSection" class="py-16 px-4 bg-white"></section>
 
     <!-- Features Section -->
-    <section class="py-16 px-4">
-      <div class="container mx-auto max-w-4xl">
-        <div class="flex items-center gap-4 mb-8">
-          <div class="w-10 md:w-12 aspect-square rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="list-checks" class="w-6 h-6 text-white"></i>
-          </div>
-          <h2 class="text-3xl font-bold">Features</h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-              </div>
-              <span class="text-gray-600">Convert images to PNG from multiple formats (JPG, JPEG, GIF, BMP, TIFF, WebP, and more)</span>
-            </div>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-              </div>
-              <span class="text-gray-600">Resize output image by specifying custom width and height</span>
-            </div>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-              </div>
-              <span class="text-gray-600">Choose background color for non-transparent images or remove background for transparent PNGs</span>
-            </div>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-              </div>
-              <span class="text-gray-600">Keep or remove transparency based on your needs</span>
-            </div>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-              </div>
-              <span class="text-gray-600">Instant preview and one-click download of the converted PNG</span>
-            </div>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-              </div>
-              <span class="text-gray-600">All processing is done in your browser for privacy and security</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="featuresSection" class="py-16 px-4"></section>
 
     <!-- FAQ Section -->
-    <section class="py-16 px-4 bg-white">
-      <div class="container mx-auto max-w-4xl">
-        <div class="flex items-center gap-4 mb-8">
-          <div class="w-10 md:w-12 aspect-square rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="help-circle" class="w-6 h-6 text-white"></i>
-          </div>
-          <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
-        </div>
-        <div class="space-y-4">
-          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden">
-            <button class="w-full px-6 py-4 text-left flex items-center justify-between">
-              <h3 class="text-xl font-semibold">What image formats can I convert to PNG?</h3>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
-            </button>
-            <div class="faq-content">
-              <div class="px-6 pb-4">
-                <p class="text-gray-600">You can convert various image formats including JPG, JPEG, GIF, BMP, TIFF, and WebP to PNG format.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden">
-            <button class="w-full px-6 py-4 text-left flex items-center justify-between">
-              <h3 class="text-xl font-semibold">Will the converted PNG maintain image quality?</h3>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
-            </button>
-            <div class="faq-content">
-              <div class="px-6 pb-4">
-                <p class="text-gray-600">Yes, our converter preserves the original image quality while converting to PNG format. PNG is a lossless format, so there won't be any quality degradation.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden">
-            <button class="w-full px-6 py-4 text-left flex items-center justify-between">
-              <h3 class="text-xl font-semibold">Is there a file size limit for conversion?</h3>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
-            </button>
-            <div class="faq-content">
-              <div class="px-6 pb-4">
-                <p class="text-gray-600">No, there are no file size limitations. You can convert images of any size to PNG format.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden">
-            <button class="w-full px-6 py-4 text-left flex items-center justify-between">
-              <h3 class="text-xl font-semibold">Are my uploaded images secure?</h3>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
-            </button>
-            <div class="faq-content">
-              <div class="px-6 pb-4">
-                <p class="text-gray-600">Yes, all conversions are performed locally in your browser. Your images are never uploaded to our servers, ensuring complete privacy and security.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item bg-gray-50 rounded-xl overflow-hidden">
-            <button class="w-full px-6 py-4 text-left flex items-center justify-between">
-              <h3 class="text-xl font-semibold">Can I customise the PNG output before converting?</h3>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 faq-icon transition-transform"></i>
-            </button>
-            <div class="faq-content">
-              <div class="px-6 pb-4">
-                <p class="text-gray-600">Yes! Before converting, you can set a custom width and height to resize your image, choose a background color, and decide whether to keep or remove transparency. These options give you full control over your PNG output.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="faqSection" class="py-16 px-4 bg-white"></section>
   </main>
 
   <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
+  <!-- Floating Buttons Placeholder -->
+  <div id="floating-buttons"></div>
 
-  <!-- App JS -->
+  <!-- Scripts -->
   <script src="../app.js"></script>
   <script>
-    // Expose tools and categories to window for similar-tools.js
-    if (typeof tools !== 'undefined') window.tools = tools;
-    if (typeof categories !== 'undefined') window.categories = categories;
+    // Set current tool info automatically by matching URL
+    if (window.tools) {
+      window.CSRGO_TOOL_INFO = window.tools.find(
+        t => t.url === "tools/image-to-png-converter.html"
+      );
+    }
+  </script>
+  <script>
+    // Debug: Log tool data and similar tools logic
+    console.log('window.tools:', window.tools);
+    console.log('window.categories:', window.categories);
+    console.log('window.CSRGO_TOOL_INFO:', window.CSRGO_TOOL_INFO);
+    if (!window.tools) {
+      console.error('window.tools is not defined');
+    } else {
+      const current = window.tools.find(t => t.url === "tools/image-to-png-converter.html");
+      if (!current) {
+        console.error('Current tool not found in window.tools');
+      } else {
+        console.log('Current tool:', current);
+        const similar = window.tools.filter(
+          t => t.category === current.category && t.url !== current.url
+        );
+        if (similar.length === 0) {
+          console.warn('No similar tools found for this category:', current.category);
+        } else {
+          console.log('Similar tools:', similar);
+        }
+      }
+    }
   </script>
   <script src="../components/include.js"></script>
+  <script src="../components/similar-tools.js"></script>
+  <script src="../tool-sections.js"></script>
+  <script src="../components/floating-buttons.js"></script>
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
 
-    // Initialize components
-    includeHTML('header-placeholder', '../components/header.html');
-    includeHTML('footer-placeholder', '../components/footer.html');
+    // Initialize tool sections
+    document.addEventListener('DOMContentLoaded', () => {
+      renderToolSections('image-to-png-converter');
+    });
 
-    // Tool functionality
+    // File handling
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
     const previewArea = document.getElementById('previewArea');
     const originalPreview = document.getElementById('originalPreview');
     const pngPreview = document.getElementById('pngPreview');
-    const downloadBtn = document.getElementById('downloadBtn');
     const convertBtn = document.getElementById('convertBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
     const conversionResult = document.getElementById('conversionResult');
-    const resizeWidth = document.getElementById('resizeWidth');
-    const resizeHeight = document.getElementById('resizeHeight');
-    const bgColor = document.getElementById('bgColor');
-    const keepTransparency = document.getElementById('keepTransparency');
-    let originalImage = null;
 
     // Handle drag and drop
-    dropZone.addEventListener('dragover', (e) => {
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
       e.preventDefault();
-      dropZone.classList.add('drop-zone-active');
-    });
-
-    dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('drop-zone-active');
-    });
-
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('drop-zone-active');
-      const file = e.dataTransfer.files[0];
-      if (file && file.type.startsWith('image/')) {
-        handleImageUpload(file);
-      }
-    });
-
-    // Handle click to upload
-    dropZone.addEventListener('click', () => {
-      fileInput.click();
-    });
-
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        handleImageUpload(file);
-      }
-    });
-
-    // Handle image upload and conversion
-    function handleImageUpload(file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        originalPreview.src = e.target.result;
-        originalImage = new window.Image();
-        originalImage.onload = () => {
-          // Set default resize values
-          resizeWidth.value = '';
-          resizeHeight.value = '';
-          conversionResult.classList.add('hidden');
-        };
-        originalImage.src = e.target.result;
-        previewArea.classList.remove('hidden');
-        dropZone.classList.add('hidden');
-      };
-      reader.readAsDataURL(file);
+      e.stopPropagation();
     }
 
-    // Handle convert
-    convertBtn.addEventListener('click', () => {
-      if (!originalImage) return;
-      // Get options
-      let width = parseInt(resizeWidth.value) || originalImage.naturalWidth;
-      let height = parseInt(resizeHeight.value) || originalImage.naturalHeight;
-      let bg = bgColor.value;
-      let transparency = keepTransparency.checked;
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, highlight, false);
+    });
 
-      // Create canvas
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, unhighlight, false);
+    });
+
+    function highlight(e) {
+      dropZone.classList.add('drop-zone-active');
+    }
+
+    function unhighlight(e) {
+      dropZone.classList.remove('drop-zone-active');
+    }
+
+    dropZone.addEventListener('drop', handleDrop, false);
+    dropZone.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', handleFileSelect);
+
+    function handleDrop(e) {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      handleFiles(files);
+    }
+
+    function handleFileSelect(e) {
+      const files = e.target.files;
+      handleFiles(files);
+    }
+
+    function handleFiles(files) {
+      if (files.length > 0) {
+        const file = files[0];
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            originalPreview.src = e.target.result;
+            previewArea.classList.remove('hidden');
+            conversionResult.classList.add('hidden');
+            // Scroll to original image section
+            setTimeout(() => {
+              document.getElementById('originalImageSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    }
+
+    // Conversion handling
+    convertBtn.addEventListener('click', async () => {
+      const width = document.getElementById('resizeWidth').value;
+      const height = document.getElementById('resizeHeight').value;
+      const bgColor = document.getElementById('bgColor').value;
+      const keepTransparency = document.getElementById('keepTransparency').checked;
+
+      // Create a canvas for conversion
       const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
       const ctx = canvas.getContext('2d');
 
-      // If not keeping transparency, fill background
-      if (!transparency) {
-        ctx.fillStyle = bg;
-        ctx.fillRect(0, 0, width, height);
-      } else {
-        ctx.clearRect(0, 0, width, height);
+      // Set dimensions
+      if (width) canvas.width = parseInt(width);
+      if (height) canvas.height = parseInt(height);
+
+      // Fill background if needed
+      if (!keepTransparency) {
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
 
       // Draw image
-      ctx.drawImage(originalImage, 0, 0, width, height);
-
-      // Show PNG preview
-      const pngDataUrl = canvas.toDataURL('image/png');
-      pngPreview.src = pngDataUrl;
-      conversionResult.classList.remove('hidden');
-      // Scroll to PNG preview
-      setTimeout(() => {
-        conversionResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
+      const img = new Image();
+      img.onload = () => {
+        if (!width && !height) {
+          canvas.width = img.width;
+          canvas.height = img.height;
+        }
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        
+        // Show result
+        pngPreview.src = canvas.toDataURL('image/png');
+        conversionResult.classList.remove('hidden');
+        // Scroll to PNG preview section
+        setTimeout(() => {
+          document.getElementById('pngPreviewSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      };
+      img.src = originalPreview.src;
     });
 
-    // Handle download
+    // Download handling
     downloadBtn.addEventListener('click', () => {
       const link = document.createElement('a');
       link.download = 'converted-image.png';
       link.href = pngPreview.src;
       link.click();
     });
-
-    // FAQ functionality
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const button = item.querySelector('button');
-      const content = item.querySelector('.faq-content');
-      button.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(faq => {
-          faq.classList.remove('active');
-          faq.querySelector('.faq-content').style.maxHeight = null;
-        });
-        if (!isActive) {
-          item.classList.add('active');
-          content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-          item.classList.remove('active');
-          content.style.maxHeight = null;
-        }
-      });
-    });
   </script>
-  <div id="floating-buttons"></div>
-  <script>
-    window.CSRGO_TOOL_INFO = {
-      name: 'Image to PNG Converter',
-      url: window.location.href,
-      icon: 'image',
-      category: 'image-tools'
-    };
-  </script>
-  <script src="../components/floating-buttons.js"></script>
-  <script src="../components/similar-tools.js"></script>
 </body>
 </html> 
