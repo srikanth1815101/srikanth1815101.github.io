@@ -7,11 +7,22 @@
   // Utility: Get tools by category, excluding current tool
   function getSimilarTools(currentTool) {
     if (!currentTool || !currentTool.category) return [];
-    return (window.tools || []).filter(t =>
+    
+    // Get all tools in the same category except current tool
+    const similarTools = (window.tools || []).filter(t =>
       t.category === currentTool.category &&
       t.url !== currentTool.url &&
       t.name !== currentTool.name
     );
+
+    // Shuffle the array using Fisher-Yates algorithm
+    for (let i = similarTools.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [similarTools[i], similarTools[j]] = [similarTools[j], similarTools[i]];
+    }
+
+    // Return first 2 tools from shuffled array
+    return similarTools.slice(0, 2);
   }
   // Utility: Get category info
   function getCategory(catId) {
@@ -62,8 +73,6 @@
     const similarTools = getSimilarTools(currentTool);
     if (!similarTools.length) return;
     const category = getCategory(currentTool.category);
-    // Pick 2 tools (random or first 2)
-    const shownTools = similarTools.slice(0, 2);
     // Section HTML
     const section = document.createElement('section');
     section.id = 'similarToolsSection';
@@ -75,7 +84,7 @@
           Similar Tools
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-          ${shownTools.map((tool, idx) => renderToolCard(tool, idx)).join('')}
+          ${similarTools.map((tool, idx) => renderToolCard(tool, idx)).join('')}
           <a href="../category.html?id=${category ? category.id : ''}" class="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#2563eb] shadow-sm hover:shadow-md transition-all">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-white/10">
               <i data-lucide="arrow-right" class="w-5 h-5 text-white"></i>

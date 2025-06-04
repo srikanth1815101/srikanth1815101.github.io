@@ -168,6 +168,472 @@ const TOOL_SECTIONS_DATA = {
       { q: 'Is my image processed securely?', a: 'Yes, all processing happens locally in your browser. Your images are never uploaded.' }
     ]
   },
+  'image-compressor': {
+    hero: {
+      icon: 'image-upscale',
+      iconBg: 'gradient-bg',
+      title: 'Image Compressor',
+      subtitle: 'Compress your images without losing quality. Reduce file size while maintaining visual clarity.',
+      features: [
+        { icon: 'shield', color: 'text-green-500', label: 'Secure Compression' },
+        { icon: 'sliders', color: 'text-purple-500', label: 'Quality Control' },
+        { icon: 'globe', color: 'text-blue-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is Image Compressor?',
+      content: `The Image Compressor is a free online tool that helps you reduce the file size of your images while maintaining acceptable quality. It's perfect for optimizing images for web use, email attachments, or storage purposes.<br><br><strong>Compression options:</strong> You can control the compression level using the quality slider, resize the image dimensions, choose the output format (JPEG, PNG, or WebP), and maintain aspect ratio. The tool shows you the compression ratio and file size savings in real-time, helping you find the perfect balance between quality and file size.`
+    },
+    whyUse: {
+      title: 'Why Use Image Compressor?',
+      items: [
+        { icon: 'shield', title: 'Optimize File Size', desc: 'Reduce image file sizes without significant quality loss, perfect for web optimization and faster loading times.' },
+        { icon: 'sliders', title: 'Quality Control', desc: 'Fine-tune compression settings to find the perfect balance between file size and image quality.' },
+        { icon: 'scaling', title: 'Resize & Format', desc: 'Resize images to specific dimensions and convert to different formats (JPEG, PNG, WebP) in one step.' },
+        { icon: 'chart-bar', title: 'Real-time Stats', desc: 'See compression ratio and file size savings instantly to make informed decisions.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use Image Compressor',
+      steps: [
+        { icon: 'upload', title: 'Upload Your Image', desc: 'Click the upload area or drag and drop your image file into the designated zone.' },
+        { icon: 'settings', title: 'Adjust Settings', desc: 'Set your desired quality level, dimensions, and output format. Preview the compression results in real-time.' },
+        { icon: 'download', title: 'Download Compressed Image', desc: 'Review the compression stats and download your optimized image with one click.' }
+      ]
+    },
+    features: [
+      'Compress images while maintaining acceptable quality',
+      'Adjust compression level with quality slider',
+      'Resize images to specific dimensions',
+      'Choose output format (JPEG, PNG, WebP)',
+      'Maintain aspect ratio while resizing',
+      'Real-time compression statistics',
+      'Instant preview and one-click download',
+      'All processing is done in your browser for privacy and security'
+    ],
+    faq: [
+      {
+        q: 'What image formats are supported?',
+        a: 'You can compress images in various formats including JPG, PNG, WebP, GIF, and more.'
+      },
+      {
+        q: 'Will compression affect image quality?',
+        a: 'The tool allows you to control the compression level. Higher quality settings maintain more detail but result in larger file sizes.'
+      },
+      {
+        q: 'Can I resize images while compressing?',
+        a: 'Yes, you can set custom dimensions and maintain aspect ratio while compressing your images.'
+      },
+      {
+        q: 'What output formats are available?',
+        a: 'You can save compressed images in JPEG, PNG, or WebP format, depending on your needs.'
+      },
+      {
+        q: 'Is my image data secure?',
+        a: 'Yes, all compression is done locally in your browser. Your images are never uploaded to our servers.'
+      }
+    ]
+  },
+  'image-cropper': {
+    hero: {
+      icon: 'crop',
+      iconBg: 'gradient-bg',
+      title: 'Image Cropper',
+      subtitle: 'Crop your images with precision. Free online tool with aspect ratio control and custom dimensions.',
+      features: [
+        { icon: 'ruler', color: 'text-blue-500', label: 'Custom Dimensions' },
+        { icon: 'ratio', color: 'text-purple-500', label: 'Aspect Ratio Control' },
+        { icon: 'globe', color: 'text-green-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is Image Cropper?',
+      content: `The Image Cropper is a free online tool that allows you to crop your images with precision and control. It's perfect for adjusting image compositions, creating profile pictures, or preparing images for social media.<br><br><strong>Crop options:</strong> You can crop images freely or maintain specific aspect ratios (1:1, 16:9, 9:16, 4:3, 3:4). Set custom dimensions in pixels, preview the cropped result in real-time, and download the cropped image instantly. All processing is done in your browser for privacy and speed.`
+    },
+    whyUse: {
+      title: 'Why Use Image Cropper?',
+      items: [
+        { icon: 'ruler', title: 'Precise Control', desc: 'Crop images with pixel-perfect precision using our intuitive cropping interface.' },
+        { icon: 'ratio', title: 'Aspect Ratio Options', desc: 'Choose from common aspect ratios or set custom dimensions for your specific needs.' },
+        { icon: 'eye', title: 'Real-time Preview', desc: 'See your cropped image instantly before downloading, ensuring perfect results.' },
+        { icon: 'shield', title: 'Privacy First', desc: 'All image processing happens in your browser. Your images are never uploaded to our servers.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use Image Cropper',
+      steps: [
+        { icon: 'upload', title: 'Upload Your Image', desc: 'Click the upload area or drag and drop your image file into the designated zone.' },
+        { icon: 'settings', title: 'Set Crop Options', desc: 'Choose your desired aspect ratio or set custom dimensions. Use the cropping interface to adjust the crop area.' },
+        { icon: 'download', title: 'Download Cropped Image', desc: 'Preview your cropped image and download it instantly in PNG format.' }
+      ]
+    },
+    features: [
+      'Crop images with pixel-perfect precision',
+      'Choose from common aspect ratios (1:1, 16:9, 9:16, 4:3, 3:4)',
+      'Set custom dimensions in pixels',
+      'Real-time preview of cropped result',
+      'Drag and drop image upload',
+      'Instant download in PNG format',
+      'All processing done in your browser',
+      'No image quality loss'
+    ],
+    faq: [
+      {
+        q: 'What image formats are supported?',
+        a: 'You can upload images in various formats including JPG, PNG, WebP, GIF, and more. The cropped output will be in PNG format.'
+      },
+      {
+        q: 'Can I set custom dimensions?',
+        a: 'Yes, you can enter specific width and height values in pixels, or use the aspect ratio presets for common dimensions.'
+      },
+      {
+        q: 'Will cropping affect image quality?',
+        a: 'No, the cropping process maintains the original image quality. The output is saved in lossless PNG format.'
+      },
+      {
+        q: 'Is there a file size limit?',
+        a: 'No, there are no file size limitations. However, very large images might take longer to process.'
+      },
+      {
+        q: 'Are my images secure?',
+        a: 'Yes, all processing is done locally in your browser. Your images are never uploaded to our servers.'
+      }
+    ]
+  },
+  'image-to-base64': {
+    hero: {
+      icon: 'file-code',
+      iconBg: 'gradient-bg',
+      title: 'Image to Base64 Converter',
+      subtitle: 'Convert your images to Base64 format online. Free tool for encoding images to Base64 strings.',
+      features: [
+        { icon: 'shield', color: 'text-green-500', label: 'Secure Conversion' },
+        { icon: 'sliders', color: 'text-purple-500', label: 'Format Options' },
+        { icon: 'globe', color: 'text-blue-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is Image to Base64 Converter?',
+      content: `The Image to Base64 Converter is a free online tool that allows you to convert your images into Base64 encoded strings. Base64 encoding is a way to represent binary data (like images) in an ASCII string format, making it easy to embed images directly in HTML, CSS, or JSON files.<br><br><strong>Conversion options:</strong> You can choose the output format (JPEG, PNG, or WebP), adjust quality settings for lossy formats, and get the Base64 string instantly. The tool also provides options to copy the Base64 string to clipboard or download it as a text file. All processing is done in your browser for privacy and speed.`
+    },
+    whyUse: {
+      title: 'Why Use Image to Base64 Converter?',
+      items: [
+        { icon: 'code', title: 'Easy Integration', desc: 'Embed images directly in your code without needing separate image files.' },
+        { icon: 'sliders', title: 'Format Control', desc: 'Choose between JPEG, PNG, and WebP formats with quality control for optimal results.' },
+        { icon: 'clipboard', title: 'Quick Copy', desc: 'One-click copy functionality to easily use the Base64 string in your projects.' },
+        { icon: 'shield', title: 'Privacy First', desc: 'All conversion happens in your browser. Your images are never uploaded to our servers.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use Image to Base64 Converter',
+      steps: [
+        { icon: 'upload', title: 'Upload Your Image', desc: 'Click the upload area or drag and drop your image file into the designated zone.' },
+        { icon: 'settings', title: 'Set Conversion Options', desc: 'Choose your desired output format (JPEG, PNG, or WebP) and adjust quality if needed.' },
+        { icon: 'code', title: 'Get Base64 String', desc: 'Click "Convert to Base64" to generate the encoded string. Copy or download the result.' }
+      ]
+    },
+    features: [
+      'Convert images to Base64 from multiple formats',
+      'Choose output format (JPEG, PNG, WebP)',
+      'Adjust quality settings for lossy formats',
+      'One-click copy to clipboard',
+      'Download Base64 string as text file',
+      'Real-time preview of original image',
+      'Drag and drop image upload',
+      'All processing done in your browser'
+    ],
+    faq: [
+      {
+        q: 'What is Base64 encoding?',
+        a: 'Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It\'s commonly used to embed images in HTML, CSS, or JSON files.'
+      },
+      {
+        q: 'What image formats are supported?',
+        a: 'You can convert images from any common format (JPG, PNG, WebP, GIF, etc.) and output them as Base64 encoded JPEG, PNG, or WebP.'
+      },
+      {
+        q: 'Why would I need to convert images to Base64?',
+        a: 'Base64 encoding is useful for embedding images directly in code, reducing HTTP requests, and including images in JSON data or CSS files.'
+      },
+      {
+        q: 'Is there a file size limit?',
+        a: 'No, there are no file size limitations. However, very large images might take longer to process.'
+      },
+      {
+        q: 'Are my images secure?',
+        a: 'Yes, all conversion is done locally in your browser. Your images are never uploaded to our servers.'
+      }
+    ]
+  },
+  'convert-webp-to-png': {
+    hero: {
+      icon: 'image',
+      iconBg: 'gradient-bg',
+      title: 'WebP to PNG Converter',
+      subtitle: 'Convert WebP images to PNG format with ease. Free online tool for high-quality image conversion.',
+      features: [
+        { icon: 'shield', color: 'text-green-500', label: 'Lossless Quality' },
+        { icon: 'image', color: 'text-blue-500', label: 'Format Support' },
+        { icon: 'globe', color: 'text-purple-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is WebP to PNG Converter?',
+      content: `The WebP to PNG Converter is a free online tool that allows you to convert WebP images to PNG format. WebP is a modern image format developed by Google that provides superior compression for images on the web, while PNG is a widely supported format that offers lossless compression and transparency support.<br><br><strong>Conversion options:</strong> You can convert WebP images to PNG format while maintaining image quality and transparency. The tool supports all WebP image types and provides instant conversion without any software installation required. All processing is done in your browser for privacy and speed.`
+    },
+    whyUse: {
+      title: 'Why Use WebP to PNG Converter?',
+      items: [
+        { icon: 'shield', title: 'Wide Compatibility', desc: 'PNG format is supported by virtually all image viewers and editors, making it more accessible than WebP.' },
+        { icon: 'image', title: 'Lossless Quality', desc: 'PNG format provides lossless compression, ensuring your images maintain their original quality.' },
+        { icon: 'layers', title: 'Transparency Support', desc: 'PNG format supports alpha channel transparency, making it ideal for images with transparent backgrounds.' },
+        { icon: 'zap', title: 'Instant Conversion', desc: 'Convert your WebP images to PNG quickly and easily with our browser-based tool.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use WebP to PNG Converter',
+      steps: [
+        { icon: 'upload', title: 'Upload WebP Image', desc: 'Click the upload area or drag and drop your WebP image file into the designated zone.' },
+        { icon: 'settings', title: 'Adjust Settings', desc: 'Set the desired quality for your PNG output using the quality slider.' },
+        { icon: 'image', title: 'Convert to PNG', desc: 'Click the "Convert to PNG" button to start the conversion process.' },
+        { icon: 'download', title: 'Download PNG', desc: 'Once the conversion is complete, click the "Download PNG" button to save your converted image.' }
+      ]
+    },
+    features: [
+      'Convert WebP images to PNG format',
+      'Preserve image quality and transparency',
+      'Support for all WebP image types',
+      'Instant conversion process',
+      'No software installation required',
+      'Drag and drop image upload',
+      'Quality control for output',
+      'All processing done in your browser'
+    ],
+    faq: [
+      {
+        q: 'What is WebP format?',
+        a: 'WebP is a modern image format developed by Google that provides superior compression for images on the web. It supports both lossy and lossless compression, as well as transparency and animation.'
+      },
+      {
+        q: 'Why convert WebP to PNG?',
+        a: 'While WebP offers better compression, PNG is more widely supported and provides lossless quality. Converting to PNG can be necessary for compatibility with older systems or when you need to maintain the highest possible image quality.'
+      },
+      {
+        q: 'Will the conversion affect image quality?',
+        a: 'No, converting from WebP to PNG will not affect the image quality. PNG format provides lossless compression, ensuring your images maintain their original quality.'
+      },
+      {
+        q: 'Is there a file size limit?',
+        a: 'No, there is no file size limit for converting WebP images to PNG format. You can convert images of any size.'
+      },
+      {
+        q: 'Are my images secure?',
+        a: 'Yes, your images are completely secure. All conversions are done locally in your browser, and your images are never uploaded to our servers.'
+      }
+    ]
+  },
+  'gif-maker': {
+    hero: {
+      icon: 'image-play',
+      iconBg: 'gradient-bg',
+      title: 'GIF Maker',
+      subtitle: 'Create animated GIFs from your images with customizable frame timing and effects',
+      features: [
+        { icon: 'image', color: 'text-blue-500', label: 'Multiple Frames' },
+        { icon: 'clock', color: 'text-purple-500', label: 'Custom Timing' },
+        { icon: 'globe', color: 'text-green-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is GIF Maker?',
+      content: `The GIF Maker is a free online tool that allows you to create animated GIFs from multiple images. GIF (Graphics Interchange Format) is a bitmap image format that supports both static and animated images, making it perfect for creating simple animations, memes, and short video clips.<br><br><strong>Creation options:</strong> You can upload multiple images as frames, adjust the duration of each frame, set the loop count, and preview your animation before creating the final GIF. The tool supports various image formats and provides instant conversion without any software installation required. All processing is done in your browser for privacy and speed.`
+    },
+    whyUse: {
+      title: 'Why Use GIF Maker?',
+      items: [
+        { icon: 'image', title: 'Easy Animation', desc: 'Create animated GIFs from your images with just a few clicks, no complex software required.' },
+        { icon: 'clock', title: 'Custom Timing', desc: 'Control the duration of each frame to create smooth or dramatic animations.' },
+        { icon: 'repeat', title: 'Loop Control', desc: 'Set how many times your GIF should loop, from once to infinite.' },
+        { icon: 'eye', title: 'Live Preview', desc: 'Preview your animation in real-time before creating the final GIF.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use GIF Maker',
+      steps: [
+        { icon: 'upload', title: 'Upload Images', desc: 'Click the upload area or drag and drop your image files. You can select multiple images to use as frames.' },
+        { icon: 'settings', title: 'Adjust Settings', desc: 'Set the duration for each frame and choose how many times the GIF should loop.' },
+        { icon: 'play', title: 'Preview Animation', desc: 'Click the "Preview GIF" button to see how your animation looks.' },
+        { icon: 'image', title: 'Create & Download', desc: 'Click "Create GIF" to generate your animated GIF, then download it to your device.' }
+      ]
+    },
+    features: [
+      'Create GIFs from multiple image frames',
+      'Customize frame duration for each image',
+      'Set loop count (infinite or specific number)',
+      'Live preview of animation',
+      'Drag and drop image upload',
+      'Support for various image formats',
+      'Instant conversion process',
+      'All processing done in your browser'
+    ],
+    faq: [
+      {
+        q: 'What is a GIF?',
+        a: 'A GIF (Graphics Interchange Format) is a bitmap image format that supports both static and animated images. It\'s widely used for simple animations, memes, and short video clips on the web.'
+      },
+      {
+        q: 'What image formats are supported?',
+        a: 'You can use various image formats including JPG, PNG, WebP, and more. The tool will convert them to GIF format.'
+      },
+      {
+        q: 'How many frames can I use?',
+        a: 'You can use as many frames as you need, but keep in mind that more frames will result in a larger file size.'
+      },
+      {
+        q: 'Can I adjust the timing of each frame?',
+        a: 'Yes, you can set a custom duration for each frame in milliseconds, allowing you to create smooth or dramatic animations.'
+      },
+      {
+        q: 'Are my images secure?',
+        a: 'Yes, all processing is done locally in your browser. Your images are never uploaded to our servers.'
+      }
+    ]
+  },
+  'qr-code-generator': {
+    hero: {
+      icon: 'qr-code',
+      iconBg: 'gradient-bg',
+      title: 'QR Code Generator',
+      subtitle: 'Create QR codes for URLs, text, contact information, and more with size and error correction options',
+      features: [
+        { icon: 'shield', color: 'text-green-500', label: 'Secure Generation' },
+        { icon: 'zap', color: 'text-purple-500', label: 'Instant Results' },
+        { icon: 'globe', color: 'text-blue-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is QR Code Generator?',
+      content: `The QR Code Generator is a free online tool that allows you to create QR codes for various purposes. QR (Quick Response) codes are two-dimensional barcodes that can store different types of information such as URLs, text, contact details, and more.<br><br><strong>Options:</strong> You can adjust the size and error correction level of your QR code. All QR codes are generated with a black foreground and white background for maximum compatibility and scan reliability.`
+    },
+    whyUse: {
+      title: 'Why Use QR Code Generator?',
+      items: [
+        { icon: 'shield', title: 'Error Correction', desc: 'Choose from multiple error correction levels to ensure your QR code remains scannable even if partially damaged.' },
+        { icon: 'ruler', title: 'Custom Size', desc: 'Set the size of your QR code to fit your needs, from 50px to 1000px.' },
+        { icon: 'globe', title: 'Universal Compatibility', desc: 'Generated QR codes are compatible with all modern QR code scanners and mobile devices.' },
+        { icon: 'zap', title: 'Instant Generation', desc: 'Create and download QR codes instantly without any software installation required.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use QR Code Generator',
+      steps: [
+        { icon: 'edit', title: 'Enter Content', desc: 'Type or paste the text, URL, or other content you want to encode in the QR code.' },
+        { icon: 'settings', title: 'Set Size & Error Correction', desc: 'Adjust the size and error correction level to match your needs.' },
+        { icon: 'wand-2', title: 'Generate QR Code', desc: 'Click the "Generate QR Code" button to create your QR code.' },
+        { icon: 'download', title: 'Download', desc: 'Download your QR code as a PNG image for use in your projects.' }
+      ]
+    },
+    features: [
+      'Generate QR codes for URLs, text, contact information, and more',
+      'Customize QR code size from 50px to 1000px',
+      'Choose from multiple error correction levels (L, M, Q, H)',
+      'All QR codes are black on white for maximum compatibility',
+      'Instant preview of generated QR code',
+      'Download QR code as PNG image',
+      'All processing done in your browser for privacy and security',
+      'No software installation required'
+    ],
+    faq: [
+      {
+        q: 'What is error correction in QR codes?',
+        a: 'Error correction allows QR codes to remain scannable even if they are partially damaged or obscured. Higher error correction levels (H) provide better recovery but require more space, while lower levels (L) use less space but are more vulnerable to damage.'
+      },
+      {
+        q: 'What types of content can I encode in a QR code?',
+        a: 'You can encode various types of content including URLs, plain text, contact information (vCard), email addresses, phone numbers, SMS messages, and more.'
+      },
+      {
+        q: 'Can I customize the colors of my QR code?',
+        a: 'No, this tool generates QR codes with a black foreground and white background only. This ensures the highest level of compatibility and scan reliability.'
+      },
+      {
+        q: 'What size should I make my QR code?',
+        a: 'The size depends on your use case. For digital use, 200-300px is usually sufficient. For printing, you may want to use a larger size (500px+) to ensure good quality.'
+      },
+      {
+        q: 'Are my QR codes secure?',
+        a: 'Yes, all QR code generation is done locally in your browser. Your data is never sent to our servers, ensuring complete privacy and security.'
+      }
+    ]
+  },
+  'screenshot-to-pdf-converter': {
+    hero: {
+      icon: 'file',
+      iconBg: 'gradient-bg',
+      title: 'Screenshot to PDF Converter',
+      subtitle: 'Combine your screenshots into a single PDF file online. Free, fast, and privacy-friendly.',
+      features: [
+        { icon: 'image', color: 'text-blue-500', label: 'Multiple Images' },
+        { icon: 'layers', color: 'text-purple-500', label: 'Reorder & Preview' },
+        { icon: 'globe', color: 'text-green-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is Screenshot to PDF Converter?',
+      content: `Screenshot to PDF Converter is a free online tool that allows you to combine multiple screenshots or images into a single PDF document. Simply upload your screenshots, arrange them in your preferred order, and download the resulting PDF. All processing is done in your browser for maximum privacy.`
+    },
+    whyUse: {
+      title: 'Why Use Screenshot to PDF Converter?',
+      items: [
+        { icon: 'image', title: 'Combine Screenshots', desc: 'Merge multiple screenshots or images into a single, easy-to-share PDF file.' },
+        { icon: 'layers', title: 'Reorder & Preview', desc: 'Drag to reorder your images and preview the result before converting.' },
+        { icon: 'shield', title: 'Privacy First', desc: 'All processing is done locally in your browser. Your images are never uploaded.' },
+        { icon: 'zap', title: 'Instant Conversion', desc: 'Create and download your PDF instantly, no signup or installation required.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use Screenshot to PDF Converter',
+      steps: [
+        { icon: 'upload', title: 'Upload Screenshots', desc: 'Click the upload area or drag and drop your screenshots or images.' },
+        { icon: 'settings', title: 'Reorder & Preview', desc: 'Arrange your images in the desired order and preview them.' },
+        { icon: 'file-text', title: 'Convert to PDF', desc: 'Click "Convert to PDF" to generate your PDF document.' },
+        { icon: 'download', title: 'Download PDF', desc: 'Download your combined PDF file instantly.' }
+      ]
+    },
+    features: [
+      'Combine multiple screenshots or images into a single PDF',
+      'Drag-and-drop upload and easy reordering',
+      'Preview images before conversion',
+      'All processing is done in your browser for privacy',
+      'No file size or image count limits (browser memory applies)',
+      'Download PDF instantly, no signup required',
+      'Supports PNG, JPG, JPEG, BMP, GIF, WebP formats',
+      'Modern, mobile-friendly interface'
+    ],
+    faq: [
+      {
+        q: 'What image formats are supported?',
+        a: 'You can upload PNG, JPG, JPEG, BMP, GIF, and WebP images.'
+      },
+      {
+        q: 'Is there a limit to the number of screenshots I can combine?',
+        a: 'There is no hard limit, but very large numbers of images may be limited by your browser memory.'
+      },
+      {
+        q: 'Are my images uploaded to a server?',
+        a: 'No, all processing is done locally in your browser. Your images never leave your device.'
+      },
+      {
+        q: 'Can I reorder the screenshots before creating the PDF?',
+        a: 'Yes, you can drag to reorder your images before converting to PDF.'
+      },
+      {
+        q: 'Is this tool free to use?',
+        a: 'Yes, Screenshot to PDF Converter is completely free and requires no signup.'
+      }
+    ]
+  },
 };
 
 function renderToolSections(toolName) {

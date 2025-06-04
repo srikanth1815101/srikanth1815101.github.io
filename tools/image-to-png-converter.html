@@ -158,30 +158,6 @@
       );
     }
   </script>
-  <script>
-    // Debug: Log tool data and similar tools logic
-    console.log('window.tools:', window.tools);
-    console.log('window.categories:', window.categories);
-    console.log('window.CSRGO_TOOL_INFO:', window.CSRGO_TOOL_INFO);
-    if (!window.tools) {
-      console.error('window.tools is not defined');
-    } else {
-      const current = window.tools.find(t => t.url === "tools/image-to-png-converter.html");
-      if (!current) {
-        console.error('Current tool not found in window.tools');
-      } else {
-        console.log('Current tool:', current);
-        const similar = window.tools.filter(
-          t => t.category === current.category && t.url !== current.url
-        );
-        if (similar.length === 0) {
-          console.warn('No similar tools found for this category:', current.category);
-        } else {
-          console.log('Similar tools:', similar);
-        }
-      }
-    }
-  </script>
   <script src="../components/include.js"></script>
   <script src="../components/similar-tools.js"></script>
   <script src="../tool-sections.js"></script>
