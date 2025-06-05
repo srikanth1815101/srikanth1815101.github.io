@@ -235,10 +235,45 @@
           restore: false,
           guides: true,
           center: true,
-          highlight: false,
+          highlight: true,
           cropBoxMovable: true,
           cropBoxResizable: true,
           toggleDragModeOnDblclick: false,
+          // Enhanced mobile support
+          responsive: true,
+          touchDragZoom: true,
+          zoomable: true,
+          zoomOnTouch: true,
+          zoomOnWheel: true,
+          // Improved handles visibility
+          cropBoxMovable: true,
+          cropBoxResizable: true,
+          handles: 'all',
+          // Custom styles for better visibility
+          ready: function() {
+            // Add custom styles for better handle visibility
+            const style = document.createElement('style');
+            style.textContent = `
+              .cropper-point {
+                background-color: #fff !important;
+                border: 2px solid #0ea5e9 !important;
+                width: 16px !important;
+                height: 16px !important;
+                opacity: 1 !important;
+              }
+              .cropper-line {
+                background-color: #0ea5e9 !important;
+                opacity: 0.5 !important;
+              }
+              .cropper-view-box {
+                outline: 2px solid #0ea5e9 !important;
+              }
+              .cropper-bg {
+                background-color: rgba(0, 0, 0, 0.5) !important;
+              }
+            `;
+            document.head.appendChild(style);
+          }
         });
       };
       reader.readAsDataURL(file);

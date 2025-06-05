@@ -22,10 +22,27 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://csrgo.com/",
+    "@type": "Organization",
+    "@id": "https://csrgo.com/#organization",
+    "url": "https://csrgo.com",
     "name": "CSRGO Tools",
-    "logo": "https://csrgo.com/logo.png"
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://csrgo.com/logo.png",
+      "width": "32",
+      "height": "32"
+    },
+    "sameAs": [
+      "https://csrgo.com/about.html",
+      "https://csrgo.com/contact.html",
+      "https://csrgo.com/blog.html"
+    ],
+    "description": "Your one-stop destination for free online tools",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://csrgo.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>

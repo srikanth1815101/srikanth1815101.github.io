@@ -567,12 +567,12 @@ const TOOL_SECTIONS_DATA = {
       }
     ]
   },
-  'screenshot-to-pdf-converter': {
+  'image-to-pdf-converter': {
     hero: {
       icon: 'file',
       iconBg: 'gradient-bg',
-      title: 'Screenshot to PDF Converter',
-      subtitle: 'Combine your screenshots into a single PDF file online. Free, fast, and privacy-friendly.',
+      title: 'Image to PDF Converter',
+      subtitle: 'Combine your images into a single PDF file online. Free, fast, and privacy-friendly.',
       features: [
         { icon: 'image', color: 'text-blue-500', label: 'Multiple Images' },
         { icon: 'layers', color: 'text-purple-500', label: 'Reorder & Preview' },
@@ -580,29 +580,29 @@ const TOOL_SECTIONS_DATA = {
       ]
     },
     whatIs: {
-      title: 'What is Screenshot to PDF Converter?',
-      content: `Screenshot to PDF Converter is a free online tool that allows you to combine multiple screenshots or images into a single PDF document. Simply upload your screenshots, arrange them in your preferred order, and download the resulting PDF. All processing is done in your browser for maximum privacy.`
+      title: 'What is Image to PDF Converter?',
+      content: `Image to PDF Converter is a free online tool that allows you to combine multiple images into a single PDF document. Simply upload your images, arrange them in your preferred order, and download the resulting PDF. All processing is done in your browser for maximum privacy.`
     },
     whyUse: {
-      title: 'Why Use Screenshot to PDF Converter?',
+      title: 'Why Use Image to PDF Converter?',
       items: [
-        { icon: 'image', title: 'Combine Screenshots', desc: 'Merge multiple screenshots or images into a single, easy-to-share PDF file.' },
+        { icon: 'image', title: 'Combine Images', desc: 'Merge multiple images into a single, easy-to-share PDF file.' },
         { icon: 'layers', title: 'Reorder & Preview', desc: 'Drag to reorder your images and preview the result before converting.' },
         { icon: 'shield', title: 'Privacy First', desc: 'All processing is done locally in your browser. Your images are never uploaded.' },
         { icon: 'zap', title: 'Instant Conversion', desc: 'Create and download your PDF instantly, no signup or installation required.' }
       ]
     },
     howToUse: {
-      title: 'How to Use Screenshot to PDF Converter',
+      title: 'How to Use Image to PDF Converter',
       steps: [
-        { icon: 'upload', title: 'Upload Screenshots', desc: 'Click the upload area or drag and drop your screenshots or images.' },
+        { icon: 'upload', title: 'Upload Images', desc: 'Click the upload area or drag and drop your images.' },
         { icon: 'settings', title: 'Reorder & Preview', desc: 'Arrange your images in the desired order and preview them.' },
         { icon: 'file-text', title: 'Convert to PDF', desc: 'Click "Convert to PDF" to generate your PDF document.' },
         { icon: 'download', title: 'Download PDF', desc: 'Download your combined PDF file instantly.' }
       ]
     },
     features: [
-      'Combine multiple screenshots or images into a single PDF',
+      'Combine multiple images into a single PDF',
       'Drag-and-drop upload and easy reordering',
       'Preview images before conversion',
       'All processing is done in your browser for privacy',
@@ -617,7 +617,7 @@ const TOOL_SECTIONS_DATA = {
         a: 'You can upload PNG, JPG, JPEG, BMP, GIF, and WebP images.'
       },
       {
-        q: 'Is there a limit to the number of screenshots I can combine?',
+        q: 'Is there a limit to the number of images I can combine?',
         a: 'There is no hard limit, but very large numbers of images may be limited by your browser memory.'
       },
       {
@@ -625,12 +625,317 @@ const TOOL_SECTIONS_DATA = {
         a: 'No, all processing is done locally in your browser. Your images never leave your device.'
       },
       {
-        q: 'Can I reorder the screenshots before creating the PDF?',
+        q: 'Can I reorder the images before creating the PDF?',
         a: 'Yes, you can drag to reorder your images before converting to PDF.'
       },
       {
         q: 'Is this tool free to use?',
-        a: 'Yes, Screenshot to PDF Converter is completely free and requires no signup.'
+        a: 'Yes, Image to PDF Converter is completely free and requires no signup.'
+      }
+    ]
+  },
+  'word-counter': {
+    hero: {
+      icon: 'whole-word',
+      iconBg: 'gradient-bg',
+      title: 'Word Counter',
+      subtitle: 'Count words, characters, sentences, and paragraphs in your text. Get detailed statistics and reading time estimates.',
+      features: [
+        { icon: 'zap', color: 'text-blue-500', label: 'Real-time Analysis' },
+        { icon: 'chart-bar', color: 'text-purple-500', label: 'Detailed Stats' },
+        { icon: 'globe', color: 'text-green-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is Word Counter?',
+      content: `The Word Counter is a free online tool that helps you analyze text by counting various elements such as words, characters, sentences, and paragraphs. It's particularly useful for writers, students, and professionals who need to meet specific length requirements or analyze their content.<br><br><strong>Analysis features:</strong> Our word counter provides detailed statistics about your text, including word count, character count, sentence count, paragraph count, reading time, speaking time, and unique words count. All processing is done in your browser for privacy and speed.`
+    },
+    whyUse: {
+      title: 'Why Use Word Counter?',
+      items: [
+        { icon: 'zap', title: 'Real-time Analysis', desc: 'Get instant feedback as you type or paste your text, with all statistics updating automatically.' },
+        { icon: 'chart-bar', title: 'Comprehensive Stats', desc: 'Track multiple metrics including words, characters, sentences, paragraphs, and reading time.' },
+        { icon: 'clock', title: 'Time Estimates', desc: 'Calculate reading and speaking time based on standard rates for better content planning.' },
+        { icon: 'shield', title: 'Privacy First', desc: 'All text analysis happens in your browser. Your content never leaves your device.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use Word Counter',
+      steps: [
+        { icon: 'edit', title: 'Enter Your Text', desc: 'Type or paste your text into the input box. The counter updates automatically as you type.' },
+        { icon: 'chart-bar', title: 'View Statistics', desc: 'Watch the statistics update in real-time, showing word count, character count, and more.' },
+        { icon: 'copy', title: 'Copy Text', desc: 'Use the copy button to easily copy your text to the clipboard.' },
+        { icon: 'trash-2', title: 'Clear Text', desc: 'Use the clear button to reset the counter and start over.' }
+      ]
+    },
+    features: [
+      'Real-time word, character, sentence, and paragraph counting',
+      'Reading time estimation based on average reading speed',
+      'Speaking time calculation for presentation planning',
+      'Unique words analysis for vocabulary assessment',
+      'Copy and clear functionality for easy text management',
+      'Mobile-responsive design for use on any device',
+      'No data storage or server processing',
+      'Instant updates as you type or paste text'
+    ],
+    faq: [
+      {
+        q: 'How accurate is the word count?',
+        a: 'Our word counter is highly accurate, counting words based on standard word separation rules. It handles various text formats and special characters correctly.'
+      },
+      {
+        q: 'Does the tool count spaces as characters?',
+        a: 'Yes, the character count includes spaces. This is useful for applications that have character limits including spaces.'
+      },
+      {
+        q: 'How is reading time calculated?',
+        a: 'Reading time is calculated based on an average reading speed of 200 words per minute, which is the standard reading speed for adults.'
+      },
+      {
+        q: 'Is my text saved or stored?',
+        a: 'No, your text is processed entirely in your browser and is never sent to our servers. This ensures complete privacy.'
+      },
+      {
+        q: 'Can I use this tool on mobile devices?',
+        a: 'Yes, our word counter is fully responsive and works perfectly on all devices, including smartphones and tablets.'
+      }
+    ]
+  },
+  'white-space-removal': {
+    hero: {
+      icon: 'letter-text',
+      iconBg: 'gradient-bg',
+      title: 'White Space Removal',
+      subtitle: 'Remove extra spaces, tabs, and line breaks from your text. Clean up text formatting with ease.',
+      features: [
+        { icon: 'wand-2', color: 'text-blue-500', label: 'Smart Cleaning' },
+        { icon: 'settings', color: 'text-purple-500', label: 'Custom Options' },
+        { icon: 'globe', color: 'text-green-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is White Space Removal?',
+      content: `The White Space Removal tool is a free online utility that helps you clean up text by removing unnecessary spaces, tabs, and line breaks. It's perfect for formatting text for various purposes, from code snippets to content editing.<br><br><strong>Cleaning options:</strong> You can choose to remove extra spaces, tabs, line breaks, and trim edges of your text. The tool processes your text instantly in your browser, ensuring privacy and speed.`
+    },
+    whyUse: {
+      title: 'Why Use White Space Removal?',
+      items: [
+        { icon: 'wand-2', title: 'Smart Text Cleaning', desc: 'Remove unnecessary spaces, tabs, and line breaks with a single click.' },
+        { icon: 'settings', title: 'Customizable Options', desc: 'Choose which types of white space to remove based on your needs.' },
+        { icon: 'zap', title: 'Instant Results', desc: 'Get clean text instantly with real-time processing.' },
+        { icon: 'shield', title: 'Privacy First', desc: 'All text processing happens in your browser. Your content never leaves your device.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use White Space Removal',
+      steps: [
+        { icon: 'edit', title: 'Enter Your Text', desc: 'Type or paste your text into the input box.' },
+        { icon: 'settings', title: 'Select Options', desc: 'Choose which types of white space to remove (spaces, tabs, line breaks, trim edges).' },
+        { icon: 'wand-2', title: 'Clean Text', desc: 'Click the "Clean Text" button to process your text.' },
+        { icon: 'copy', title: 'Copy Result', desc: 'Use the copy button to copy the cleaned text to your clipboard.' }
+      ]
+    },
+    features: [
+      'Remove extra spaces between words',
+      'Remove tab characters',
+      'Remove line breaks and newlines',
+      'Trim spaces from text edges',
+      'Customizable cleaning options',
+      'Copy cleaned text to clipboard',
+      'Clear text with one click',
+      'All processing done in your browser'
+    ],
+    faq: [
+      {
+        q: 'What types of white space can be removed?',
+        a: 'The tool can remove extra spaces between words, tab characters, line breaks, and trim spaces from the beginning and end of text.'
+      },
+      {
+        q: 'Will the tool affect my text formatting?',
+        a: 'The tool only removes white space characters (spaces, tabs, line breaks) and doesn\'t modify any other text formatting or content.'
+      },
+      {
+        q: 'Can I choose which types of white space to remove?',
+        a: 'Yes, you can select which types of white space to remove using the checkboxes before processing your text.'
+      },
+      {
+        q: 'Is my text saved or stored?',
+        a: 'No, your text is processed entirely in your browser and is never sent to our servers. This ensures complete privacy.'
+      },
+      {
+        q: 'Can I use this tool on mobile devices?',
+        a: 'Yes, our white space removal tool is fully responsive and works perfectly on all devices, including smartphones and tablets.'
+      }
+    ]
+  },
+  'case-converter': {
+    hero: {
+      icon: 'type',
+      iconBg: 'gradient-bg',
+      title: 'Case Converter',
+      subtitle: 'Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and more. Free online case conversion tool for text formatting.',
+      features: [
+        { icon: 'zap', color: 'text-blue-500', label: 'Instant Conversion' },
+        { icon: 'type', color: 'text-purple-500', label: 'Multiple Formats' },
+        { icon: 'globe', color: 'text-green-500', label: 'Browser-based' }
+      ]
+    },
+    whatIs: {
+      title: 'What is a Case Converter?',
+      content: `<p>A case converter is a text formatting tool that transforms text into different capitalization styles. It's particularly useful for:</p>
+      <ul class="list-disc pl-6 mt-4 space-y-2">
+        <li>Converting text to UPPERCASE for emphasis or headings</li>
+        <li>Transforming text to lowercase for consistent formatting</li>
+        <li>Creating Title Case for proper nouns and titles</li>
+        <li>Applying Sentence case for proper sentence structure</li>
+        <li>Generating alternating case for creative text styling</li>
+        <li>Inverting case for special formatting needs</li>
+      </ul>`
+    },
+    whyUse: {
+      title: 'Why Use Our Case Converter?',
+      items: [
+        {
+          icon: 'zap',
+          title: 'Instant Conversion',
+          description: 'Get immediate results with our fast and efficient case conversion tool.'
+        },
+        {
+          icon: 'type',
+          title: 'Multiple Formats',
+          description: 'Choose from various case styles including UPPERCASE, lowercase, Title Case, and more.'
+        },
+        {
+          icon: 'shield',
+          title: 'Privacy Focused',
+          description: 'Your text is processed locally in your browser - we never store or transmit your content.'
+        },
+        {
+          icon: 'globe',
+          title: 'Accessible Anywhere',
+          description: 'Use our tool on any device with a web browser - no installation required.'
+        }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use',
+      steps: [
+        {
+          icon: 'type',
+          title: 'Enter Your Text',
+          description: 'Type or paste your text into the input area.'
+        },
+        {
+          icon: 'wand-2',
+          title: 'Choose Case Style',
+          description: 'Select your desired case conversion style from the available options.'
+        },
+        {
+          icon: 'copy',
+          title: 'Copy Result',
+          description: 'Click the copy button to copy the converted text to your clipboard.'
+        }
+      ]
+    },
+    features: [
+      'Convert text to UPPERCASE',
+      'Transform text to lowercase',
+      'Create Title Case formatting',
+      'Apply Sentence case structure',
+      'Generate alternating case text',
+      'Invert text case',
+      'Instant conversion',
+      'Copy to clipboard functionality',
+      'Clear text option',
+      'Mobile-friendly interface'
+    ],
+    faq: [
+      {
+        q: 'What types of case conversion are available?',
+        a: 'Our tool offers six different case conversion options: UPPERCASE, lowercase, Title Case, Sentence case, alternating case, and inverse case.'
+      },
+      {
+        q: 'Is my text safe when using this tool?',
+        a: 'Yes, your text is completely safe. All processing happens locally in your browser, and we never store or transmit your content.'
+      },
+      {
+        q: 'Can I use this tool on mobile devices?',
+        a: 'Yes, our case converter is fully responsive and works on any device with a web browser, including smartphones and tablets.'
+      },
+      {
+        q: 'How do I copy the converted text?',
+        a: 'Simply click the "Copy" button after converting your text, and it will be copied to your clipboard automatically.'
+      },
+      {
+        q: 'Is there a limit to how much text I can convert?',
+        a: 'There is no strict limit, but for optimal performance, we recommend converting text under 100,000 characters at a time.'
+      }
+    ]
+  },
+  'text-to-handwriting': {
+    hero: {
+      icon: 'pen-tool',
+      iconBg: 'gradient-bg',
+      title: 'Text to Handwriting Converter',
+      subtitle: 'Transform your digital text into beautiful handwriting styles with customizable paper backgrounds',
+      features: [
+        { icon: 'pen-tool', color: 'text-blue-500', label: 'Multiple Styles' },
+        { icon: 'layout', color: 'text-purple-500', label: 'Paper Options' },
+        { icon: 'download', color: 'text-green-500', label: 'High Quality' }
+      ]
+    },
+    whatIs: {
+      title: 'What is Text to Handwriting Converter?',
+      content: `The Text to Handwriting Converter is a free online tool that transforms your digital text into realistic handwriting styles. It's perfect for creating personalized notes, cards, or adding a human touch to your digital content.<br><br><strong>Conversion options:</strong> Choose from multiple handwriting styles with live previews, various paper backgrounds (lined, blank, grid), and customization options like font size, line spacing, and ink color. All processing is done in your browser for privacy and speed.`
+    },
+    whyUse: {
+      title: 'Why Use Text to Handwriting Converter?',
+      items: [
+        { icon: 'pen-tool', title: 'Multiple Styles', desc: 'Choose from various handwriting styles including cursive, print, neat, and casual, with live previews of each style.' },
+        { icon: 'layout', title: 'Paper Options', desc: 'Select from lined, blank, or grid paper backgrounds with proper spacing and alignment for authentic results.' },
+        { icon: 'sliders', title: 'Customization', desc: 'Adjust font size, line spacing, and ink color to create the perfect handwritten look for your needs.' },
+        { icon: 'download', title: 'High Quality', desc: 'Download your converted text as a high-resolution PNG image, perfect for any use case.' }
+      ]
+    },
+    howToUse: {
+      title: 'How to Use Text to Handwriting Converter',
+      steps: [
+        { icon: 'type', title: 'Enter Your Text', desc: 'Type or paste the text you want to convert into handwriting.' },
+        { icon: 'sliders', title: 'Choose Style', desc: 'Select your preferred handwriting style and see a live preview of how it looks.' },
+        { icon: 'settings', title: 'Customize', desc: 'Adjust font size, line spacing, and ink color to match your preferences.' },
+        { icon: 'download', title: 'Download', desc: 'Click the download button to save your handwritten text as a PNG image.' }
+      ]
+    },
+    features: [
+      'Convert text to multiple handwriting styles',
+      'Choose from various paper backgrounds (lined, blank, grid)',
+      'Adjustable font size and line spacing',
+      'Custom ink color selection',
+      'Real-time preview of changes',
+      'Download as high-quality PNG image',
+      'Mobile-friendly interface',
+      'All processing done in your browser'
+    ],
+    faq: [
+      {
+        q: 'What file format is the output?',
+        a: 'The converted text is downloaded as a high-quality PNG image file, which can be used in any project or shared easily.'
+      },
+      {
+        q: 'Can I use the converted text commercially?',
+        a: 'Yes, you can use the converted text for both personal and commercial purposes. The handwriting fonts used are free for commercial use.'
+      },
+      {
+        q: 'Is there a limit to how much text I can convert?',
+        a: 'There is no strict limit, but for best results, we recommend converting text in smaller chunks to maintain quality and readability.'
+      },
+      {
+        q: 'Can I customize the handwriting style?',
+        a: 'Yes, you can choose from multiple handwriting styles and adjust various parameters like size, spacing, and color to create your desired look.'
+      },
+      {
+        q: 'Are my texts secure?',
+        a: 'Yes, all conversion is done locally in your browser. Your text is never uploaded to our servers.'
       }
     ]
   },

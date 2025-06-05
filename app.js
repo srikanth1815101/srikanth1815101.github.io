@@ -8,25 +8,11 @@ window.categories = [
     color: 'bg-green-50 text-green-600',
   },
   {
-    id: 'seo-tools',
-    name: 'SEO Tools',
-    description: 'Optimize your website for search engines',
-    icon: 'search',
-    color: 'bg-purple-50 text-purple-600',
-  },
-  {
     id: 'text-tools',
     name: 'Text Tools',
     description: 'Text manipulation and analysis tools',
     icon: 'type',
     color: 'bg-blue-50 text-blue-600',
-  },
-  {
-    id: 'developer-tools',
-    name: 'Developer Tools',
-    description: 'Essential tools for web developers',
-    icon: 'code',
-    color: 'bg-orange-50 text-orange-600',
   },
   {
     id: 'math-calculators',
@@ -41,6 +27,20 @@ window.categories = [
     description: 'Convert units easily',
     icon: 'ruler',
     color: 'bg-yellow-50 text-yellow-600',
+  },
+  {
+    id: 'seo-tools',
+    name: 'SEO Tools',
+    description: 'Optimize your website for search engines',
+    icon: 'search',
+    color: 'bg-purple-50 text-purple-600',
+  },
+  {
+    id: 'developer-tools',
+    name: 'Developer Tools',
+    description: 'Essential tools for web developers',
+    icon: 'code',
+    color: 'bg-orange-50 text-orange-600',
   },
   {
     id: 'security-tools',
@@ -141,10 +141,10 @@ window.tools = [
   },
   {
     id: 'screenshot-to-pdf',
-    name: 'Screenshot to PDF Converter',
+    name: 'Image to PDF Converter',
     description: 'Convert screenshots to PDF format',
     icon: 'file',
-    url: 'tools/screenshot-to-pdf-converter.html',
+    url: 'tools/image-to-pdf-converter.html',
     category: 'image-tools',
   },
 
@@ -240,12 +240,13 @@ window.tools = [
     category: 'text-tools',
   },
   {
-    id: 'character-counter',
-    name: 'Character Counter',
-    description: 'Count characters in your text',
-    icon: 'case-sensitive',
-    url: 'tools/character-counter.html',
+    id: 'white-space-removal',
+    name: 'White Space Removal',
+    description: 'Remove extra spaces, tabs, and line breaks',
+    icon: 'letter-text',
+    url: 'tools/white-space-removal.html',
     category: 'text-tools',
+    keywords: ['white space', 'text cleaning', 'format text', 'remove spaces', 'remove tabs', 'remove line breaks', 'text formatting', 'clean text']
   },
   {
     id: 'case-converter',
@@ -256,11 +257,11 @@ window.tools = [
     category: 'text-tools',
   },
   {
-    id: 'plagiarism-checker',
-    name: 'Plagiarism Checker',
-    description: 'Check text for plagiarism',
-    icon: 'copy',
-    url: 'tools/plagiarism-checker.html',
+    id: 'text-to-handwriting',
+    name: 'Text to Handwriting Converter',
+    description: 'Convert your text into realistic handwriting',
+    icon: 'pen-tool',
+    url: 'tools/text-to-handwriting.html',
     category: 'text-tools',
   },
   {
