@@ -82,7 +82,7 @@
           <div class="space-y-8">
             <!-- Text Input Area -->
             <div class="space-y-4">
-              <div class="flex items-center justify-between">
+              <div class="flex flex-col gap-2 items-start md:flex-row md:items-center md:justify-between">
                 <h3 class="text-lg font-semibold flex items-center gap-2">
                   <i data-lucide="type" class="w-5 h-5 text-blue-600"></i>
                   Enter Your Text
@@ -125,6 +125,9 @@
                     <option value="permanent-marker" class="handwriting-option permanent-marker">Permanent Marker - Marker Style</option>
                   </optgroup>
                 </select>
+                <div id="handwritingStylePreview" class="mt-2 px-3 py-2 rounded bg-gray-50 border border-gray-200 text-base text-gray-700" style="min-height: 2.5em;">
+                  <span id="handwritingStylePreviewText">The quick brown fox jumps over the lazy dog</span>
+                </div>
               </div>
               <div class="space-y-2">
                 <label class="text-sm font-medium text-gray-700">Paper Style</label>
@@ -173,13 +176,13 @@
               <div class="bg-gray-50 rounded-xl p-6">
                 <h4 class="text-lg font-semibold mb-4">Preview</h4>
                 <div id="handwritingPreview" class="min-h-[200px] p-4 bg-white border border-gray-200 rounded-lg"></div>
-                <div class="mt-4 flex justify-end gap-3">
-                  <button id="downloadImageBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
-                    <i data-lucide="image" class="w-4 h-4"></i>
+                <div class="mt-4 flex flex-col gap-2 w-full">
+                  <button id="downloadImageBtn" class="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-medium text-base hover:from-blue-700 hover:to-indigo-700 transition-colors flex items-center justify-center gap-2 shadow">
+                    <i data-lucide="image" class="w-5 h-5"></i>
                     Download as Image
                   </button>
-                  <button id="downloadWordBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
-                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                  <button id="downloadWordBtn" class="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-medium text-base hover:from-blue-700 hover:to-indigo-700 transition-colors flex items-center justify-center gap-2 shadow">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
                     Export as Word
                   </button>
                 </div>
@@ -330,6 +333,16 @@
     paperStyle.addEventListener('change', updatePreview);
     inkColor.addEventListener('input', updatePreview);
 
+    // Live preview for handwriting style
+    const handwritingStylePreview = document.getElementById('handwritingStylePreview');
+    const handwritingStylePreviewText = document.getElementById('handwritingStylePreviewText');
+    function updateHandwritingStylePreview() {
+      handwritingStylePreviewText.style.fontFamily = getHandwritingFont(handwritingStyle.value);
+    }
+    handwritingStyle.addEventListener('change', updateHandwritingStylePreview);
+    // Initialize preview on load
+    updateHandwritingStylePreview();
+
     // Convert text to handwriting
     function convertToHandwriting() {
       const text = textInput.value.trim();
@@ -411,60 +424,74 @@
       link.click();
     }
 
-    // Export as Word document
+    // Export as Word document (with paper background as image)
     function exportAsWord() {
-      // Create a temporary div to hold the content
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = handwritingPreview.innerHTML;
-      tempDiv.style.fontFamily = getHandwritingFont(handwritingStyle.value);
-      tempDiv.style.fontSize = `${fontSize.value}px`;
-      tempDiv.style.lineHeight = lineSpacing.value;
-      tempDiv.style.color = inkColor.value;
-      tempDiv.style.backgroundColor = '#fff';
-      tempDiv.style.backgroundImage = getPaperStyle(paperStyle.value);
-      tempDiv.style.padding = '20px';
-      tempDiv.style.whiteSpace = 'pre-wrap';
-      tempDiv.style.wordBreak = 'break-word';
-      tempDiv.style.minHeight = '200px';
-      tempDiv.style.border = '1px solid #e5e7eb';
-      tempDiv.style.borderRadius = '0.5rem';
-
-      // Create the Word document content
+      // Create a canvas and draw the preview (same as downloadHandwriting)
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      canvas.width = handwritingPreview.offsetWidth;
+      canvas.height = handwritingPreview.offsetHeight;
+      // Draw background
+      context.fillStyle = '#fff';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      // Draw paper style (only lined/grid for now)
+      if (paperStyle.value === 'lined') {
+        for (let y = 0; y < canvas.height; y += 24) {
+          context.beginPath();
+          context.moveTo(0, y);
+          context.lineTo(canvas.width, y);
+          context.strokeStyle = '#eee';
+          context.stroke();
+        }
+      } else if (paperStyle.value === 'grid') {
+        for (let y = 0; y < canvas.height; y += 24) {
+          context.beginPath();
+          context.moveTo(0, y);
+          context.lineTo(canvas.width, y);
+          context.strokeStyle = '#eee';
+          context.stroke();
+        }
+        for (let x = 0; x < canvas.width; x += 24) {
+          context.beginPath();
+          context.moveTo(x, 0);
+          context.lineTo(x, canvas.height);
+          context.strokeStyle = '#eee';
+          context.stroke();
+        }
+      }
+      // Draw text
+      context.font = `${fontSize.value}px ${getHandwritingFont(handwritingStyle.value)}`;
+      context.fillStyle = inkColor.value;
+      context.textBaseline = 'top';
+      context.textAlign = 'left';
+      // Support multi-line text
+      const lines = handwritingPreview.textContent.split('\n');
+      let y = 20;
+      for (const line of lines) {
+        context.fillText(line, 20, y);
+        y += fontSize.value * lineSpacing.value;
+      }
+      // Convert canvas to data URL
+      const imgData = canvas.toDataURL('image/png');
+      // Create the Word document content with the image
       const content = `
         <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
         <head>
           <meta charset='utf-8'>
           <title>Handwriting Document</title>
-          <style>
-            body {
-              font-family: ${getHandwritingFont(handwritingStyle.value)};
-              font-size: ${fontSize.value}px;
-              line-height: ${lineSpacing.value};
-              color: ${inkColor.value};
-              background-color: white;
-              padding: 20px;
-            }
-            @page {
-              size: A4;
-              margin: 1in;
-            }
-          </style>
         </head>
-        <body>
-          ${handwritingPreview.textContent}
+        <body style="margin:0;padding:0;">
+          <img src="${imgData}" style="max-width:100%;height:auto;display:block;"/>
         </body>
         </html>
       `;
-
       // Create a Blob with the content
       const blob = new Blob([content], { type: 'application/msword' });
-      
       // Create download link
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
       link.download = 'handwriting.doc';
       link.click();
-      
       // Clean up
       URL.revokeObjectURL(link.href);
     }

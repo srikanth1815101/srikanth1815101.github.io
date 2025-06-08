@@ -53,6 +53,10 @@
                 <div class="flex flex-col md:flex-row gap-4">
                   <div class="flex-1">
                     <textarea id="qrInput" rows="4" class="w-full rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-blue-500 text-lg p-4" placeholder="Enter text or URL to generate QR code..."></textarea>
+                    <div class="mt-4 flex flex-col gap-2">
+                      <input id="qrTextAbove" type="text" class="w-full rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-blue-500 text-base p-2" placeholder="Text above QR code (optional)">
+                      <input id="qrTextBelow" type="text" class="w-full rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-blue-500 text-base p-2" placeholder="Text below QR code (optional)">
+                    </div>
                   </div>
                   <div class="flex flex-col gap-4 md:w-64">
                     <div>
@@ -150,6 +154,8 @@
 
     // Elements
     const qrInput = document.getElementById('qrInput');
+    const qrTextAbove = document.getElementById('qrTextAbove');
+    const qrTextBelow = document.getElementById('qrTextBelow');
     const qrSize = document.getElementById('qrSize');
     const qrErrorCorrection = document.getElementById('qrErrorCorrection');
     const generateBtn = document.getElementById('generateBtn');
@@ -159,12 +165,17 @@
     const previewSection = document.getElementById('previewSection');
 
     let qrCode = null; // To store the QRCode object
+    let previewCanvas = null; // To store the preview canvas for download
 
     // Generate QR Code
     function generateQRCode() {
         const text = qrInput.value.trim();
+        const textAbove = qrTextAbove.value.trim();
+        const textBelow = qrTextBelow.value.trim();
         const size = parseInt(qrSize.value);
         const errorCorrection = qrErrorCorrection.value;
+        const font = '16px Inter, Arial, sans-serif';
+        const padding = 16;
 
         if (!text) {
             alert('Please enter text or a URL to generate a QR code.');
@@ -175,8 +186,11 @@
         qrcodeDiv.innerHTML = '';
         downloadArea.classList.add('hidden');
 
+        // Create a temporary div to generate QR code with qrcodejs
+        const tempDiv = document.createElement('div');
+        document.body.appendChild(tempDiv);
         try {
-            qrCode = new QRCode(qrcodeDiv, {
+            qrCode = new QRCode(tempDiv, {
                 text: text,
                 width: size,
                 height: size,
@@ -184,50 +198,117 @@
                 colorLight: "#ffffff",
                 correctLevel: QRCode.CorrectLevel[errorCorrection]
             });
-
+            setTimeout(() => {
+                // Get QR code image data
+                let qrImg = tempDiv.querySelector('canvas') || tempDiv.querySelector('img');
+                if (!qrImg) {
+                    alert('Could not generate QR code image.');
+                    document.body.removeChild(tempDiv);
+                    return;
+                }
+                // Draw to canvas for preview
+                // --- Calculate text wrapping and dynamic height ---
+                function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+                    if (!text) return 0;
+                    const words = text.split(' ');
+                    let line = '';
+                    let lines = [];
+                    for (let n = 0; n < words.length; n++) {
+                        let testLine = line + words[n] + ' ';
+                        let metrics = ctx.measureText(testLine);
+                        let testWidth = metrics.width;
+                        if (testWidth > maxWidth && n > 0) {
+                            lines.push(line);
+                            line = words[n] + ' ';
+                        } else {
+                            line = testLine;
+                        }
+                    }
+                    lines.push(line);
+                    for (let i = 0; i < lines.length; i++) {
+                        ctx.fillText(lines[i].trim(), x, y + i * lineHeight);
+                    }
+                    return lines.length * lineHeight;
+                }
+                // ---
+                let maxTextWidth = size + padding * 1.5; // a bit wider than QR
+                let lineHeight = 20;
+                // Measure above/below text height
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                ctx.font = font;
+                let aboveLines = textAbove ? Math.ceil(ctx.measureText(textAbove).width / maxTextWidth) : 0;
+                let belowLines = textBelow ? Math.ceil(ctx.measureText(textBelow).width / maxTextWidth) : 0;
+                let aboveHeight = textAbove ? aboveLines * lineHeight : 0;
+                let belowHeight = textBelow ? belowLines * lineHeight : 0;
+                // Add extra spacing between text and QR
+                let textQRGap = textAbove ? 12 : 0;
+                let qrTextGap = textBelow ? 12 : 0;
+                let totalHeight = aboveHeight + textQRGap + size + qrTextGap + belowHeight + padding * 2;
+                let totalWidth = size + padding * 2;
+                canvas.width = totalWidth;
+                canvas.height = totalHeight;
+                // Fill white background
+                ctx.fillStyle = '#fff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                // Draw text above (wrapped)
+                ctx.font = font;
+                ctx.fillStyle = '#222';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                let aboveY = padding;
+                if (textAbove) {
+                    aboveHeight = wrapText(ctx, textAbove, totalWidth / 2, aboveY, maxTextWidth, lineHeight);
+                }
+                // Draw QR code
+                let qrImage = new window.Image();
+                qrImage.onload = function() {
+                    let qrY = padding + aboveHeight + (textAbove ? textQRGap : 0);
+                    ctx.drawImage(qrImage, padding, qrY, size, size);
+                    // Draw text below (wrapped)
+                    if (textBelow) {
+                        let belowY = qrY + size + qrTextGap;
+                        wrapText(ctx, textBelow, totalWidth / 2, belowY, maxTextWidth, lineHeight);
+                    }
+                    // Show preview
+                    qrcodeDiv.innerHTML = '';
+                    canvas.style.maxWidth = '100%';
+                    canvas.style.height = 'auto';
+                    qrcodeDiv.appendChild(canvas);
+                    previewCanvas = canvas;
+                    // Show download button
+                    downloadArea.classList.remove('hidden');
+                };
+                if (qrImg.tagName.toLowerCase() === 'canvas') {
+                    qrImage.src = qrImg.toDataURL('image/png');
+                } else {
+                    qrImage.src = qrImg.src;
+                }
+                document.body.removeChild(tempDiv);
+            }, 100);
             // Show preview section and scroll to it
             previewSection.classList.remove('hidden');
             previewSection.scrollIntoView({ behavior: 'smooth' });
-
-            // Show download button after a short delay (to allow QR code to render)
-            setTimeout(() => {
-                downloadArea.classList.remove('hidden');
-            }, 100);
-
         } catch (error) {
             console.error('QR code generation error:', error);
             alert('Error generating QR code: ' + error.message);
+            document.body.removeChild(tempDiv);
         }
     }
 
     // Download QR Code
     function downloadQRCode() {
-        if (!qrCode) {
+        if (!previewCanvas) {
             alert('Please generate a QR code first.');
             return;
         }
-
-        // Get the canvas or image element created by qrcodejs
-        const qrCanvas = qrcodeDiv.querySelector('canvas');
-        const qrImg = qrcodeDiv.querySelector('img');
-
-        let dataURL = '';
-        if (qrCanvas) {
-            dataURL = qrCanvas.toDataURL("image/png");
-        } else if (qrImg) {
-            // For older browsers or if using img tag
-            dataURL = qrImg.src;
-        } else {
-            alert('Could not find QR code image data.');
-            return;
-        }
-
+        const jpgUrl = previewCanvas.toDataURL('image/jpeg', 0.95);
         const link = document.createElement('a');
-        link.download = 'qrcode.png';
-        link.href = dataURL;
-        document.body.appendChild(link); // Required for Firefox
+        link.download = 'qrcode.jpg';
+        link.href = jpgUrl;
+        document.body.appendChild(link);
         link.click();
-        document.body.removeChild(link); // Clean up
+        document.body.removeChild(link);
     }
 
     // Event Listeners

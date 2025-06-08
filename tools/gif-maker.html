@@ -254,12 +254,33 @@
       createButton.innerHTML = '<i data-lucide="loader" class="w-5 h-5 inline-block mr-2 animate-spin"></i>Creating GIF... 0%';
 
       try {
+        // Determine max width and height from all frames
+        let maxWidth = 0;
+        let maxHeight = 0;
+        for (const frame of frames) {
+          const img = new Image();
+          await new Promise((resolve, reject) => {
+            img.onload = () => {
+              if (img.width > maxWidth) maxWidth = img.width;
+              if (img.height > maxHeight) maxHeight = img.height;
+              resolve();
+            };
+            img.onerror = reject;
+            img.src = frame.src;
+          });
+        }
+        // Fallback if something goes wrong
+        if (maxWidth === 0 || maxHeight === 0) {
+          maxWidth = 400;
+          maxHeight = 400;
+        }
+
         // Create a new GIF instance
         const gif = new GIF({
           workers: 2,
-          quality: 1,
-          width: 200,
-          height: 200,
+          quality: 10,
+          width: maxWidth,
+          height: maxHeight,
           workerScript: 'lib/gif.worker.js'
         });
 
@@ -288,8 +309,8 @@
 
           // Create a canvas to draw the frame
           const canvas = document.createElement('canvas');
-          canvas.width = 200;
-          canvas.height = 200;
+          canvas.width = maxWidth;
+          canvas.height = maxHeight;
           const ctx = canvas.getContext('2d');
 
           // Fill with white background
@@ -297,9 +318,9 @@
           ctx.fillRect(0, 0, canvas.width, canvas.height);
 
           // Calculate dimensions to maintain aspect ratio
-          const scale = Math.min(200 / img.width, 200 / img.height);
-          const x = (200 - img.width * scale) / 2;
-          const y = (200 - img.height * scale) / 2;
+          const scale = Math.min(maxWidth / img.width, maxHeight / img.height);
+          const x = (maxWidth - img.width * scale) / 2;
+          const y = (maxHeight - img.height * scale) / 2;
 
           // Draw the image centered on the canvas
           ctx.drawImage(img, x, y, img.width * scale, img.height * scale);

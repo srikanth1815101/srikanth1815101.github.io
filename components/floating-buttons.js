@@ -41,8 +41,6 @@
     return [
       { name: 'WhatsApp', icon: 'message-circle', url: `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}` },
       { name: 'Telegram', icon: 'send', url: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}` },
-      { name: 'Messenger', icon: 'message-square', url: `https://www.facebook.com/dialog/send?link=${encodeURIComponent(url)}&app_id=YOUR_APP_ID&redirect_uri=${encodeURIComponent(url)}` },
-      { name: 'Instagram', icon: 'instagram', url: `https://www.instagram.com/share?url=${encodeURIComponent(url)}` },
       { name: 'Copy Link', icon: 'copy', url: '#', action: 'copy' }
     ];
   }
@@ -66,14 +64,14 @@
     style.id = 'csrgo-share-popup-style';
     style.textContent = `
       #csrgo-share-popup {
-        background: rgba(255,255,255,0.95);
+        background: linear-gradient(135deg, #e0e7ff 0%, #f5f3ff 100%);
         backdrop-filter: blur(16px) saturate(180%);
         border-radius: 1.5rem;
         box-shadow: 0 8px 32px rgba(37,99,235,0.35), 0 2px 8px rgba(0,0,0,0.15);
-        border: 1.5px solid rgba(224,231,239,0.8);
+        border: 2.5px solid #7c3aed;
         padding: 2rem 1.5rem 1.5rem 1.5rem;
         animation: fade-in .25s cubic-bezier(.4,0,.2,1);
-        transition: box-shadow .2s;
+        transition: box-shadow .2s, border-color .2s;
       }
       #csrgo-share-popup .absolute.top-2.right-2 {
         top: 1rem; right: 1rem;
@@ -171,6 +169,24 @@
           gap: 1rem;
         }
       }
+      #csrgo-share-popup #csrgo-share-close-btn {
+        background: linear-gradient(90deg, #7c3aed 0%, #2563eb 100%);
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgba(124,60,237,0.10);
+        padding: 0.35rem 1.2rem;
+        font-size: 0.98rem;
+        margin-top: 0.5rem;
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      }
+      #csrgo-share-popup #csrgo-share-close-btn:hover {
+        background: linear-gradient(90deg, #8b5cf6 0%, #2563eb 100%);
+        box-shadow: 0 4px 16px rgba(124,60,237,0.18);
+        transform: translateY(-2px) scale(1.04);
+      }
     `;
     document.head.appendChild(style);
   }
@@ -207,7 +223,7 @@
       html: `<button id="csrgo-scroll-top" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*btnIndex}px; right:24px; width:${btnSize}px; height:${btnSize}px; background:linear-gradient(90deg,#2563eb,#7c3aed); color:white; box-shadow:0 4px 24px rgba(79,70,229,0.12); border-radius:9999px; display:flex; align-items:center; justify-content:center; transition:all .2s; opacity:0; pointer-events:none;" title="Go to top"><i data-lucide="arrow-up" class="w-5 h-5" style="color:white;"></i></button>`
     });
     // Render all buttons
-    container.innerHTML = buttons.map(b => b.html).join('') + `<div id="csrgo-share-popup" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*(btnIndex+1)}px; right:24px; background:white; border-radius:1rem; box-shadow:0 8px 32px rgba(37,99,235,0.10); border:1px solid #f1f5f9; padding:1.5rem; width:20rem; max-width:90vw; display:none; animation:fade-in .2s;"><div id="csrgo-share-content"></div></div>`;
+    container.innerHTML = buttons.map(b => b.html).join('') + `<div id="csrgo-share-popup" class="fixed z-50" style="bottom:${baseBottom + (btnSize+gap)*(btnIndex+1)}px; right:24px; border-radius:1rem; width:20rem; max-width:90vw; display:none; animation:fade-in .2s;"><div id="csrgo-share-content"></div></div>`;
     if (window.lucide) lucide.createIcons();
     // Scroll-to-top logic
     const scrollBtn = document.getElementById('csrgo-scroll-top');
@@ -285,20 +301,15 @@
                 let iconClass = '';
                 if (l.name === 'WhatsApp') iconClass = 'icon-whatsapp';
                 if (l.name === 'Telegram') iconClass = 'icon-telegram';
-                if (l.name === 'Messenger') iconClass = 'icon-messenger';
-                if (l.name === 'Instagram') iconClass = 'icon-instagram';
                 if (l.name === 'Copy Link') iconClass = 'icon-copy';
                 if (l.action === 'copy') {
-                  return `<button class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" data-copy-url=\"${url}\">
-                    <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>
-                    <span class=\"text-xs\">${l.name}</span>
-                  </button>`;
+                  return `<button class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" data-copy-url=\"${url}\">\n                    <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>\n                    <span class=\"text-xs\">${l.name}</span>\n                  </button>`;
                 }
-                return `<a href=\"${l.url}\" target=\"_blank\" rel=\"noopener\" class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" onclick=\"window.open(this.href, '_blank', 'width=600,height=400'); return false;\">
-                  <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>
-                  <span class=\"text-xs\">${l.name}</span>
-                </a>`;
+                return `<a href=\"${l.url}\" target=\"_blank\" rel=\"noopener\" class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" onclick=\"window.open(this.href, '_blank', 'width=600,height=400'); return false;\">\n                  <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>\n                  <span class=\"text-xs\">${l.name}</span>\n                </a>`;
               }).join('')}
+            </div>
+            <div class="flex justify-center mt-2">
+              <button id="csrgo-share-close-btn" class="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-semibold transition-colors">Close</button>
             </div>
           `;
           if (window.lucide) lucide.createIcons();
@@ -313,6 +324,13 @@
               setTimeout(() => { span.textContent = originalText; }, 1200);
             };
           });
+          // Add event listener for close button
+          const closeBtn = tabContent.querySelector('#csrgo-share-close-btn');
+          if (closeBtn) {
+            closeBtn.onclick = function() {
+              sharePopup.style.display = 'none';
+            };
+          }
         }
         tabSite.onclick = () => showTab('site');
         tabTool.onclick = () => showTab('tool');
@@ -331,20 +349,15 @@
               let iconClass = '';
               if (l.name === 'WhatsApp') iconClass = 'icon-whatsapp';
               if (l.name === 'Telegram') iconClass = 'icon-telegram';
-              if (l.name === 'Messenger') iconClass = 'icon-messenger';
-              if (l.name === 'Instagram') iconClass = 'icon-instagram';
               if (l.name === 'Copy Link') iconClass = 'icon-copy';
               if (l.action === 'copy') {
-                return `<button class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" data-copy-url=\"${url}\">
-                  <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>
-                  <span class=\"text-xs\">${l.name}</span>
-                </button>`;
+                return `<button class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" data-copy-url=\"${url}\">\n                  <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>\n                  <span class=\"text-xs\">${l.name}</span>\n                </button>`;
               }
-              return `<a href=\"${l.url}\" target=\"_blank\" rel=\"noopener\" class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" onclick=\"window.open(this.href, '_blank', 'width=600,height=400'); return false;\">
-                <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>
-                <span class=\"text-xs\">${l.name}</span>
-              </a>`;
+              return `<a href=\"${l.url}\" target=\"_blank\" rel=\"noopener\" class=\"flex flex-col items-center gap-1 text-gray-700 hover:text-blue-600\" onclick=\"window.open(this.href, '_blank', 'width=600,height=400'); return false;\">\n                <i data-lucide=\"${l.icon}\" class=\"w-7 h-7 ${iconClass}\"></i>\n                <span class=\"text-xs\">${l.name}</span>\n              </a>`;
             }).join('')}
+          </div>
+          <div class="flex justify-center mt-2">
+            <button id="csrgo-share-close-btn" class="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-semibold transition-colors">Close</button>
           </div>
         `;
         // Add event listener for copy button
@@ -358,6 +371,13 @@
             setTimeout(() => { span.textContent = originalText; }, 1200);
           };
         });
+        // Add event listener for close button
+        const closeBtn = shareContent.querySelector('#csrgo-share-close-btn');
+        if (closeBtn) {
+          closeBtn.onclick = function() {
+            sharePopup.style.display = 'none';
+          };
+        }
         if (window.lucide) lucide.createIcons();
       }
     });
@@ -381,4 +401,4 @@
   }
   // Expose for manual re-render if needed
   window.renderFloatingButtons = renderButtons;
-})(); 
+})();

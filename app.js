@@ -142,7 +142,7 @@ window.tools = [
   {
     id: 'screenshot-to-pdf',
     name: 'Image to PDF Converter',
-    description: 'Convert screenshots to PDF format',
+    description: 'Convert images to PDF format',
     icon: 'file',
     url: 'tools/image-to-pdf-converter.html',
     category: 'image-tools',
