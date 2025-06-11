@@ -1,0 +1,1 @@
+window.HTML_TO_MARKDOWN_CONVERTER_DATA = {};

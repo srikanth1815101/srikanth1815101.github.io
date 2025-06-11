@@ -1,0 +1,1 @@
+window.SCIENTIFIC_CALCULATOR_DATA = {};

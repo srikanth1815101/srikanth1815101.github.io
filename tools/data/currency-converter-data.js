@@ -1,0 +1,1 @@
+window.CURRENCY_CONVERTER_DATA = {};

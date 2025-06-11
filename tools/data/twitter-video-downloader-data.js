@@ -1,0 +1,1 @@
+window.TWITTER_VIDEO_DOWNLOADER_DATA = {};

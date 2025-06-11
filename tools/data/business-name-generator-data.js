@@ -1,0 +1,1 @@
+window.BUSINESS_NAME_GENERATOR_DATA = {};

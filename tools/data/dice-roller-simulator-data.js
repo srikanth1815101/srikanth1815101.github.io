@@ -1,0 +1,1 @@
+window.DICE_ROLLER_SIMULATOR_DATA = {};

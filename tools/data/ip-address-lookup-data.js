@@ -1,0 +1,1 @@
+window.IP_ADDRESS_LOOKUP_DATA = {};

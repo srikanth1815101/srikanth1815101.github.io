@@ -1,0 +1,1 @@
+window.DAILY_PLANNER_CREATOR_DATA = {};

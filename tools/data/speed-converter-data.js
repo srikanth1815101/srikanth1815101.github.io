@@ -1,0 +1,1 @@
+window.SPEED_CONVERTER_DATA = {};

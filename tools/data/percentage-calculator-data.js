@@ -1,0 +1,1 @@
+window.PERCENTAGE_CALCULATOR_DATA = {};

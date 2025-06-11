@@ -1,0 +1,1 @@
+window.FLIP_A_COIN_SIMULATOR_DATA = {};

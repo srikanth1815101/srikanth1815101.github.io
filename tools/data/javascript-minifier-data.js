@@ -1,0 +1,1 @@
+window.JAVASCRIPT_MINIFIER_DATA = {};

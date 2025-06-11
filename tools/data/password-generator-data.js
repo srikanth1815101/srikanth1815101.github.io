@@ -1,0 +1,1 @@
+window.PASSWORD_GENERATOR_DATA = {};

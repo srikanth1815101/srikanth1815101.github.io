@@ -1,0 +1,1 @@
+window.MOBILE_FRIENDLY_TEST_DATA = {};

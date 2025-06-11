@@ -1,0 +1,1 @@
+window.DISCOUNT_CALCULATOR_DATA = {};

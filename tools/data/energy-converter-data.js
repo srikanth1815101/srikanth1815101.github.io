@@ -1,0 +1,1 @@
+window.ENERGY_CONVERTER_DATA = {};

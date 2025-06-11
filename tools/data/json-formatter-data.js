@@ -1,0 +1,1 @@
+window.JSON_FORMATTER_DATA = {};

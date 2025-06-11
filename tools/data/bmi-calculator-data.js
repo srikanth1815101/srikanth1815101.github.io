@@ -1,0 +1,1 @@
+window.BMI_CALCULATOR_DATA = {};

@@ -1,0 +1,1 @@
+window.URL_ENCODER_DECODER_DATA = {};

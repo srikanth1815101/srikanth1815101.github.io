@@ -1,0 +1,1 @@
+window.COLOR_CODE_PICKER_DATA = {};

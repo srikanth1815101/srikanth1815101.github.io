@@ -1,0 +1,1 @@
+window.GOOGLE_INDEX_CHECKER_DATA = {};

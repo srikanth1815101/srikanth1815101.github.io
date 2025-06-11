@@ -1,0 +1,1 @@
+window.MD5_HASH_GENERATOR_DATA = {};

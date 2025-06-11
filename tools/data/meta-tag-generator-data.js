@@ -1,0 +1,1 @@
+window.META_TAG_GENERATOR_DATA = {};

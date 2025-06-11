@@ -1,0 +1,1 @@
+window.BIONIC_READING_CONVERTER_DATA = {};

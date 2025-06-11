@@ -1,0 +1,1 @@
+window.LENGTH_CONVERTER_DATA = {};

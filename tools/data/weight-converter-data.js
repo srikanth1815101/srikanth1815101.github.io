@@ -1,0 +1,1 @@
+window.WEIGHT_CONVERTER_DATA = {};

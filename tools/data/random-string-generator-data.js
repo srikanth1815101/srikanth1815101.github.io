@@ -1,0 +1,1 @@
+window.RANDOM_STRING_GENERATOR_DATA = {};

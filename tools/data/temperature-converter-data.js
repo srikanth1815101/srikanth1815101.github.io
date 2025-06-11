@@ -1,0 +1,1 @@
+window.TEMPERATURE_CONVERTER_DATA = {};

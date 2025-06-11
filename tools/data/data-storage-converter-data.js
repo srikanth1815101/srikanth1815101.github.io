@@ -1,0 +1,1 @@
+window.DATA_STORAGE_CONVERTER_DATA = {};

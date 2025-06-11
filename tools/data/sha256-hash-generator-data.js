@@ -1,0 +1,1 @@
+window.SHA256_HASH_GENERATOR_DATA = {};

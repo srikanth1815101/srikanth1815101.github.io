@@ -928,7 +928,7 @@ function renderCategoryCard(category) {
         <div class="w-12 h-12 rounded-xl flex items-center justify-center ${category.color}">
           <i data-lucide="${category.icon}" class="w-6 h-6"></i>
         </div>
-        <a href="category.html?id=${category.id}" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+        <a href="categories/${category.id}.html" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
           <span>View all</span>
           <span class="transform transition-transform group-hover:translate-x-0.5">→</span>
         </a>
@@ -943,6 +943,11 @@ function renderCategoryCard(category) {
 }
 
 function renderToolItem(tool, idx = 0) {
+  // Determine if we're in a category page
+  const isInCategoryPage = window.location.pathname.includes('/categories/');
+  // Add '../' prefix to tool URLs when in category pages
+  const toolUrl = isInCategoryPage ? '../' + tool.url : tool.url;
+  
   const colorPalette = [
     "bg-blue-50 text-blue-600",
     "bg-green-50 text-green-600",
@@ -955,8 +960,9 @@ function renderToolItem(tool, idx = 0) {
     "bg-gray-50 text-gray-600"
   ];
   const colorClass = colorPalette[idx % colorPalette.length];
+  
   return `
-    <a href="${tool.url}" class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group">
+    <a href="${toolUrl}" class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group">
       <div class="w-8 h-8 rounded-lg flex items-center justify-center ${colorClass}">
         <i data-lucide="${tool.icon}" class="w-4 h-4"></i>
       </div>
@@ -1380,7 +1386,3 @@ function autoScrollHeroCategoriesRow() {
   }
   setTimeout(step, 900);
 }
-
-// ---- CATEGORY PAGE RENDERING ----
-// Patch: Expose renderToolItem for category.html
-window.renderToolItem = renderToolItem; 

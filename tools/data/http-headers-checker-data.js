@@ -1,0 +1,1 @@
+window.HTTP_HEADERS_CHECKER_DATA = {};

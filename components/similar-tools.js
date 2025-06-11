@@ -85,7 +85,7 @@
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           ${similarTools.map((tool, idx) => renderToolCard(tool, idx)).join('')}
-          <a href="../category.html?id=${category ? category.id : ''}" class="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#2563eb] shadow-sm hover:shadow-md transition-all">
+          <a href="../categories/${category ? category.id : ''}.html" class="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#2563eb] shadow-sm hover:shadow-md transition-all">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-white/10">
               <i data-lucide="arrow-right" class="w-5 h-5 text-white"></i>
             </div>

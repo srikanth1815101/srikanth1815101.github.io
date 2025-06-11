@@ -153,13 +153,14 @@
     // Set current tool info automatically by matching URL
     if (window.tools) {
       window.CSRGO_TOOL_INFO = window.tools.find(
-        t => t.url === "tools/image-to-base64.html"
+        t => t.url === "tools/convert-image-to-base64.html"
       );
     }
   </script>
   <script src="../components/include.js"></script>
   <script src="../components/similar-tools.js"></script>
-  <script src="../tool-sections.js"></script>
+  <script src="../tools/data/convert-image-to-base64-data.js"></script>
+  <script src="../components/tool-sections.js"></script>
   <script src="../components/floating-buttons.js"></script>
   <script>
     // Initialize Lucide icons
@@ -167,7 +168,7 @@
 
     // Initialize tool sections
     document.addEventListener('DOMContentLoaded', () => {
-      renderToolSections('image-to-base64');
+      renderToolSections('CONVERT_IMAGE_TO_BASE64_DATA');
     });
 
     // Elements

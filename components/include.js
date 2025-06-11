@@ -7,8 +7,8 @@ async function includeHTML(elementId, path) {
   // If the current page is in a subfolder, use '../', else ''
   let basePath = '';
   let currentPath = window.location.pathname;
-  // You can add more folders here if needed
-  if (/\/tools\//.test(currentPath)) {
+  // Handle paths for subdirectories
+  if (/\/tools\//.test(currentPath) || /\/legal\//.test(currentPath) || /\/categories\//.test(currentPath)) {
     basePath = '../';
   }
 
@@ -19,7 +19,7 @@ async function includeHTML(elementId, path) {
           <div class="container mx-auto px-4 py-4">
             <nav class="flex items-center justify-between">
               <a href="${basePath}index.html" class="flex items-center gap-2 group select-none">
-                <img src="${basePath}logo.png" alt="CSRGO Logo" class="h-9 w-auto object-contain" />
+                <img src="https://csrgo.com/logo.png" alt="CSRGO Logo" class="h-9 w-auto object-contain" />
                 <span class="nav-divider mx-1"></span>
                 <span class="nav-tools-text">Tools</span>
               </a>
@@ -40,31 +40,31 @@ async function includeHTML(elementId, path) {
                   </button>
                   <div id="categoriesDropdown" class="absolute right-0 mt-2 w-fit min-w-[16rem] max-w-[22rem] bg-white rounded-2xl shadow-2xl py-4 px-2 z-50 hidden group-hover:block border border-blue-100">
                     <div class="flex flex-col gap-1">
-                      <a href="${basePath}category.html?id=image-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/image-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="image" class="w-5 h-5 text-green-500"></i> Image Tools
                       </a>
-                      <a href="${basePath}category.html?id=seo-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/seo-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="search" class="w-5 h-5 text-purple-500"></i> SEO Tools
                       </a>
-                      <a href="${basePath}category.html?id=text-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/text-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="type" class="w-5 h-5 text-blue-500"></i> Text Tools
                       </a>
-                      <a href="${basePath}category.html?id=developer-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-orange-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/developer-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-orange-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="code" class="w-5 h-5 text-orange-500"></i> Developer Tools
                       </a>
-                      <a href="${basePath}category.html?id=math-calculators" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/math-calculators.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="calculator" class="w-5 h-5 text-red-500"></i> Math & Calculators
                       </a>
-                      <a href="${basePath}category.html?id=unit-converters" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-yellow-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/unit-converters.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-yellow-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="ruler" class="w-5 h-5 text-yellow-500"></i> Unit Converters
                       </a>
-                      <a href="${basePath}category.html?id=security-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/security-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="shield" class="w-5 h-5 text-indigo-500"></i> Security & Encryption
                       </a>
-                      <a href="${basePath}category.html?id=social-media-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-pink-50 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/social-media-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-pink-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="share-2" class="w-5 h-5 text-pink-500"></i> Social Media Tools
                       </a>
-                      <a href="${basePath}category.html?id=misc-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 whitespace-nowrap">
+                      <a href="${basePath}categories/misc-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="wrench" class="w-5 h-5 text-gray-500"></i> Miscellaneous Tools
                       </a>
                     </div>
@@ -118,15 +118,15 @@ async function includeHTML(elementId, path) {
                       <i data-lucide="chevron-down" class="w-5 h-5 ml-auto transition-transform"></i>
                     </button>
                     <div id="mobileCategoriesDropdown" class="hidden pl-4 space-y-2 mt-2">
-                      <a href="${basePath}category.html?id=image-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors"><i data-lucide="image" class="w-5 h-5 text-green-600"></i> Image Tools</a>
-                      <a href="${basePath}category.html?id=seo-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-100 transition-colors"><i data-lucide="search" class="w-5 h-5 text-purple-600"></i> SEO Tools</a>
-                      <a href="${basePath}category.html?id=text-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors"><i data-lucide="type" class="w-5 h-5 text-blue-600"></i> Text Tools</a>
-                      <a href="${basePath}category.html?id=developer-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-orange-100 transition-colors"><i data-lucide="code" class="w-5 h-5 text-orange-600"></i> Developer Tools</a>
-                      <a href="${basePath}category.html?id=math-calculators" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-100 transition-colors"><i data-lucide="calculator" class="w-5 h-5 text-red-600"></i> Math & Calculators</a>
-                      <a href="${basePath}category.html?id=unit-converters" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-yellow-100 transition-colors"><i data-lucide="ruler" class="w-5 h-5 text-yellow-600"></i> Unit Converters</a>
-                      <a href="${basePath}category.html?id=security-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-100 transition-colors"><i data-lucide="shield" class="w-5 h-5 text-indigo-600"></i> Security & Encryption</a>
-                      <a href="${basePath}category.html?id=social-media-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-pink-100 transition-colors"><i data-lucide="share-2" class="w-5 h-5 text-pink-600"></i> Social Media Tools</a>
-                      <a href="${basePath}category.html?id=misc-tools" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"><i data-lucide="wrench" class="w-5 h-5 text-gray-600"></i> Miscellaneous Tools</a>
+                      <a href="${basePath}categories/image-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors"><i data-lucide="image" class="w-5 h-5 text-green-600"></i> Image Tools</a>
+                      <a href="${basePath}categories/seo-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-100 transition-colors"><i data-lucide="search" class="w-5 h-5 text-purple-600"></i> SEO Tools</a>
+                      <a href="${basePath}categories/text-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors"><i data-lucide="type" class="w-5 h-5 text-blue-600"></i> Text Tools</a>
+                      <a href="${basePath}categories/developer-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-orange-100 transition-colors"><i data-lucide="code" class="w-5 h-5 text-orange-600"></i> Developer Tools</a>
+                      <a href="${basePath}categories/math-calculators.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-100 transition-colors"><i data-lucide="calculator" class="w-5 h-5 text-red-600"></i> Math & Calculators</a>
+                      <a href="${basePath}categories/unit-converters.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-yellow-100 transition-colors"><i data-lucide="ruler" class="w-5 h-5 text-yellow-600"></i> Unit Converters</a>
+                      <a href="${basePath}categories/security-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-100 transition-colors"><i data-lucide="shield" class="w-5 h-5 text-indigo-600"></i> Security & Encryption</a>
+                      <a href="${basePath}categories/social-media-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-pink-100 transition-colors"><i data-lucide="share-2" class="w-5 h-5 text-pink-600"></i> Social Media Tools</a>
+                      <a href="${basePath}categories/misc-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"><i data-lucide="wrench" class="w-5 h-5 text-gray-600"></i> Miscellaneous Tools</a>
                     </div>
                     <a href="${basePath}blog.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                       <i data-lucide="file-text" class="w-5 h-5 mr-3 text-green-600"></i>
@@ -220,7 +220,7 @@ async function includeHTML(elementId, path) {
               <!-- Brand Section -->
               <div class="space-y-4">
                 <a href="${basePath}index.html" class="flex items-center gap-3 group" style="align-items: center;">
-                  <img src="${basePath}logo.png" alt="CSRGO Logo" class="h-10 w-auto object-contain" style="height:2.5rem;" />
+                  <img src="https://csrgo.com/logo.png" alt="CSRGO Logo" class="h-10 w-auto object-contain" style="height:2.5rem;" />
                   <span class="nav-divider mx-1"></span>
                   <span class="nav-tools-text text-2xl font-bold" style="font-size:2rem;">CSRGO Tools</span>
                 </a>
@@ -244,15 +244,15 @@ async function includeHTML(elementId, path) {
               <div>
                 <h3 class="font-semibold text-gray-900 mb-4">Categories</h3>
                 <ul class="space-y-2">
-                  <li><a href="${basePath}category.html?id=image-tools" class="text-gray-600 hover:text-blue-600 transition-colors">Image Tools</a></li>
-                  <li><a href="${basePath}category.html?id=seo-tools" class="text-gray-600 hover:text-blue-600 transition-colors">SEO Tools</a></li>
-                  <li><a href="${basePath}category.html?id=text-tools" class="text-gray-600 hover:text-blue-600 transition-colors">Text Tools</a></li>
-                  <li><a href="${basePath}category.html?id=developer-tools" class="text-gray-600 hover:text-blue-600 transition-colors">Developer Tools</a></li>
-                  <li><a href="${basePath}category.html?id=math-calculators" class="text-gray-600 hover:text-blue-600 transition-colors">Math & Calculators</a></li>
-                  <li><a href="${basePath}category.html?id=unit-converters" class="text-gray-600 hover:text-blue-600 transition-colors">Unit Converters</a></li>
-                  <li><a href="${basePath}category.html?id=security-tools" class="text-gray-600 hover:text-blue-600 transition-colors">Security & Encryption</a></li>
-                  <li><a href="${basePath}category.html?id=social-media-tools" class="text-gray-600 hover:text-blue-600 transition-colors">Social Media Tools</a></li>
-                  <li><a href="${basePath}category.html?id=misc-tools" class="text-gray-600 hover:text-blue-600 transition-colors">Miscellaneous Tools</a></li>
+                  <li><a href="${basePath}categories/image-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Image Tools</a></li>
+                  <li><a href="${basePath}categories/seo-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">SEO Tools</a></li>
+                  <li><a href="${basePath}categories/text-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Text Tools</a></li>
+                  <li><a href="${basePath}categories/developer-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Developer Tools</a></li>
+                  <li><a href="${basePath}categories/math-calculators.html" class="text-gray-600 hover:text-blue-600 transition-colors">Math & Calculators</a></li>
+                  <li><a href="${basePath}categories/unit-converters.html" class="text-gray-600 hover:text-blue-600 transition-colors">Unit Converters</a></li>
+                  <li><a href="${basePath}categories/security-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Security & Encryption</a></li>
+                  <li><a href="${basePath}categories/social-media-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Social Media Tools</a></li>
+                  <li><a href="${basePath}categories/misc-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Miscellaneous Tools</a></li>
                 </ul>
               </div>
 
@@ -260,11 +260,11 @@ async function includeHTML(elementId, path) {
               <div>
                 <h3 class="font-semibold text-gray-900 mb-4">Legal</h3>
                 <ul class="space-y-2">
-                  <li><a href="${basePath}privacy-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a></li>
-                  <li><a href="${basePath}terms-of-service.html" class="text-gray-600 hover:text-blue-600 transition-colors">Terms of Service</a></li>
-                  <li><a href="${basePath}cookie-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Cookie Policy</a></li>
-                  <li><a href="${basePath}disclaimer.html" class="text-gray-600 hover:text-blue-600 transition-colors">Disclaimer</a></li>
-                  <li><a href="${basePath}accessibility.html" class="text-gray-600 hover:text-blue-600 transition-colors">Accessibility</a></li>
+                  <li><a href="${basePath}legal/privacy-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                  <li><a href="${basePath}legal/terms-of-service.html" class="text-gray-600 hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                  <li><a href="${basePath}legal/cookie-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Cookie Policy</a></li>
+                  <li><a href="${basePath}legal/disclaimer.html" class="text-gray-600 hover:text-blue-600 transition-colors">Disclaimer</a></li>
+                  <li><a href="${basePath}legal/accessibility.html" class="text-gray-600 hover:text-blue-600 transition-colors">Accessibility</a></li>
                 </ul>
               </div>
             </div>
@@ -272,7 +272,7 @@ async function includeHTML(elementId, path) {
             <!-- AdSense Notice -->
             <div class="bg-blue-50 rounded-lg p-4 mb-8">
               <p class="text-sm text-blue-800 text-center">
-                This site uses Google AdSense to serve personalized advertisements. By using this site, you agree to our use of cookies and data collection practices as described in our <a href="${basePath}privacy-policy.html" class="underline hover:text-blue-900">Privacy Policy</a>.
+                This site uses Google AdSense to serve personalized advertisements. By using this site, you agree to our use of cookies and data collection practices as described in our <a href="${basePath}legal/privacy-policy.html" class="underline hover:text-blue-900">Privacy Policy</a>.
               </p>
             </div>
 

@@ -1,0 +1,1 @@
+window.PRIVACY_POLICY_GENERATOR_DATA = {};

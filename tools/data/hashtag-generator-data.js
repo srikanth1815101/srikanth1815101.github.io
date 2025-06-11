@@ -1,0 +1,1 @@
+window.HASHTAG_GENERATOR_DATA = {};

@@ -1,0 +1,1 @@
+window.INVOICE_GENERATOR_DATA = {};

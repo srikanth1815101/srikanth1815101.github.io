@@ -1,0 +1,1 @@
+window.LOAN_EMI_CALCULATOR_DATA = {};
