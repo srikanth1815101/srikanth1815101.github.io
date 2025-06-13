@@ -1,1 +1,0 @@
-window.FANCY_TEXT_GENERATOR_DATA = {};
