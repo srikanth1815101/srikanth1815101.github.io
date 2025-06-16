@@ -29,13 +29,6 @@ window.categories = [
     color: 'bg-yellow-50 text-yellow-600',
   },
   {
-    id: 'seo-tools',
-    name: 'SEO Tools',
-    description: 'Optimize your website for search engines',
-    icon: 'search',
-    color: 'bg-purple-50 text-purple-600',
-  },
-  {
     id: 'developer-tools',
     name: 'Developer Tools',
     description: 'Essential tools for web developers',
@@ -48,6 +41,13 @@ window.categories = [
     description: 'Tools for security and data encryption',
     icon: 'shield',
     color: 'bg-indigo-50 text-indigo-600',
+  },
+  {
+    id: 'seo-tools',
+    name: 'SEO Tools',
+    description: 'Optimize your website for search engines',
+    icon: 'search',
+    color: 'bg-purple-50 text-purple-600',
   },
   {
     id: 'social-media-tools',
@@ -522,7 +522,7 @@ window.tools = [
     id: 'fuel-converter',
     name: 'Fuel Efficiency Converter',
     description: 'Convert between fuel efficiency units',
-    icon: 'circle-gauge',
+    icon: 'fuel',
     url: 'tools/fuel-efficiency-converter.html',
     category: 'unit-converters',
   },

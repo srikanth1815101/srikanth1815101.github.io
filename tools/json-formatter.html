@@ -10,6 +10,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../styles.css">
   <link rel="icon" href="https://csrgo.com/logo.png" type="image/png" sizes="32x32">
@@ -24,6 +27,16 @@
     "logo": "https://csrgo.com/logo.png"
   }
   </script>
+  <style>
+    .hljs {
+      background: transparent !important;
+      padding: 0 !important;
+    }
+    .json-editor {
+      font-family: 'Fira Code', monospace;
+      tab-size: 2;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-b from-blue-50 via-white to-gray-50 min-h-screen flex flex-col">
   <!-- Header Placeholder -->
@@ -35,6 +48,95 @@
     <section class="pt-20 pb-8 px-4 relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent"></div>
       <div class="container mx-auto text-center relative z-10" id="heroSection"></div>
+    </section>
+
+    <!-- Formatter Tool Section -->
+    <section class="py-12 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
+          <!-- Options Bar -->
+          <div class="flex flex-wrap gap-4 mb-6">
+            <div class="flex items-center gap-2">
+              <label class="text-sm font-medium text-gray-700">Indentation:</label>
+              <select id="indentSize" class="rounded-lg border border-gray-300 px-3 py-1.5 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                <option value="2">2 Spaces</option>
+                <option value="4">4 Spaces</option>
+                <option value="8">8 Spaces</option>
+                <option value="tab">Tab</option>
+              </select>
+            </div>
+            <div class="flex items-center gap-2">
+              <label class="text-sm font-medium text-gray-700">Theme:</label>
+              <select id="theme" class="rounded-lg border border-gray-300 px-3 py-1.5 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                <option value="github">GitHub</option>
+                <option value="vs2015">VS2015</option>
+                <option value="atom-one-dark">Atom Dark</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Editor Section -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Input Section -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <label class="block text-sm font-medium text-gray-700">Input JSON</label>
+                <button id="clearInput" class="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                  Clear
+                </button>
+              </div>
+              <div class="relative">
+                <textarea id="jsonInput" class="w-full h-[400px] rounded-lg border border-gray-300 p-4 font-mono text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all resize-none" placeholder="Paste your JSON here..."></textarea>
+              </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <label class="block text-sm font-medium text-gray-700">Formatted JSON</label>
+                <button id="copyOutput" class="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                  Copy
+                </button>
+              </div>
+              <div class="relative">
+                <pre id="jsonOutput" class="w-full h-[400px] rounded-lg border border-gray-300 p-4 font-mono text-sm bg-gray-50 overflow-auto"></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button id="formatBtn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5"></i>
+              Format & Validate
+            </button>
+            <button id="minifyBtn" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2">
+              <i data-lucide="minimize-2" class="w-5 h-5"></i>
+              Minify
+            </button>
+          </div>
+
+          <!-- Error Message -->
+          <div id="errorMessage" class="mt-4 p-4 bg-red-50 text-red-700 rounded-lg hidden"></div>
+
+          <!-- Sample JSON -->
+          <div class="mt-8">
+            <h3 class="text-sm font-medium text-gray-700 mb-4">Sample JSON</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <button class="sample-json p-4 text-left rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all">
+                <h4 class="font-medium text-gray-900">Simple Object</h4>
+                <p class="text-sm text-gray-500 mt-1">Basic JSON object with key-value pairs</p>
+              </button>
+              <button class="sample-json p-4 text-left rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all">
+                <h4 class="font-medium text-gray-900">Nested Array</h4>
+                <p class="text-sm text-gray-500 mt-1">Complex JSON with nested arrays and objects</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Similar Tools Section Placeholder -->
@@ -79,10 +181,154 @@
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
+
     // Initialize tool sections
     document.addEventListener('DOMContentLoaded', () => {
       renderToolSections('JSON_FORMATTER_DATA');
     });
+
+    // Elements
+    const jsonInput = document.getElementById('jsonInput');
+    const jsonOutput = document.getElementById('jsonOutput');
+    const formatBtn = document.getElementById('formatBtn');
+    const minifyBtn = document.getElementById('minifyBtn');
+    const clearInput = document.getElementById('clearInput');
+    const copyOutput = document.getElementById('copyOutput');
+    const errorMessage = document.getElementById('errorMessage');
+    const indentSize = document.getElementById('indentSize');
+    const theme = document.getElementById('theme');
+    const sampleJsonButtons = document.querySelectorAll('.sample-json');
+
+    // Sample JSON data
+    const sampleJson = {
+      simple: {
+        name: "John Doe",
+        age: 30,
+        email: "john@example.com",
+        active: true,
+        hobbies: ["reading", "gaming", "coding"]
+      },
+      complex: {
+        users: [
+          {
+            id: 1,
+            name: "Alice",
+            address: {
+              street: "123 Main St",
+              city: "Boston",
+              country: "USA"
+            },
+            orders: [
+              {
+                id: "A123",
+                items: ["laptop", "mouse"],
+                total: 1299.99
+              }
+            ]
+          }
+        ],
+        metadata: {
+          version: "1.0",
+          timestamp: "2024-03-20T12:00:00Z"
+        }
+      }
+    };
+
+    // Format JSON
+    function formatJSON(json, indent) {
+      try {
+        const parsed = typeof json === 'string' ? JSON.parse(json) : json;
+        return JSON.stringify(parsed, null, indent);
+      } catch (e) {
+        throw new Error('Invalid JSON: ' + e.message);
+      }
+    }
+
+    // Minify JSON
+    function minifyJSON(json) {
+      try {
+        const parsed = typeof json === 'string' ? JSON.parse(json) : json;
+        return JSON.stringify(parsed);
+      } catch (e) {
+        throw new Error('Invalid JSON: ' + e.message);
+      }
+    }
+
+    // Update syntax highlighting
+    function updateHighlighting() {
+      const code = jsonOutput.textContent;
+      jsonOutput.innerHTML = code;
+      hljs.highlightElement(jsonOutput);
+    }
+
+    // Format button click
+    formatBtn.addEventListener('click', () => {
+      try {
+        const indent = indentSize.value === 'tab' ? '\t' : parseInt(indentSize.value);
+        const formatted = formatJSON(jsonInput.value, indent);
+        jsonOutput.textContent = formatted;
+        updateHighlighting();
+        errorMessage.classList.add('hidden');
+      } catch (e) {
+        errorMessage.textContent = e.message;
+        errorMessage.classList.remove('hidden');
+      }
+    });
+
+    // Minify button click
+    minifyBtn.addEventListener('click', () => {
+      try {
+        const minified = minifyJSON(jsonInput.value);
+        jsonOutput.textContent = minified;
+        updateHighlighting();
+        errorMessage.classList.add('hidden');
+      } catch (e) {
+        errorMessage.textContent = e.message;
+        errorMessage.classList.remove('hidden');
+      }
+    });
+
+    // Clear input
+    clearInput.addEventListener('click', () => {
+      jsonInput.value = '';
+      jsonOutput.textContent = '';
+      errorMessage.classList.add('hidden');
+    });
+
+    // Copy output
+    copyOutput.addEventListener('click', () => {
+      const text = jsonOutput.textContent;
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          const originalText = copyOutput.innerHTML;
+          copyOutput.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> Copied!';
+          lucide.createIcons();
+          setTimeout(() => {
+            copyOutput.innerHTML = originalText;
+            lucide.createIcons();
+          }, 2000);
+        });
+      }
+    });
+
+    // Theme change
+    theme.addEventListener('change', () => {
+      const link = document.querySelector('link[href*="highlight.js"]');
+      link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/${theme.value}.min.css`;
+      updateHighlighting();
+    });
+
+    // Sample JSON buttons
+    sampleJsonButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        const sample = index === 0 ? sampleJson.simple : sampleJson.complex;
+        jsonInput.value = JSON.stringify(sample, null, 2);
+        formatBtn.click();
+      });
+    });
+
+    // Initialize with empty state
+    jsonOutput.textContent = '';
   </script>
 </body>
 </html>
