@@ -290,7 +290,7 @@
             tabSite.classList.remove('csrgo-tab-active');
             tabSite.classList.add('csrgo-tab-inactive');
             const tool = getToolInfo();
-            renderShareTab(tool.url, tool.name);
+            renderShareTab('https://csrgo.com/'+tool.url, tool.name);
           }
         }
         function renderShareTab(url, text) {

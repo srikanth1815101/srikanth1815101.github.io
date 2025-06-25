@@ -1,1 +1,0 @@
-window.IP_GEOLOCATION_FINDER_DATA = {};
