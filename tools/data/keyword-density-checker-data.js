@@ -1,1 +1,0 @@
-window.KEYWORD_DENSITY_CHECKER_DATA = {};

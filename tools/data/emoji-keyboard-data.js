@@ -1,1 +1,0 @@
-window.EMOJI_KEYBOARD_DATA = {};

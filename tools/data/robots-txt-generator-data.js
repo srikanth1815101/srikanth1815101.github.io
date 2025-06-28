@@ -1,1 +1,0 @@
-window.ROBOTS_TXT_GENERATOR_DATA = {};

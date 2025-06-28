@@ -30,7 +30,7 @@ async function includeHTML(elementId, path) {
                 </a>
                 <a href="${basePath}favourite-tools.html" class="flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">
                   <i data-lucide="star" class="w-5 h-5 text-yellow-500"></i>
-                  Favourite Tools
+                  Favourites
                 </a>
                 <div class="relative group">
                   <button class="text-base font-medium text-gray-700 hover:text-blue-700 transition-colors flex items-center gap-1" id="categoriesDropdownBtn">
@@ -42,9 +42,6 @@ async function includeHTML(elementId, path) {
                     <div class="flex flex-col gap-1">
                       <a href="${basePath}categories/image-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="image" class="w-5 h-5 text-green-500"></i> Image Tools
-                      </a>
-                      <a href="${basePath}categories/seo-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors text-gray-700 whitespace-nowrap">
-                        <i data-lucide="search" class="w-5 h-5 text-purple-500"></i> SEO Tools
                       </a>
                       <a href="${basePath}categories/text-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="type" class="w-5 h-5 text-blue-500"></i> Text Tools
@@ -61,26 +58,19 @@ async function includeHTML(elementId, path) {
                       <a href="${basePath}categories/security-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-50 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="shield" class="w-5 h-5 text-indigo-500"></i> Security & Encryption
                       </a>
-                      <a href="${basePath}categories/social-media-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-pink-50 transition-colors text-gray-700 whitespace-nowrap">
-                        <i data-lucide="share-2" class="w-5 h-5 text-pink-500"></i> Social Media Tools
-                      </a>
                       <a href="${basePath}categories/misc-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 whitespace-nowrap">
                         <i data-lucide="wrench" class="w-5 h-5 text-gray-500"></i> Miscellaneous Tools
                       </a>
                     </div>
                   </div>
                 </div>
-                <a href="${basePath}blog.html" class="flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">
-                  <i data-lucide="file-text" class="w-5 h-5 text-green-600"></i>
-                  Blog
-                </a>
                 <a href="${basePath}about.html" class="flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">
                   <i data-lucide="info" class="w-5 h-5 text-indigo-600"></i>
-                  About Us
+                  About
                 </a>
                 <a href="${basePath}contact.html" class="flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">
                   <i data-lucide="mail" class="w-5 h-5 text-red-600"></i>
-                  Contact Us
+                  Contact
                 </a>
                 <a href="${basePath}sitemap.html" class="flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-blue-600 px-2 py-1 rounded transition-colors">
                   <i data-lucide="network" class="w-5 h-5 text-orange-600"></i>
@@ -110,7 +100,7 @@ async function includeHTML(elementId, path) {
                     </a>
                     <a href="${basePath}favourite-tools.html" class="w-full flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                       <i data-lucide="star" class="w-5 h-5 mr-3 text-yellow-500"></i>
-                      Favourite Tools
+                      Favourites
                     </a>
                     <button id="mobileCategoriesBtn" class="w-full flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                       <i data-lucide="grid" class="w-5 h-5 mr-3 text-purple-600"></i>
@@ -119,26 +109,20 @@ async function includeHTML(elementId, path) {
                     </button>
                     <div id="mobileCategoriesDropdown" class="hidden pl-4 space-y-2 mt-2">
                       <a href="${basePath}categories/image-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors"><i data-lucide="image" class="w-5 h-5 text-green-600"></i> Image Tools</a>
-                      <a href="${basePath}categories/seo-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-100 transition-colors"><i data-lucide="search" class="w-5 h-5 text-purple-600"></i> SEO Tools</a>
                       <a href="${basePath}categories/text-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors"><i data-lucide="type" class="w-5 h-5 text-blue-600"></i> Text Tools</a>
                       <a href="${basePath}categories/developer-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-orange-100 transition-colors"><i data-lucide="code" class="w-5 h-5 text-orange-600"></i> Developer Tools</a>
                       <a href="${basePath}categories/math-calculators.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-100 transition-colors"><i data-lucide="calculator" class="w-5 h-5 text-red-600"></i> Math & Calculators</a>
                       <a href="${basePath}categories/unit-converters.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-yellow-100 transition-colors"><i data-lucide="ruler" class="w-5 h-5 text-yellow-600"></i> Unit Converters</a>
                       <a href="${basePath}categories/security-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-100 transition-colors"><i data-lucide="shield" class="w-5 h-5 text-indigo-600"></i> Security & Encryption</a>
-                      <a href="${basePath}categories/social-media-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-pink-100 transition-colors"><i data-lucide="share-2" class="w-5 h-5 text-pink-600"></i> Social Media Tools</a>
                       <a href="${basePath}categories/misc-tools.html" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"><i data-lucide="wrench" class="w-5 h-5 text-gray-600"></i> Miscellaneous Tools</a>
                     </div>
-                    <a href="${basePath}blog.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                      <i data-lucide="file-text" class="w-5 h-5 mr-3 text-green-600"></i>
-                      Blog
-                    </a>
                     <a href="${basePath}about.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                       <i data-lucide="info" class="w-5 h-5 mr-3 text-indigo-600"></i>
-                      About Us
+                      About
                     </a>
                     <a href="${basePath}contact.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                       <i data-lucide="mail" class="w-5 h-5 mr-3 text-red-600"></i>
-                      Contact Us
+                      Contact
                     </a>
                     <a href="${basePath}sitemap.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                       <i data-lucide="network" class="w-5 h-5 mr-3 text-orange-600"></i>
@@ -232,9 +216,8 @@ async function includeHTML(elementId, path) {
                 <h3 class="font-semibold text-gray-900 mb-4">Quick Links</h3>
                 <ul class="space-y-2">
                   <li><a href="${basePath}index.html" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a></li>
-                  <li><a href="${basePath}favourite-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Favourite Tools</a></li>
-                  <li><a href="${basePath}about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About Us</a></li>
-                  <li><a href="${basePath}blog.html" class="text-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
+                  <li><a href="${basePath}favourite-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Favourits</a></li>
+                  <li><a href="${basePath}about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a></li>
                   <li><a href="${basePath}contact.html" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
                   <li><a href="${basePath}sitemap.html" class="text-gray-600 hover:text-blue-600 transition-colors">Sitemap</a></li>
                 </ul>
@@ -245,13 +228,11 @@ async function includeHTML(elementId, path) {
                 <h3 class="font-semibold text-gray-900 mb-4">Categories</h3>
                 <ul class="space-y-2">
                   <li><a href="${basePath}categories/image-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Image Tools</a></li>
-                  <li><a href="${basePath}categories/seo-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">SEO Tools</a></li>
                   <li><a href="${basePath}categories/text-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Text Tools</a></li>
                   <li><a href="${basePath}categories/developer-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Developer Tools</a></li>
                   <li><a href="${basePath}categories/math-calculators.html" class="text-gray-600 hover:text-blue-600 transition-colors">Math & Calculators</a></li>
                   <li><a href="${basePath}categories/unit-converters.html" class="text-gray-600 hover:text-blue-600 transition-colors">Unit Converters</a></li>
                   <li><a href="${basePath}categories/security-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Security & Encryption</a></li>
-                  <li><a href="${basePath}categories/social-media-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Social Media Tools</a></li>
                   <li><a href="${basePath}categories/misc-tools.html" class="text-gray-600 hover:text-blue-600 transition-colors">Miscellaneous Tools</a></li>
                 </ul>
               </div>
@@ -267,13 +248,6 @@ async function includeHTML(elementId, path) {
                   <li><a href="${basePath}legal/accessibility.html" class="text-gray-600 hover:text-blue-600 transition-colors">Accessibility</a></li>
                 </ul>
               </div>
-            </div>
-
-            <!-- AdSense Notice -->
-            <div class="bg-blue-50 rounded-lg p-4 mb-8">
-              <p class="text-sm text-blue-800 text-center">
-                This site uses Google AdSense to serve personalized advertisements. By using this site, you agree to our use of cookies and data collection practices as described in our <a href="${basePath}legal/privacy-policy.html" class="underline hover:text-blue-900">Privacy Policy</a>.
-              </p>
             </div>
 
             <!-- Copyright -->

@@ -1,1 +1,0 @@
-window.YOUTUBE_TAGS_EXTRACTOR_DATA = {};

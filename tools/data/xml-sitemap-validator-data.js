@@ -1,1 +1,0 @@
-window.XML_SITEMAP_VALIDATOR_DATA = {};

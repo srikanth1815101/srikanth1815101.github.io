@@ -1,1 +1,0 @@
-window.BACKLINK_CHECKER_DATA = {};

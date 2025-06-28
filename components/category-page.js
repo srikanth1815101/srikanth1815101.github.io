@@ -132,13 +132,11 @@ function renderOtherCategories(currentCategoryId) {
 function getCategoryDescription(categoryId) {
   const descriptions = {
     'image-tools': 'Convert, resize, and optimize your images',
-    'seo-tools': 'Improve your website\'s search engine ranking',
     'text-tools': 'Format, analyze, and transform your text',
     'developer-tools': 'Essential tools for web development',
     'math-calculators': 'Perform complex calculations and conversions',
     'unit-converters': 'Convert between different units of measurement',
     'security-tools': 'Keep your data safe and secure',
-    'social-media-tools': 'Enhance your social media presence',
     'misc-tools': 'Various useful tools and utilities'
   };
   return descriptions[categoryId] || 'Explore our collection of tools';

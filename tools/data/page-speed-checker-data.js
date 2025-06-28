@@ -1,1 +1,0 @@
-window.PAGE_SPEED_CHECKER_DATA = {};

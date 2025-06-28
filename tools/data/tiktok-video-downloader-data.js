@@ -1,1 +1,0 @@
-window.TIKTOK_VIDEO_DOWNLOADER_DATA = {};

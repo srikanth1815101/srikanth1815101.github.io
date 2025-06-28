@@ -1,1 +1,0 @@
-window.SITEMAP_GENERATOR_DATA = {};

@@ -1,1 +1,0 @@
-window.DOMAIN_AUTHORITY_CHECKER_DATA = {};
