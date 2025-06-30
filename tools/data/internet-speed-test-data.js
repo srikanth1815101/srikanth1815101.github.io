@@ -1,1 +1,0 @@
-window.INTERNET_SPEED_TEST_DATA = {};

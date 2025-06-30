@@ -1,1 +1,0 @@
-window.MEME_GENERATOR_DATA = {};

@@ -1,1 +1,0 @@
-window.LOTTERY_NUMBER_GENERATOR_DATA = {};

@@ -1,1 +1,0 @@
-window.FAKE_ADDRESS_GENERATOR_DATA = {};

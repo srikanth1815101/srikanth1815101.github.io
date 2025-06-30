@@ -1,1 +1,0 @@
-window.STORY_PLOT_GENERATOR_DATA = {};

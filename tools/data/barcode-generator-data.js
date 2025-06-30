@@ -1,1 +1,0 @@
-window.BARCODE_GENERATOR_DATA = {};
