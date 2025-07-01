@@ -315,7 +315,7 @@ function renderFooter() {
                         class="group inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-2xl shadow-purple-500/25"
                     >
                         <i data-lucide="mail" class="w-6 h-6 group-hover:rotate-12 transition-transform"></i>
-                        <span>contact@csrgo.com</span>
+                        <span>contact.csrgo@gmail.com</span>
                     </a>
                 </div>
                 
