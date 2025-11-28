@@ -27,10 +27,10 @@ const subdomains = [
         available: true
     },
     {
-        title: 'Portfolio',
-        url: 'me.csrgo.com',
-        description: 'My digital portfolio and resume, showcasing work, skills, and experience.',
-        icon: 'user',
+        title: 'Services',
+        url: 'services.csrgo.com',
+        description: 'Fast, secure, and modern digital solutions for websites, apps, Shopify setup, and creative content.',
+        icon: 'briefcase',
         gradient: 'from-blue-400 to-indigo-600',
         bgGradient: 'from-blue-50 to-indigo-50',
         darkBgGradient: 'from-blue-900/20 to-indigo-900/20',
@@ -224,7 +224,7 @@ function renderGamesSection() {
                         Coming Soon
                     </h2>
                     <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Exciting gaming experiences currently in development. Get ready for some fun!
+                        A dedicated Java DSA platform that is 100% free, secure, and requires no logins or accounts.
                     </p>
                 </div>
                 
@@ -238,7 +238,7 @@ function renderGamesSection() {
                         <div class="relative z-10 text-center">
                             <div class="flex justify-center mb-8">
                                 <div class="p-6 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-800/40 dark:to-blue-800/40 rounded-3xl group-hover:bg-gradient-to-r group-hover:from-purple-200 group-hover:to-blue-200 dark:group-hover:from-purple-700/50 dark:group-hover:to-blue-700/50 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6">
-                                    <i data-lucide="gamepad-2" class="w-16 h-16 text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors"></i>
+                                    <i data-lucide="code-2" class="w-16 h-16 text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors"></i>
                                 </div>
                             </div>
                             
@@ -250,35 +250,40 @@ function renderGamesSection() {
                             </div>
                             
                             <h3 class="text-3xl font-black mb-6 text-gray-900 dark:text-white">
-                                Games Hub
+                                DSA Platform
                             </h3>
                             
                             <p class="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed text-lg">
-                                A collection of engaging browser games including puzzles, arcade-style games, and strategy challenges. 
-                                Perfect for quick entertainment breaks or deep gaming sessions.
+                                Practice data structures and algorithms in Java with ready-to-download starter code you can run locally. Seamless learning with zero sign-ups—just open the repo and start coding.
                             </p>
                             
                             <div class="flex items-center justify-center mb-8">
                                 <div class="px-6 py-3 bg-gray-100 dark:bg-gray-700/50 rounded-xl">
                                     <span class="text-lg text-gray-600 dark:text-gray-400 font-mono">
-                                        games.csrgo.com
+                                        dsa.csrgo.com
                                     </span>
                                 </div>
                             </div>
 
-                            <!-- Game Features Preview -->
+                            <!-- Platform Features Preview -->
                             <div class="grid grid-cols-3 gap-4 text-center">
                                 <div class="p-3 bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-xl">
-                                    <div class="text-2xl mb-2">🧩</div>
-                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Puzzles</span>
+                                    <div class="flex justify-center mb-2">
+                                        <i data-lucide="coffee" class="w-6 h-6 text-purple-600 dark:text-purple-300"></i>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Pure Java</span>
                                 </div>
                                 <div class="p-3 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl">
-                                    <div class="text-2xl mb-2">⚡</div>
-                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Arcade</span>
+                                    <div class="flex justify-center mb-2">
+                                        <i data-lucide="lock" class="w-6 h-6 text-orange-500 dark:text-orange-300"></i>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">No Login</span>
                                 </div>
                                 <div class="p-3 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-xl">
-                                    <div class="text-2xl mb-2">🎯</div>
-                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Strategy</span>
+                                    <div class="flex justify-center mb-2">
+                                        <i data-lucide="download" class="w-6 h-6 text-blue-500 dark:text-blue-300"></i>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Starter Code</span>
                                 </div>
                             </div>
                         </div>
