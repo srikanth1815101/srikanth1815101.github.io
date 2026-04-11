@@ -333,17 +333,22 @@ function renderFooter() {
                     </div>
                     
                     <div class="flex items-center space-x-4 sm:space-x-6">
-                        ${[
-                            { icon: 'user', href: 'https://resume.csrgo.com/' },
-                            { icon: 'linkedin', href: 'https://www.linkedin.com/in/csrsrikanthreddy/' }
-                        ].map(social => `
-                            <a 
-                                href="${social.href}" 
-                                class="p-2 sm:p-3 bg-gray-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 text-gray-400 hover:text-white rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-                            >
-                                <i data-lucide="${social.icon}" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                            </a>
-                        `).join('')}
+                        <a 
+                            href="https://resume.csrgo.com/" 
+                            class="p-2 sm:p-3 bg-gray-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 text-gray-400 hover:text-white rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                        >
+                            <i data-lucide="user" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        </a>
+                        <a 
+                            href="https://www.linkedin.com/in/csrsrikanthreddy/" 
+                            class="p-2 sm:p-3 bg-gray-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 text-gray-400 hover:text-white rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 sm:w-6 sm:h-6">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
