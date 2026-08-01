@@ -27,6 +27,16 @@ const subdomains = [
         available: true
     },
     {
+        title: 'Wishes',
+        url: 'wishes.csrgo.com',
+        description: 'Create Personalized Wishes Websites with Permanent URLs for Every Occasion.',
+        icon: 'heart',
+        gradient: 'from-pink-400 to-red-600',
+        bgGradient: 'from-pink-50 to-red-50',
+        darkBgGradient: 'from-pink-900/20 to-red-900/20',
+        available: true
+    },
+    {
         title: 'Services',
         url: 'services.csrgo.com',
         description: 'Fast, secure, and modern digital solutions for websites, apps, Shopify setup, and creative content.',
@@ -88,10 +98,10 @@ function renderHeader() {
                             onclick="toggleDarkMode()"
                             class="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-800/40 dark:to-blue-800/40 hover:from-purple-200 hover:to-blue-200 dark:hover:from-purple-700/50 dark:hover:to-blue-700/50 transition-all duration-300 transform hover:scale-105 active:scale-95"
                         >
-                            ${darkMode ? 
-                                '<i data-lucide="sun" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400"></i>' : 
-                                '<i data-lucide="moon" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-600"></i>'
-                            }
+                            ${darkMode ?
+            '<i data-lucide="sun" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400"></i>' :
+            '<i data-lucide="moon" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-600"></i>'
+        }
                         </button>
                     </div>
                 </div>
@@ -375,7 +385,7 @@ function renderApp() {
             ${renderFooter()}
         </div>
     `;
-    
+
     root.innerHTML = app;
     if (window.lucide && window.lucide.createIcons) {
         window.lucide.createIcons();
