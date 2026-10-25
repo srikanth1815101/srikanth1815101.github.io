@@ -7,13 +7,13 @@ let scrollY = 0;
 // Data
 const subdomains = [
     {
-        title: 'Tools',
-        url: 'tools.csrgo.com',
-        description: 'Browser-based online utilities like formatters, converters, calculators, and more.',
-        icon: 'wrench',
-        gradient: 'from-emerald-400 to-teal-600',
-        bgGradient: 'from-emerald-50 to-teal-50',
-        darkBgGradient: 'from-emerald-900/20 to-teal-900/20',
+        title: 'DSA',
+        url: 'dsa.csrgo.com',
+        description: 'Practice data structures and algorithms in Java with ready-to-download starter code and zero logins.',
+        icon: 'code-2',
+        gradient: 'from-purple-500 to-indigo-600',
+        bgGradient: 'from-purple-50 to-indigo-50',
+        darkBgGradient: 'from-purple-900/20 to-indigo-900/20',
         available: true
     },
     {
@@ -24,6 +24,16 @@ const subdomains = [
         gradient: 'from-orange-400 to-red-600',
         bgGradient: 'from-orange-50 to-red-50',
         darkBgGradient: 'from-orange-900/20 to-red-900/20',
+        available: true
+    },
+    {
+        title: 'Tools',
+        url: 'tools.csrgo.com',
+        description: 'Browser-based online utilities like formatters, converters, calculators, and more.',
+        icon: 'wrench',
+        gradient: 'from-emerald-400 to-teal-600',
+        bgGradient: 'from-emerald-50 to-teal-50',
+        darkBgGradient: 'from-emerald-900/20 to-teal-900/20',
         available: true
     },
     {
@@ -224,90 +234,7 @@ function renderProjectsSection() {
     `;
 }
 
-function renderGamesSection() {
-    return `
-        <section class="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-purple-50/50 to-blue-50/50 dark:from-purple-900/10 dark:to-blue-900/10"></div>
-            <div class="max-w-7xl mx-auto relative">
-                <div class="text-center mb-12 sm:mb-16 md:mb-20">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 text-gray-900 dark:text-white">
-                        Coming Soon
-                    </h2>
-                    <p class="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
-                        A dedicated Java DSA platform that is 100% free, secure, and requires no logins or accounts.
-                    </p>
-                </div>
-                
-                <div class="flex justify-center">
-                    <div class="group relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden transform hover:scale-105 transition-all duration-500 max-w-md w-full mx-2 sm:mx-0">
-                        <!-- Animated Background -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 opacity-50"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-                        
-                        <!-- Content -->
-                        <div class="relative z-10 text-center">
-                            <div class="flex justify-center mb-6 sm:mb-8">
-                                <div class="p-4 sm:p-5 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-800/40 dark:to-blue-800/40 rounded-2xl sm:rounded-3xl group-hover:bg-gradient-to-r group-hover:from-purple-200 group-hover:to-blue-200 dark:group-hover:from-purple-700/50 dark:group-hover:to-blue-700/50 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6">
-                                    <i data-lucide="code-2" class="w-10 h-10 sm:w-12 sm:h-12 text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center justify-center space-x-2 mb-4 sm:mb-6">
-                                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-orange-400 rounded-full animate-pulse"></div>
-                                <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-orange-100 dark:bg-orange-800/40 text-orange-700 dark:text-orange-300 text-xs sm:text-sm font-bold rounded-full">
-                                    Coming Soon
-                                </span>
-                            </div>
-                            
-                            <h3 class="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white">
-                                DSA Platform
-                            </h3>
-                            
-                            <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2">
-                                Practice data structures and algorithms in Java with ready-to-download starter code you can run locally. Seamless learning with zero sign-ups—just open the repo and start coding.
-                            </p>
-                            
-                            <div class="flex items-center justify-center mb-4 sm:mb-6">
-                                <div class="px-4 sm:px-5 py-2 sm:py-2.5 bg-gray-100 dark:bg-gray-700/50 rounded-lg sm:rounded-xl">
-                                    <span class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-mono break-all">
-                                        dsa.csrgo.com
-                                    </span>
-                                </div>
-                            </div>
 
-                            <!-- Platform Features Preview -->
-                            <div class="grid grid-cols-3 gap-2 sm:gap-3 text-center">
-                                <div class="p-2 sm:p-3 bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-lg sm:rounded-xl">
-                                    <div class="flex justify-center mb-1.5 sm:mb-2">
-                                        <i data-lucide="coffee" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 dark:text-purple-300"></i>
-                                    </div>
-                                    <span class="text-xs font-semibold text-gray-700 dark:text-gray-300">Pure Java</span>
-                                </div>
-                                <div class="p-2 sm:p-3 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg sm:rounded-xl">
-                                    <div class="flex justify-center mb-1.5 sm:mb-2">
-                                        <i data-lucide="lock" class="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-300"></i>
-                                    </div>
-                                    <span class="text-xs font-semibold text-gray-700 dark:text-gray-300">No Login</span>
-                                </div>
-                                <div class="p-2 sm:p-3 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-lg sm:rounded-xl">
-                                    <div class="flex justify-center mb-1.5 sm:mb-2">
-                                        <i data-lucide="download" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 dark:text-blue-300"></i>
-                                    </div>
-                                    <span class="text-xs font-semibold text-gray-700 dark:text-gray-300">Starter Code</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Loading Animation -->
-                        <div class="absolute bottom-0 left-0 right-0 h-1.5 sm:h-2 bg-gray-200 dark:bg-gray-700 overflow-hidden rounded-b-2xl sm:rounded-b-3xl">
-                            <div class="h-full bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-2000 ease-out"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    `;
-}
 
 function renderFooter() {
     const currentYear = new Date().getFullYear();
@@ -326,11 +253,11 @@ function renderFooter() {
                     </p>
                     
                     <a
-                        href="mailto:contact@csrgo.com"
+                        href="mailto:support@csrgo.com"
                         class="group inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-2xl shadow-purple-500/25"
                     >
                         <i data-lucide="mail" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform"></i>
-                        <span class="text-xs sm:text-sm md:text-base break-all sm:break-normal">contact.csrgo@gmail.com</span>
+                        <span class="text-xs sm:text-sm md:text-base break-all sm:break-normal">support@csrgo.com</span>
                     </a>
                 </div>
                 
@@ -381,7 +308,6 @@ function renderApp() {
             ${renderHeader()}
             ${renderHeroSection()}
             ${renderProjectsSection()}
-            ${renderGamesSection()}
             ${renderFooter()}
         </div>
     `;
