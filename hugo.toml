@@ -1,0 +1,59 @@
+baseURL = "https://csrgo.com/"
+locale = "en-us"
+title = "CSRGO — One Door to All Tools & Evolving Ecosystem"
+enableEmoji = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "A unified digital gateway and single door to specialized tools, algorithms, tech blogs, creative experiences, and modern web services."
+  author = "CSRGO"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.8
+  filename = "sitemap.xml"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Tools"
+  url = "/#tools"
+  weight = 2
+
+[[menu.main]]
+  name = "DSA"
+  url = "/#dsa"
+  weight = 3
+
+[[menu.main]]
+  name = "Blog"
+  url = "/#blog"
+  weight = 4
+
+[[menu.main]]
+  name = "Services"
+  url = "/#services"
+  weight = 5
+
+[[menu.main]]
+  name = "Wishes"
+  url = "/#wishes"
+  weight = 6
+
+[[menu.footer]]
+  name = "Privacy Policy"
+  url = "/privacy/"
+  weight = 1
+
+[[menu.footer]]
+  name = "Terms & Conditions"
+  url = "/terms/"
+  weight = 2
