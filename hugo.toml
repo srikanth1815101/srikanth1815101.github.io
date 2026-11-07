@@ -25,27 +25,27 @@ disableKinds = ["taxonomy", "term"]
 
 [[menu.main]]
   name = "Tools"
-  url = "/#tools"
+  url = "/tools"
   weight = 2
 
 [[menu.main]]
   name = "DSA"
-  url = "/#dsa"
+  url = "/dsa"
   weight = 3
 
 [[menu.main]]
   name = "Blog"
-  url = "/#blog"
+  url = "/blog"
   weight = 4
 
 [[menu.main]]
   name = "Services"
-  url = "/#services"
+  url = "/services"
   weight = 5
 
 [[menu.main]]
   name = "Wishes"
-  url = "/#wishes"
+  url = "/wishes"
   weight = 6
 
 [[menu.footer]]
