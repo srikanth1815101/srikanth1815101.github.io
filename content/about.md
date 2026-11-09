@@ -2,6 +2,7 @@
 title: "About CSRGO"
 description: "CSRGO is your single door to an evolving ecosystem of specialized tools, interactive computer science practice, engineering articles, and digital services."
 date: 2026-11-06
+layout: "about"
 draft: false
 ---
 
@@ -38,4 +39,4 @@ CSRGO powers five dedicated, live micro-platforms:
 - **Privacy First:** We minimize data capture and respect user privacy across every subdomain.
 - **Continuous Evolution:** New tools, problem sets, and features are continually added to the CSRGO ecosystem.
 
-Have questions, suggestions, or collaboration inquiries? Visit our [Contact Page](/contact/) or email us directly at [csrgomain@gmail.com](mailto:csrgomain@gmail.com).
+Have questions, suggestions, or collaboration inquiries? Visit our [Contact Page](/contact/) or email us directly at [support@csrgo.com](mailto:support@csrgo.com).

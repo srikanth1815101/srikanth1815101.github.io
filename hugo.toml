@@ -1,12 +1,16 @@
 baseURL = "https://csrgo.com/"
 locale = "en-us"
-title = "CSRGO — One Door to All Tools & Evolving Ecosystem"
+title = "CSRGO"
 enableEmoji = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
+  siteTagline = "One Door to All Tools & Evolving Ecosystem"
   description = "A unified digital gateway and single door to specialized tools, algorithms, tech blogs, creative experiences, and modern web services."
   author = "CSRGO"
+  googleTagManager = "GTM-W5QBLL9G"
+  googleAnalytics = "G-985YFQTWCK"
+  googleAdsense = "" # Enter your AdSense publisher client ID here (e.g. "ca-pub-XXXXXXXXXXXXXXXX")
 
 [outputs]
   home = ["HTML", "RSS"]
@@ -25,28 +29,38 @@ disableKinds = ["taxonomy", "term"]
 
 [[menu.main]]
   name = "Tools"
-  url = "/tools"
+  url = "https://tools.csrgo.com/"
   weight = 2
 
 [[menu.main]]
   name = "DSA"
-  url = "/dsa"
+  url = "https://dsa.csrgo.com/"
   weight = 3
 
 [[menu.main]]
   name = "Blog"
-  url = "/blog"
+  url = "https://blog.csrgo.com/"
   weight = 4
 
 [[menu.main]]
   name = "Services"
-  url = "/services"
+  url = "https://services.csrgo.com/"
   weight = 5
 
 [[menu.main]]
   name = "Wishes"
-  url = "/wishes"
+  url = "https://wishes.csrgo.com/"
   weight = 6
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 7
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 8
 
 [[menu.footer]]
   name = "Privacy Policy"
@@ -57,3 +71,13 @@ disableKinds = ["taxonomy", "term"]
   name = "Terms & Conditions"
   url = "/terms/"
   weight = 2
+
+[[menu.footer]]
+  name = "Cookie Policy"
+  url = "/cookies/"
+  weight = 3
+
+[[menu.footer]]
+  name = "Disclaimer"
+  url = "/disclaimer/"
+  weight = 4

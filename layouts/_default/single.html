@@ -1,5 +1,6 @@
 {{ define "main" }}
-<article class="bg-white dark:bg-[#141B3D] p-6 sm:p-10 rounded-3xl border border-gray-100 dark:border-gray-700/50 shadow-xl my-8 animate-fade-in-up">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<article class="bg-white dark:bg-[#141B3D] p-6 sm:p-10 rounded-3xl border border-gray-100 dark:border-gray-700/50 shadow-xl my-4 animate-fade-in-up">
   <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-4">{{ .Title }}</h1>
   {{ with .Date }}
   <div class="text-xs sm:text-sm font-semibold text-gray-500 dark:text-gray-400 mb-8 pb-4 border-b border-gray-100 dark:border-gray-700/50 flex items-center gap-2">
@@ -11,4 +12,5 @@
     {{ .Content }}
   </div>
 </article>
+</div>
 {{ end }}

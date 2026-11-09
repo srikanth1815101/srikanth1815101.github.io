@@ -6,40 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Title & Canonical -->
-    <title>{{ if .IsHome }}{{ .Site.Title }} — Unified Digital Ecosystem & Micro-Platforms{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ if in .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}{{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
 
+    <!-- Robots & Crawler Directives -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Description & Author -->
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="keywords" content="CSRGO, developer tools, online utilities, data structures and algorithms, DSA Java, tech blog, web engineering, client-side tools">
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#4A90E2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0A0E27" media="(prefers-color-scheme: dark)">
 
     <!-- Open Graph / Social Meta -->
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }} — Unified Digital Ecosystem & Micro-Platforms{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ if in .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}{{ end }}">
     <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:image" content="{{ .Site.BaseURL }}logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="CSRGO — Unified Digital Ecosystem">
     <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }} — Unified Digital Ecosystem & Micro-Platforms{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ if in .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}{{ end }}">
     <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="twitter:image" content="{{ .Site.BaseURL }}logo.png">
+    <meta name="twitter:image:alt" content="CSRGO — Unified Digital Ecosystem">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    {{ if .IsHome }}
+    <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets & E-E-A-T -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "{{ .Site.BaseURL }}#website",
+          "url": "{{ .Site.BaseURL }}",
+          "name": "{{ .Site.Title }}",
+          "headline": "CSRGO — One Door to All Tools & Developer Ecosystem",
+          "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+          "publisher": {
+            "@id": "{{ .Site.BaseURL }}#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "{{ .Site.BaseURL }}#organization",
+          "name": "{{ .Site.Title }}",
+          "url": "{{ .Site.BaseURL }}",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "{{ .Site.BaseURL }}#logo",
+            "url": "{{ .Site.BaseURL }}logo.png",
+            "caption": "{{ .Site.Title }} Logo",
+            "width": 512,
+            "height": 512
+          },
+          "image": {
+            "@id": "{{ .Site.BaseURL }}#logo"
+          },
+          "sameAs": [
+            "https://github.com/srikanth1815101",
+            "https://instagram.com/csrgo_com",
+            "https://youtube.com/@csrgo_com"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "support@csrgo.com",
+              "availableLanguage": ["en"]
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    {{ end }}
+
+    {{ with .Site.Params.googleAdsense }}
+    <!-- Google AdSense Verification & Auto-Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}" crossorigin="anonymous"></script>
+    {{ end }}
+    {{ with .Site.Params.googleTagManager }}
+    <!-- Google Tag Manager / Analytics -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      {{ with $.Site.Params.googleAnalytics }}
+      gtag('config', '{{ . }}');
+      {{ end }}
+    </script>
+    {{ else }}
+    {{ with .Site.Params.googleAnalytics }}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ . }}');
+    </script>
+    {{ end }}
+    {{ end }}
+
+    {{ if .IsHome }}
+    <!-- Preload Hero First-Frame Poster for Instant Paint -->
+    <link rel="preload" as="image" href="/hero-poster.webp" type="image/webp" fetchpriority="high">
+    {{ end }}
+
+    <!-- Favicon (Exact from Blog Project) -->
+    <link rel="icon" type="image/png" href="/logo.png">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter, JetBrains Mono & Space Grotesk (Exact from Blog Project) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
@@ -56,7 +153,8 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif']
                     },
                     backgroundImage: {
                         'gradient-primary': 'linear-gradient(135deg, #FF6B35 0%, #4A90E2 50%, #9B59B6 100%)',
@@ -144,9 +242,13 @@
 </head>
 
 <body class="bg-[#F8F9FA] dark:bg-[#0A0E27] text-gray-900 dark:text-[#E5E7EB] font-sans antialiased selection:bg-primary/30 selection:text-primary">
+    {{ with .Site.Params.googleTagManager }}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ . }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{ end }}
     {{ partial "header.html" . }}
 
-    <main class="{{ if .IsHome }}min-h-screen{{ else }}pt-24 md:pt-28 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12{{ end }}">
+    <main class="{{ if .IsHome }}min-h-screen{{ else }}pt-20 md:pt-24 min-h-screen{{ end }}">
         {{ block "main" . }}{{ end }}
     </main>
 

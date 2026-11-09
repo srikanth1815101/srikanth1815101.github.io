@@ -1,33 +1,74 @@
 ---
-title: "Terms of Service"
-description: "Terms and conditions governing the use of CSRGO services and website."
-date: 2026-11-06
+title: "Terms and Conditions"
+description: "Review the Terms and Conditions governing your access to and use of CSRGO, our client-side developer utilities, educational content, and digital services."
+date: 2026-11-09
+layout: "legal"
+url: "/terms/"
+aliases:
+  - "/terms-and-conditions/"
+  - "/terms-conditions/"
 draft: false
 ---
 
-## Terms and Conditions
+**Last Updated: November 9, 2026**
 
-By accessing and using [csrgo.com](https://csrgo.com), you agree to comply with and be bound by the following terms and conditions of use.
+Welcome to CSRGO! By accessing or using our website at [https://csrgo.com](https://csrgo.com) and associated subdomains (including tools.csrgo.com, dsa.csrgo.com, and blog.csrgo.com) (collectively, the "Site"), you agree to comply with and be bound by these Terms and Conditions. Please read them carefully before using our platform.
 
-### Intellectual Property
+If you do not agree to these Terms and Conditions in full, you must discontinue use of the Site immediately.
 
-All content, logos, graphical assets, documentation, and design layouts displayed on this website are the intellectual property of CSRGO or used under permissible licenses. You may not reproduce, distribute, or create derivative works without express prior written consent.
+## 1. Educational, Informational, and Utility Purpose
 
-### Acceptable Use
+All developer utilities, Data Structures &amp; Algorithms (DSA) curricula, code snippets, engineering tutorials, and publications available across CSRGO are provided for **educational, learning, and general developer utility purposes only**.
 
-You agree to use this site solely for lawful purposes and in a manner that does not infringe upon, restrict, or inhibit the rights of any third party. Prohibited activities include attempting to breach site security, introducing malicious software, or scraping site resources maliciously.
+*   **Explore at Your Own Risk:** The tools, code snippets, and guides provided here are intended to assist your learning and accelerate developer workflows. You are solely responsible for testing, validating, and verifying any code, algorithm, regex, or command before running it in local environments or production systems.
+*   **No Professional Advice:** The content on this Site does not constitute professional, legal, or enterprise consulting advice. While we strive for accuracy, software standards change rapidly, and information may become outdated or contain unintended errors.
+*   **"As Is" Basis:** All services, tools, and content are provided on an "as is" and "as available" basis without warranties of any kind, whether express, statutory, or implied. We do not guarantee that the tools will work error-free in your specific browser environment or meet specific technical requirements.
 
-### Disclaimer of Warranties
+## 2. Intellectual Property Rights
 
-The materials and services on this website are provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied. CSRGO does not guarantee that website functions will be uninterrupted or error-free.
+Unless otherwise indicated, CSRGO and/or its creators own all intellectual property rights for the original editorial materials, design layout, brand assets, and architecture of this Site.
 
-### Limitation of Liability
+*   **You May:** View, bookmark, locally cache, and use code snippets, algorithmic patterns, and browser utilities for your own personal and commercial developer projects without royalty fees.
+*   **You Must Not:** Republish original articles in bulk on another website, resell or sub-license our content, or reproduce substantial proprietary portions of the Site for commercial gain without our express prior written authorization.
 
-In no event shall CSRGO or its contributors be held liable for any damages arising out of the use or inability to use the materials on this website.
+## 3. Acceptable Use and User Conduct
 
-### Governing Law
+You agree to use CSRGO only for lawful purposes in a manner that does not infringe upon, restrict, or inhibit the rights of any third party. Specifically, you agree not to:
 
-These terms and conditions are governed by and construed in accordance with applicable laws, and any disputes shall be resolved within competent legal jurisdictions.
+*   Attempt to compromise, probe, or breach the security, accessibility, or integrity of the Site or its underlying hosting infrastructure.
+*   Deploy aggressive automated scraping scripts, bots, or denial-of-service tools that overburden network resources or degrade the browsing experience for other users.
+*   Introduce viruses, trojans, worms, or any malicious code into the platform or community boards.
 
-For questions concerning these terms, please contact [csrgomain@gmail.com](mailto:csrgomain@gmail.com).
+## 4. Client-Side Tools & Output Responsibility
 
+A core principle of the CSRGO platform is privacy-preserving client-side execution:
+
+*   Utilities hosted across [tools.csrgo.com](https://tools.csrgo.com) operate entirely within your local browser sandbox using native Web APIs.
+*   You retain full ownership of any source code, payloads, or text strings you enter into our tools.
+*   You are solely responsible for how you handle, distribute, or execute any output generated by the tools. CSRGO accepts no liability for data corruption, formatting discrepancies, or operational issues resulting from generated outputs.
+
+## 5. Limitation of Liability
+
+To the fullest extent permitted under applicable law, in no event shall CSRGO, nor any of its contributors, maintainers, or authors, be liable to you or any third party for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages whatsoever (including, without limitation, damages for loss of business profits, data corruption, business interruption, system crashes, or hardware failure) arising out of or in connection with your use of or inability to use this Site, its tools, or its educational curricula, whether based on warranty, contract, tort (including negligence), or any other legal theory.
+
+## 6. Third-Party Links & Advertisements
+
+This Site may contain links to third-party websites (such as GitHub, documentation portals, and community services) and third-party advertisements served by Google AdSense.
+
+*   We have no control over and assume no responsibility for the content, privacy policies, practices, or availability of any third-party websites or services.
+*   You acknowledge and agree that CSRGO shall not be held liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any external content, products, or services.
+
+## 7. Modifications to Terms
+
+We reserve the right to modify, amend, or update these Terms and Conditions at any time at our sole discretion. Any revisions will be effective immediately upon posting to this page with an updated "Last Updated" timestamp. Your continued use of the Site following the publication of revised terms constitutes your binding agreement to the modifications.
+
+## 8. Governing Law and Jurisdiction
+
+These Terms and Conditions shall be governed by, construed, and enforced in accordance with the laws of the Republic of India. Any legal action, suit, or proceeding arising out of or relating to these Terms or your use of the Site shall be instituted exclusively in the competent courts located in India.
+
+## 9. Contact Us
+
+If you have any questions or require clarification regarding these Terms and Conditions, please contact us:
+
+*   **Email:** [support@csrgo.com](mailto:support@csrgo.com)
+*   **Contact Form:** [https://csrgo.com/contact/](https://csrgo.com/contact/)
