@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title & Canonical -->
+    <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ if in .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}{{ end }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Robots & Crawler Directives -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Description & Author -->
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="keywords" content="CSRGO, developer tools, online utilities, data structures and algorithms, DSA Java, tech blog, web engineering, client-side tools">
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#4A90E2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0A0E27" media="(prefers-color-scheme: dark)">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ if in .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}{{ end }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="CSRGO — Unified Digital Ecosystem">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ if in .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}{{ end }}">
+    <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}logo.png">
+    <meta name="twitter:image:alt" content="CSRGO — Unified Digital Ecosystem">
+
+    {{ if .IsHome }}
+    <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets & E-E-A-T -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "{{ .Site.BaseURL }}#website",
+          "url": "{{ .Site.BaseURL }}",
+          "name": "{{ .Site.Title }}",
+          "headline": "CSRGO — One Door to All Tools & Developer Ecosystem",
+          "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+          "publisher": {
+            "@id": "{{ .Site.BaseURL }}#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "{{ .Site.BaseURL }}#organization",
+          "name": "{{ .Site.Title }}",
+          "url": "{{ .Site.BaseURL }}",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "{{ .Site.BaseURL }}#logo",
+            "url": "{{ .Site.BaseURL }}logo.png",
+            "caption": "{{ .Site.Title }} Logo",
+            "width": 512,
+            "height": 512
+          },
+          "image": {
+            "@id": "{{ .Site.BaseURL }}#logo"
+          },
+          "sameAs": [
+            "https://github.com/srikanth1815101",
+            "https://instagram.com/csrgo_com",
+            "https://youtube.com/@csrgo_com"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "support@csrgo.com",
+              "availableLanguage": ["en"]
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    {{ end }}
+
+    {{ with .Site.Params.googleAdsense }}
+    <!-- Google AdSense Verification & Auto-Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}" crossorigin="anonymous"></script>
+    {{ end }}
+    {{ with .Site.Params.googleTagManager }}
+    <!-- Google Tag Manager / Analytics -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      {{ with $.Site.Params.googleAnalytics }}
+      gtag('config', '{{ . }}');
+      {{ end }}
+    </script>
+    {{ else }}
+    {{ with .Site.Params.googleAnalytics }}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ . }}');
+    </script>
+    {{ end }}
+    {{ end }}
+
+    {{ if .IsHome }}
+    <!-- Preload Hero First-Frame Poster for Instant Paint -->
+    <link rel="preload" as="image" href="/hero-poster.webp" type="image/webp" fetchpriority="high">
+    {{ end }}
+
+    <!-- Favicon (Exact from Blog Project) -->
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Inter, JetBrains Mono & Space Grotesk (Exact from Blog Project) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS with Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#9B59B6',
+                        accent: '#FF6B35',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #FF6B35 0%, #4A90E2 50%, #9B59B6 100%)',
+                        'gradient-secondary': 'linear-gradient(135deg, #4A90E2 0%, #9B59B6 100%)',
+                        'gradient-accent': 'linear-gradient(90deg, #FF6B35 0%, #FF8C5A 50%, #4A90E2 100%)',
+                        'gradient-warm': 'linear-gradient(135deg, #FF6B35 0%, #FF7F66 100%)',
+                        'gradient-cool': 'linear-gradient(135deg, #4A90E2 0%, #8B5CF6 100%)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+                        'fade-in': 'fadeIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+                        'blob': 'blob 7s infinite',
+                        'pop-in': 'popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+                        'marquee': 'marquee 45s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        popIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8) translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS (Exact from DSA-Combined) -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Theme Toggle Script (Exact from DSA-Combined) -->
+    <script>
+        (function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const theme = urlParams.get('theme') || localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-[#F8F9FA] dark:bg-[#0A0E27] text-gray-900 dark:text-[#E5E7EB] font-sans antialiased selection:bg-primary/30 selection:text-primary">
+    {{ with .Site.Params.googleTagManager }}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ . }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{ end }}
+    {{ partial "header.html" . }}
+
+    <main class="{{ if .IsHome }}min-h-screen{{ else }}pt-20 md:pt-24 min-h-screen{{ end }}">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- Go to Top Button (Exact from DSA-Combined) -->
+    <button id="goToTopBtn"
+        class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[101] hidden items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:-translate-y-1 active:scale-95 transition-all duration-300 opacity-0 transform translate-y-4 cursor-pointer"
+        aria-label="Scroll to top">
+        <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Global UI Scripts (Exact from DSA-Combined) -->
+    <script src="/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // Go to top button handler
+            const goToTopBtn = document.getElementById('goToTopBtn');
+            if (goToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 400) {
+                        goToTopBtn.classList.remove('hidden');
+                        setTimeout(() => {
+                            goToTopBtn.classList.remove('opacity-0', 'translate-y-4');
+                            goToTopBtn.classList.add('opacity-100', 'translate-y-0');
+                        }, 10);
+                    } else {
+                        goToTopBtn.classList.add('opacity-0', 'translate-y-4');
+                        goToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                        setTimeout(() => {
+                            if (window.scrollY <= 400) goToTopBtn.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+
+                goToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+# Google AdSense ads.txt for csrgo.com
+# Once your AdSense account is created, replace pub-0000000000000000 with your actual Publisher ID:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
