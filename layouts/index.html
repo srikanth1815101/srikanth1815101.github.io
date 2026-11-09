@@ -73,6 +73,7 @@
 
         /* ─── DESKTOP (1024px+) ─────────────────────────────────────────── */
         @media (min-width: 1024px) {
+
             .plate-video,
             .plate-poster {
                 position: absolute;
@@ -278,10 +279,12 @@
     <div class="stage" id="stage">
         <!-- Exact Plate & Video from project-bolt -->
         <div class="plate">
-            <video class="plate-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="/hero-poster.webp">
+            <video class="plate-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"
+                poster="/hero-poster.webp">
                 <source src="/hf_20260808_112712_da9d53df-6d27-4b12-bdf6-aa9dc2622bdf.mp4" type="video/mp4" />
             </video>
-            <img src="/hero-poster.webp" id="hero-poster" class="plate-poster" fetchpriority="high" decoding="async" alt="" aria-hidden="true" />
+            <img src="/hero-poster.webp" id="hero-poster" class="plate-poster" fetchpriority="high" decoding="async"
+                alt="" aria-hidden="true" />
         </div>
 
         <!-- Strict Container Aligned with Content Width of Site (max-w-7xl) -->
@@ -301,7 +304,7 @@
         <!-- Layer 4: Interactive Controls (Explore Ecosystem Button kept as requested) -->
         <div
             class="absolute inset-x-0 bottom-8 sm:bottom-10 z-30 pointer-events-auto flex items-center justify-center px-4">
-            <a href="#tools"
+            <a href="#ecosystem"
                 class="group inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-xs sm:text-sm font-bold bg-gray-950 text-white hover:bg-gray-800 dark:bg-white dark:text-[#050505] dark:hover:bg-gray-100 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300">
                 <span>Explore Ecosystem</span>
                 <i data-lucide="chevron-down" class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform"></i>
@@ -312,7 +315,7 @@
     <!-- ═════════════════════════════════════════════════════════════════ -->
     <!-- 2. SECTION: TOOLS (tools.csrgo.com) - Left Text, Right Visual     -->
     <!-- ═════════════════════════════════════════════════════════════════ -->
-    <section id="tools" class="py-24 sm:py-32 relative overflow-hidden transition-colors duration-200">
+    <section id="ecosystem" class="py-24 sm:py-32 relative overflow-hidden transition-colors duration-200">
         <!-- Soft Ambient Atmospheric Blob -->
         <div
             class="absolute top-1/2 right-[10%] -translate-y-1/2 w-[50vw] h-[40vh] bg-gradient-to-r from-purple-500/10 to-indigo-500/10 blur-[130px] rounded-full pointer-events-none">
@@ -1128,7 +1131,9 @@
                     </div>
 
                     <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Built to eliminate digital friction. A single, unified door to purpose-built developer utilities, algorithmic practice, engineering publications, and web experiences—no accounts, no subscriptions, zero friction.
+                        Built to eliminate digital friction. A single, unified door to purpose-built developer
+                        utilities, algorithmic practice, engineering publications, and web experiences—no accounts, no
+                        subscriptions, zero friction.
                     </p>
 
                     <!-- Feature Chips -->
@@ -1141,7 +1146,8 @@
                         <div
                             class="px-3 py-1.5 rounded-lg bg-purple-50/70 dark:bg-purple-900/15 border border-purple-100 dark:border-purple-800/30 flex items-center gap-1.5 shadow-sm">
                             <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-500"></i>
-                            <span class="text-xs font-medium text-gray-700 dark:text-gray-300">Client-Side Privacy</span>
+                            <span class="text-xs font-medium text-gray-700 dark:text-gray-300">Client-Side
+                                Privacy</span>
                         </div>
                         <div
                             class="px-3 py-1.5 rounded-lg bg-blue-50/70 dark:bg-blue-900/15 border border-blue-100 dark:border-blue-800/30 flex items-center gap-1.5 shadow-sm">
@@ -1162,46 +1168,54 @@
                 <div class="flex-1 w-full relative">
                     <div
                         class="bg-white dark:bg-[#0c101d] rounded-2xl sm:rounded-3xl border border-gray-200 dark:border-gray-800/80 p-5 sm:p-6 shadow-2xl shadow-indigo-500/5 space-y-3.5">
-                        <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-gray-800">
+                        <div
+                            class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-gray-800">
                             <div class="flex items-center gap-2">
                                 <div class="w-3 h-3 rounded-full bg-red-400"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
                                 <div class="w-3 h-3 rounded-full bg-green-400"></div>
                                 <span class="ml-2 text-xs font-mono text-gray-400">csrgo-ecosystem.json</span>
                             </div>
-                            <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 font-semibold">Live & Active</span>
+                            <span
+                                class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 font-semibold">Live
+                                & Active</span>
                         </div>
 
                         <div class="space-y-2.5 font-mono text-xs">
-                            <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
+                            <div
+                                class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
                                     <i data-lucide="wrench" class="w-4 h-4 text-purple-500"></i>
                                     <span class="font-bold text-gray-800 dark:text-gray-200">tools.csrgo.com</span>
                                 </div>
                                 <span class="text-gray-400">Developer Utilities</span>
                             </div>
-                            <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
+                            <div
+                                class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
                                     <i data-lucide="code-xml" class="w-4 h-4 text-blue-500"></i>
                                     <span class="font-bold text-gray-800 dark:text-gray-200">dsa.csrgo.com</span>
                                 </div>
                                 <span class="text-gray-400">Java Algorithmic Prep</span>
                             </div>
-                            <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
+                            <div
+                                class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
                                     <i data-lucide="newspaper" class="w-4 h-4 text-indigo-500"></i>
                                     <span class="font-bold text-gray-800 dark:text-gray-200">blog.csrgo.com</span>
                                 </div>
                                 <span class="text-gray-400">Engineering Insights</span>
                             </div>
-                            <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
+                            <div
+                                class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
                                     <i data-lucide="briefcase" class="w-4 h-4 text-emerald-500"></i>
                                     <span class="font-bold text-gray-800 dark:text-gray-200">services.csrgo.com</span>
                                 </div>
                                 <span class="text-gray-400">Digital Solutions</span>
                             </div>
-                            <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
+                            <div
+                                class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
                                     <i data-lucide="sparkles" class="w-4 h-4 text-rose-500"></i>
                                     <span class="font-bold text-gray-800 dark:text-gray-200">wishes.csrgo.com</span>
@@ -1210,7 +1224,8 @@
                             </div>
                         </div>
 
-                        <div class="pt-3 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                        <div
+                            class="pt-3 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
                             <span>Architecture: <strong>Static-First</strong></span>
                             <span>Barriers: <strong>0 Logins</strong></span>
                         </div>
@@ -1271,7 +1286,8 @@
                     </div>
 
                     <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Found a bug? Have a suggestion or feature request? We'd love to hear from you. Help us shape the future of CSRGO.
+                        Found a bug? Have a suggestion or feature request? We'd love to hear from you. Help us shape the
+                        future of CSRGO.
                     </p>
 
                     <!-- Feature Chips (From Contact Page Form Categories & Expectations) -->
@@ -1310,7 +1326,8 @@
                 <div class="flex-1 w-full relative">
                     <div
                         class="bg-white dark:bg-[#0c101d] rounded-2xl sm:rounded-3xl border border-gray-200 dark:border-gray-800/80 p-6 sm:p-7 shadow-2xl shadow-emerald-500/5 space-y-4">
-                        <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-gray-800">
+                        <div
+                            class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-gray-800">
                             <div class="flex items-center gap-2">
                                 <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
                                 <span class="text-xs font-bold text-gray-900 dark:text-white">Direct Contact</span>
@@ -1319,9 +1336,11 @@
                         </div>
 
                         <!-- Email Direct Box -->
-                        <div class="p-4 rounded-2xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                        <div
+                            class="p-4 rounded-2xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
                                     <i data-lucide="mail" class="w-5 h-5"></i>
                                 </div>
                                 <div>
@@ -1329,26 +1348,45 @@
                                     <div class="text-[11px] text-gray-500 dark:text-gray-400">support@csrgo.com</div>
                                 </div>
                             </div>
-                            <a href="mailto:support@csrgo.com" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-colors">
+                            <a href="mailto:support@csrgo.com"
+                                class="px-3.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-colors">
                                 Mail
                             </a>
                         </div>
 
                         <!-- Channels Grid (Exact Channels from Contact Page: Instagram & YouTube) -->
                         <div class="grid grid-cols-2 gap-3 pt-1">
-                            <a href="https://instagram.com/csrgo_com" target="_blank" rel="noopener" class="p-3 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-pink-500/40 transition-all group">
-                                <div class="flex items-center gap-2 text-xs font-bold text-gray-800 dark:text-gray-200 mb-1">
-                                    <div class="w-6 h-6 rounded-md bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <a href="https://instagram.com/csrgo_com" target="_blank" rel="noopener"
+                                class="p-3 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-pink-500/40 transition-all group">
+                                <div
+                                    class="flex items-center gap-2 text-xs font-bold text-gray-800 dark:text-gray-200 mb-1">
+                                    <div
+                                        class="w-6 h-6 rounded-md bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                        </svg>
                                     </div>
                                     <span>Instagram</span>
                                 </div>
                                 <div class="text-[11px] text-gray-400">@csrgo_com</div>
                             </a>
-                            <a href="https://youtube.com/@csrgo_com" target="_blank" rel="noopener" class="p-3 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-red-500/40 transition-all group">
-                                <div class="flex items-center gap-2 text-xs font-bold text-gray-800 dark:text-gray-200 mb-1">
-                                    <div class="w-6 h-6 rounded-md bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2h15a2 2 0 0 1 2 2 24.12 24.12 0 0 1 0 10 2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2Z"/><path d="m10 15 5-3-5-3z"/></svg>
+                            <a href="https://youtube.com/@csrgo_com" target="_blank" rel="noopener"
+                                class="p-3 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-red-500/40 transition-all group">
+                                <div
+                                    class="flex items-center gap-2 text-xs font-bold text-gray-800 dark:text-gray-200 mb-1">
+                                    <div
+                                        class="w-6 h-6 rounded-md bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2h15a2 2 0 0 1 2 2 24.12 24.12 0 0 1 0 10 2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2Z" />
+                                            <path d="m10 15 5-3-5-3z" />
+                                        </svg>
                                     </div>
                                     <span>YouTube</span>
                                 </div>
@@ -1372,7 +1410,9 @@
 
                         <div class="pt-1 text-center">
                             <span class="text-xs text-gray-500 dark:text-gray-400">
-                                Or use our interactive <a href="/contact/" class="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">contact form</a> with instant dispatch
+                                Or use our interactive <a href="/contact/"
+                                    class="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">contact
+                                    form</a> with instant dispatch
                             </span>
                         </div>
                     </div>
@@ -1382,7 +1422,7 @@
         </div>
     </section>
 
-<!-- GPU & Video Sync Pipeline -->
+    <!-- GPU & Video Sync Pipeline -->
     <script>
         (function () {
             if (window.location.search.includes('theme=dark')) {
