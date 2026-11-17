@@ -43,24 +43,14 @@ disableKinds = ["taxonomy", "term"]
   weight = 4
 
 [[menu.main]]
-  name = "Services"
-  url = "https://services.csrgo.com/"
-  weight = 5
-
-[[menu.main]]
-  name = "Wishes"
-  url = "https://wishes.csrgo.com/"
-  weight = 6
-
-[[menu.main]]
   name = "About"
   url = "/about/"
-  weight = 7
+  weight = 5
 
 [[menu.main]]
   name = "Contact"
   url = "/contact/"
-  weight = 8
+  weight = 6
 
 [[menu.footer]]
   name = "Privacy Policy"

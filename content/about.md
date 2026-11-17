@@ -1,6 +1,6 @@
 ---
 title: "About CSRGO"
-description: "CSRGO is your single door to an evolving ecosystem of specialized tools, interactive computer science practice, engineering articles, and digital services."
+description: "CSRGO is your single door to an evolving ecosystem of specialized tools, interactive computer science practice, and engineering articles."
 date: 2026-11-06
 layout: "about"
 draft: false
@@ -8,15 +8,15 @@ draft: false
 
 ## One Door to All Different Tools
 
-CSRGO was built with a clear purpose: to serve as a unified gateway and single launchpad to a fast-growing, evolving ecosystem of purpose-built micro-platforms. Instead of fragmented bookmarks and account barriers, CSRGO provides instant, zero-login access to specialized web utilities, coding problem archives, technical insights, celebratory experiences, and digital engineering services.
+CSRGO was built with a clear purpose: to serve as a unified gateway and single launchpad to a fast-growing, evolving ecosystem of purpose-built micro-platforms. Instead of fragmented bookmarks and account barriers, CSRGO provides instant, zero-login access to specialized web utilities, coding problem archives, and technical insights.
 
 ### Our Mission
 
 Our mission is to eliminate digital friction. We believe essential developer utilities, algorithm training, and high-value tools should be immediately accessible, lightning-fast, and free from mandatory account creation or clutter.
 
-### The Five Ecosystem Pillars
+### The Three Ecosystem Pillars
 
-CSRGO powers five dedicated, live micro-platforms:
+CSRGO powers three dedicated, live micro-platforms:
 
 1. **[dsa.csrgo.com](https://dsa.csrgo.com/) — DSA Practice:**
    Master Data Structures & Algorithms in Java with curated interview paths, comprehensive problem sets, ready-to-download starter code, and zero logins.
@@ -26,12 +26,6 @@ CSRGO powers five dedicated, live micro-platforms:
 
 3. **[tools.csrgo.com](https://tools.csrgo.com/) — Developer Utilities:**
    Instant, client-side online utilities including JSON formatters, text converters, encoding tools, and calculators that run directly in your browser.
-
-4. **[wishes.csrgo.com](https://wishes.csrgo.com/) — Personalized Wishes:**
-   Create and share custom celebration and wishes websites with permanent, memorable URLs for birthdays, festivals, and milestones.
-
-5. **[services.csrgo.com](https://services.csrgo.com/) — Digital Solutions:**
-   Fast, secure, and modern digital services for bespoke websites, mobile applications, Shopify e-commerce setups, and creative content creation.
 
 ### Our Core Principles
 
